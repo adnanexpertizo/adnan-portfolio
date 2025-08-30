@@ -1,0 +1,42 @@
+{
+  "title": "About Me",
+  "subtitle": "Passionate about creating safer workplaces through comprehensive safety management and training",
+  "mainTitle": "Professional Safety Officer",
+  "description": [
+    "With over 2 years of dedicated experience as a Safety Officer, I specialize in developing and implementing comprehensive safety programs that protect workers and ensure regulatory compliance. My NEBOSH certification and extensive training in various safety disciplines enable me to identify risks, develop mitigation strategies, and foster a culture of safety excellence.",
+    "I am committed to continuous learning and staying updated with the latest safety regulations and best practices. My approach combines technical expertise with effective communication to ensure safety protocols are not just implemented, but embraced by all team members."
+  ],
+  "workImage": "/safety-officer-at-work-site-wearing-hard-hat.png",
+  "skills": [
+    "NEBOSH IGC",
+    "First Aid",
+    "Fire Safety",
+    "Risk Assessment",
+    "Work at Height",
+    "Safety Training",
+    "Incident Investigation",
+    "Safety Auditing"
+  ],
+  "highlights": [
+    {
+      "icon": "Shield",
+      "title": "2+ Years Experience",
+      "description": "Professional safety officer experience"
+    },
+    {
+      "icon": "Award",
+      "title": "NEBOSH Certified",
+      "description": "International safety qualification"
+    },
+    {
+      "icon": "Users",
+      "title": "Team Safety Training",
+      "description": "Conducted safety training for 100+ employees"
+    },
+    {
+      "icon": "CheckCircle",
+      "title": "Zero Incidents",
+      "description": "Maintained excellent safety record"
+    }
+  ]
+}

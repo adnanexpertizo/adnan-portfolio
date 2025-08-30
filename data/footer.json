@@ -1,0 +1,25 @@
+{
+  "name": "Adnan Rafiq",
+  "title": "NEBOSH Certified Safety Officer",
+  "socialLinks": [
+    {
+      "type": "email",
+      "url": "mailto:adnan.rafiq@email.com",
+      "icon": "Mail",
+      "label": "Email"
+    },
+    {
+      "type": "phone",
+      "url": "tel:+971501234567",
+      "icon": "Phone",
+      "label": "Phone"
+    },
+    {
+      "type": "linkedin",
+      "url": "https://linkedin.com/in/adnanrafiq",
+      "icon": "Linkedin",
+      "label": "LinkedIn"
+    }
+  ],
+  "copyright": "All rights reserved."
+}

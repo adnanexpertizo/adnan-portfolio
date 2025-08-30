@@ -1,0 +1,41 @@
+{
+  "title": "Get In Touch",
+  "subtitle": "Ready to discuss safety solutions for your organization",
+  "contactInfo": {
+    "email": "adnan.rafiq@email.com",
+    "phone": "+971 50 123 4567",
+    "location": "Dubai, UAE",
+    "linkedin": "https://linkedin.com/in/adnanrafiq",
+    "availability": "Available for new opportunities"
+  },
+  "formFields": [
+    {
+      "name": "name",
+      "label": "Full Name",
+      "type": "text",
+      "placeholder": "Your full name",
+      "required": true
+    },
+    {
+      "name": "email",
+      "label": "Email Address",
+      "type": "email",
+      "placeholder": "your.email@example.com",
+      "required": true
+    },
+    {
+      "name": "subject",
+      "label": "Subject",
+      "type": "text",
+      "placeholder": "What's this about?",
+      "required": true
+    },
+    {
+      "name": "message",
+      "label": "Message",
+      "type": "textarea",
+      "placeholder": "Tell me about your safety requirements...",
+      "required": true
+    }
+  ]
+}

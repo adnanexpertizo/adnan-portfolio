@@ -1,0 +1,36 @@
+{
+  "title": "Professional Experience",
+  "subtitle": "Proven track record in safety management and workplace safety implementation",
+  "experiences": [
+    {
+      "title": "Safety Officer",
+      "company": "Industrial Construction Ltd.",
+      "location": "Dubai, UAE",
+      "period": "2022 - Present",
+      "type": "Full-time",
+      "responsibilities": [
+        "Conduct comprehensive risk assessments for construction sites and industrial facilities",
+        "Develop and implement safety protocols and procedures in compliance with local regulations",
+        "Provide safety training and induction programs for new employees and contractors",
+        "Investigate incidents and near-misses, preparing detailed reports and corrective action plans",
+        "Perform regular safety audits and inspections to ensure compliance with safety standards",
+        "Coordinate with management to establish safety policies and emergency response procedures"
+      ]
+    },
+    {
+      "title": "Assistant Safety Officer",
+      "company": "Metro Construction Group",
+      "location": "Abu Dhabi, UAE",
+      "period": "2021 - 2022",
+      "type": "Full-time",
+      "responsibilities": [
+        "Assisted in conducting safety inspections and risk assessments",
+        "Maintained safety documentation and incident reporting systems",
+        "Supported safety training programs and toolbox talks",
+        "Monitored compliance with personal protective equipment (PPE) requirements",
+        "Participated in safety committee meetings and contributed to safety improvement initiatives",
+        "Helped coordinate emergency drills and evacuation procedures"
+      ]
+    }
+  ]
+}

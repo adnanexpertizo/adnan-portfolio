@@ -1,0 +1,30 @@
+{
+  "title": "Education & Training",
+  "subtitle": "Academic background and professional development in safety management",
+  "education": [
+    {
+      "degree": "Bachelor of Science in Occupational Health & Safety",
+      "institution": "University of Safety Sciences",
+      "location": "Dubai, UAE",
+      "period": "2018 - 2021",
+      "status": "Graduated",
+      "description": "Comprehensive study of workplace safety, risk management, and occupational health principles."
+    },
+    {
+      "degree": "NEBOSH International General Certificate",
+      "institution": "NEBOSH Accredited Training Center",
+      "location": "Dubai, UAE",
+      "period": "2022",
+      "status": "Certified",
+      "description": "International qualification in occupational health and safety management."
+    },
+    {
+      "degree": "Advanced Safety Management Diploma",
+      "institution": "Safety Institute of Excellence",
+      "location": "Abu Dhabi, UAE",
+      "period": "2023",
+      "status": "Completed",
+      "description": "Advanced training in safety leadership, incident investigation, and regulatory compliance."
+    }
+  ]
+}

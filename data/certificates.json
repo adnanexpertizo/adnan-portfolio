@@ -1,0 +1,62 @@
+{
+  "title": "Certificates & Qualifications",
+  "subtitle": "Professional certifications demonstrating expertise in safety management",
+  "certificates": [
+    {
+      "title": "NEBOSH International General Certificate",
+      "issuingBody": "NEBOSH",
+      "year": "2022",
+      "status": "Active",
+      "category": "Health & Safety",
+      "image": "/placeholder.svg?height=400&width=600"
+    },
+    {
+      "title": "OSHA 30-Hour Construction Safety",
+      "issuingBody": "OSHA",
+      "year": "2023",
+      "status": "Active",
+      "category": "Construction Safety",
+      "image": "/placeholder.svg?height=400&width=600"
+    },
+    {
+      "title": "Emergency First Aid at Work",
+      "issuingBody": "Red Cross",
+      "year": "2023",
+      "status": "Active",
+      "category": "First Aid",
+      "image": "/placeholder.svg?height=400&width=600"
+    },
+    {
+      "title": "Fire Safety Awareness Certificate",
+      "issuingBody": "Fire Safety Institute",
+      "year": "2022",
+      "status": "Active",
+      "category": "Fire Safety",
+      "image": "/placeholder.svg?height=400&width=600"
+    },
+    {
+      "title": "Working at Height Safety",
+      "issuingBody": "Height Safety Association",
+      "year": "2023",
+      "status": "Active",
+      "category": "Height Safety",
+      "image": "/placeholder.svg?height=400&width=600"
+    },
+    {
+      "title": "Risk Assessment Certification",
+      "issuingBody": "Safety Management Institute",
+      "year": "2022",
+      "status": "Active",
+      "category": "Risk Management",
+      "image": "/placeholder.svg?height=400&width=600"
+    },
+    {
+      "title": "Incident Investigation Training",
+      "issuingBody": "Occupational Safety Board",
+      "year": "2023",
+      "status": "Active",
+      "category": "Investigation",
+      "image": "/placeholder.svg?height=400&width=600"
+    }
+  ]
+}
