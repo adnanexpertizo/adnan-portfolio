@@ -50,7 +50,7 @@ export function Navbar() {
           : "bg-background/80 backdrop-blur-sm"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-28">
+      <div className="container mx-auto lg:px-36 md:px-16 px-2 ">
         <div className="flex items-center justify-between h-20 sm:h-16">
           <div className="font-serif font-bold text-lg sm:text-xl text-primary hover:text-primary/80 transition-colors duration-300 cursor-pointer">
             {heroData.name}
