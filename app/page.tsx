@@ -11,7 +11,7 @@ import { Footer } from "@/components/footer"
 export default function Home() {
   return (
     <main className="min-h-screen ">
-      <div className="lg:px-24 md:px-16 px-4 mx-auto">
+      <div className="lg:px-24 md:px-16 px-2 mx-auto">
       <Navbar />
       <HeroSection />
       <AboutSection />
