@@ -7,7 +7,7 @@ export function EducationSection() {
     <section id="education" className="py-20">
       <div className="container  lg:px-36 md:px-16 px-2 mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">{educationData.title}</h2>
+          <h2 className="font-serif text-lg sm:text-4xl font-bold text-foreground mb-4">{educationData.title}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">{educationData.subtitle}</p>
         </div>
 
@@ -27,7 +27,7 @@ export function EducationSection() {
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                         <div className="flex items-center mb-2 sm:mb-0">
                           <GraduationCap className="h-5 w-5 text-primary mr-2" />
-                          <h3 className="font-semibold text-foreground text-lg">{item.degree}</h3>
+                          <h3 className="font-semibold text-foreground text-md md:text-lg">{item.degree}</h3>
                         </div>
                         <div className="flex items-center text-muted-foreground">
                           <Calendar className="h-4 w-4 mr-1" />

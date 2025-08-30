@@ -51,14 +51,14 @@ export function CertificatesSection() {
       <div className="container  lg:px-36 md:px-16 px-2 mx-auto">
         <div className="text-center mb-16">
           <h2
-            className={`font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4 transform transition-all duration-1000 ease-out ${
+            className={`font-serif text-md sm:text-4xl font-bold text-foreground mb-4 transform transition-all duration-1000 ease-out ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
           >
             {certificatesData.title}
           </h2>
           <p
-            className={`text-lg text-muted-foreground max-w-2xl mx-auto text-pretty transform transition-all duration-1000 ease-out ${
+            className={`text-lg text-muted-foreground md:max-w-2xl mx-auto text-pretty transform transition-all duration-1000 ease-out ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
             style={{ transitionDelay: "200ms" }}
@@ -93,7 +93,7 @@ export function CertificatesSection() {
                     {cert.status}
                   </Badge>
                 </div>
-                <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300 text-balance">
+                <CardTitle className="md:text-lg text-sm group-hover:text-primary transition-colors duration-300 text-balance">
                   {cert.title}
                 </CardTitle>
               </CardHeader>
