@@ -28,11 +28,11 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-muted/20 pt-20 sm:pt-16"
+      className="py-32 flex items-center justify-center flex-wrap bg-gradient-to-br from-background via-background to-muted/20"
     >
       <div className="container lg:px-36 md:px-16 px-2 mx-auto">
         {/* Use flex on large screens for 70/30 split, grid for mobile/tablet */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-[70px]">
+        <div className="flex flex-wrap items-center justify-between gap-8 lg:gap-[60px]">
           {/* Profile Image - 30% on large screens */}
           <div className="flex justify-center lg:justify-start order-1 lg:order-1 mb-6 lg:mb-0 w-full lg:w-[30%]">
             <div className="relative">

@@ -46,18 +46,18 @@ export function AboutSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="about" className="py-16 sm:py-20 bg-muted/30 overflow-hidden">
-      <div className="container  lg:px-36 md:px-16 px-2 mx-auto">
-        <div className="text-center mb-12 sm:mb-16">
+    <section ref={sectionRef} id="about" className="py-[40px] bg-muted/30 overflow-hidden">
+      <div className="container lg:px-[90px] md:px-[64px] px-[8px] mx-auto">
+        <div className="text-center mb-[32px]">
           <h2
-            className={`font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 transform transition-all duration-1000 ease-out ${
+            className={`font-serif text-[24px] lg:text-[28px] font-bold text-foreground mb-[16px] transform transition-all duration-1000 ease-out ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
           >
             {aboutData.title}
           </h2>
           <p
-            className={`text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto text-pretty px-4 sm:px-0 transform transition-all duration-1000 ease-out ${
+            className={`lg:text-[16px] text-[14px] text-muted-foreground max-w-2xl mx-auto text-pretty px-[12px] transform transition-all duration-1000 ease-out ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
             style={{ transitionDelay: "200ms" }}
@@ -66,7 +66,7 @@ export function AboutSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-12 sm:mb-16">
+        <div className="grid lg:grid-cols-2 gap-[32px] items-center mb-[40px]">
           <div className="order-2 lg:order-1">
             <Card
               className={`overflow-hidden hover:shadow-2xl transition-all duration-700 ease-out transform ${
@@ -80,33 +80,33 @@ export function AboutSection() {
                   alt="Adnan Rafiq at work"
                   width={600}
                   height={400}
-                  className="w-full h-48 sm:h-64 object-cover transition-transform duration-700 ease-out"
+                  className="w-full h-[192px] object-cover transition-transform duration-700 ease-out"
                 />
               </CardContent>
             </Card>
           </div>
 
           <div
-            className={`order-1 lg:order-2 px-2 sm:px-0 transform transition-all duration-1000 ease-out ${
+            className={`order-1 lg:order-2 px-[8px] transform transition-all duration-1000 ease-out ${
               isVisible ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"
             }`}
             style={{ transitionDelay: "600ms" }}
           >
-            <h3 className="font-serif text-xl sm:text-2xl font-semibold text-foreground mb-4 sm:mb-6">
+            <h3 className="font-serif text-[16px] md:text-[20px]  font-semibold text-foreground mb-[20px]">
               {aboutData.mainTitle}
             </h3>
             {aboutData.description.map((paragraph, index) => (
-              <p key={index} className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 text-pretty">
+              <p key={index} className="text-[14px] md:text-[16px] text-muted-foreground mb-[16px] text-pretty">
                 {paragraph}
               </p>
             ))}
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-[8px]">
               {aboutData.skills.map((skill, index) => (
                 <Badge
                   key={skill}
                   variant="secondary"
-                  className={`text-xs sm:text-sm transition-all duration-300 ease-out transform ${
+                  className={`text-[11px] md:text-[13px] transition-all duration-300 ease-out transform ${
                     isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
                   } border border-border/60 hover:border-primary/50 dark:border-border/70 dark:hover:border-primary/60`}
                   style={{ transitionDelay: `${800 + index * 100}ms` }}
@@ -118,7 +118,7 @@ export function AboutSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[16px]">
           {aboutData.highlights.map((highlight, index) => {
             const IconComponent = iconMap[highlight.icon as keyof typeof iconMap]
             return (
@@ -129,12 +129,12 @@ export function AboutSection() {
                 }`}
                 style={{ transitionDelay: `${1000 + index * 150}ms` }}
               >
-                <CardContent className="p-4 sm:p-6">
-                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg mb-3 sm:mb-4 dark:bg-primary/20 transition-all duration-300 ease-out">
-                    <IconComponent className="h-5 w-5 sm:h-6 sm:w-6 text-primary transition-transform duration-300" />
+                <CardContent className="p-[18px]">
+                  <div className="inline-flex items-center justify-center w-[44px] h-[44px] bg-primary/10 rounded-lg mb-[12px] dark:bg-primary/20 transition-all duration-300 ease-out">
+                    <IconComponent className="h-[22px] w-[22px] text-primary transition-transform duration-300" />
                   </div>
-                  <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">{highlight.title}</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground text-pretty">{highlight.description}</p>
+                  <h4 className="font-semibold text-foreground mb-[8px] text-[15px]">{highlight.title}</h4>
+                  <p className="text-[13px] text-muted-foreground text-pretty">{highlight.description}</p>
                 </CardContent>
               </Card>
             )
