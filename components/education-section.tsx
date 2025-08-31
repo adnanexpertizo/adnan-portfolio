@@ -4,38 +4,42 @@ import educationData from "@/data/education.json"
 
 export function EducationSection() {
   return (
-    <section id="education" className="py-20">
-      <div className="container  lg:px-36 md:px-16 px-2 mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-lg sm:text-4xl font-bold text-foreground mb-4">{educationData.title}</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">{educationData.subtitle}</p>
+    <section id="education" className="py-[40px]">
+      <div className="container lg:px-[90px] md:px-[64px] px-[8px] mx-auto">
+        <div className="text-center mb-[32px]">
+          <h2 className="font-serif text-[20px] md:text-[28px] font-bold text-foreground mb-[16px]">
+            {educationData.title}
+          </h2>
+          <p className="md:text-[16px] text-[14px] sm:text-[18px] text-muted-foreground max-w-2xl mx-auto text-pretty">
+            {educationData.subtitle}
+          </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden sm:block"></div>
+            <div className="absolute left-[32px] top-0 bottom-0 w-0.5 bg-border hidden sm:block"></div>
 
-            <div className="space-y-8">
+            <div className="space-y-[32px]">
               {educationData.education.map((item, index) => (
                 <div key={index} className="relative flex items-start">
                   {/* Timeline dot */}
-                  <div className="hidden sm:flex absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg"></div>
+                  <div className="hidden sm:flex absolute left-[24px] w-[16px] h-[16px] bg-primary rounded-full border-[4px] border-background shadow-lg"></div>
 
-                  <Card className="w-full sm:ml-16 hover:shadow-lg transition-all duration-300 border-2 border-border/80 hover:border-primary/60 bg-card shadow-md dark:border-border/80 dark:hover:border-primary/70 dark:shadow-lg dark:hover:shadow-xl dark:bg-card/98 backdrop-blur-sm">
-                    <CardContent className="p-6">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                        <div className="flex items-center mb-2 sm:mb-0">
-                          <GraduationCap className="h-5 w-5 text-primary mr-2" />
-                          <h3 className="font-semibold text-foreground text-md md:text-lg">{item.degree}</h3>
+                  <Card className="w-full sm:ml-[64px] hover:shadow-lg transition-all duration-300 border-2 border-border/80 hover:border-primary/60 bg-card shadow-md dark:border-border/80 dark:hover:border-primary/70 dark:shadow-lg dark:hover:shadow-xl dark:bg-card/98 backdrop-blur-sm">
+                    <CardContent className="p-[24px]">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-[16px]">
+                        <div className="flex items-center mb-[8px] sm:mb-0">
+                          <GraduationCap className="h-[20px] w-[20px] text-primary mr-[8px]" />
+                          <h3 className="font-semibold text-foreground text-[15px] sm:text-[18px]">{item.degree}</h3>
                         </div>
                         <div className="flex items-center text-muted-foreground">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          <span className="text-sm">{item.period}</span>
+                          <Calendar className="h-[16px] w-[16px] mr-[4px]" />
+                          <span className="text-[13px] sm:text-[15px]">{item.period}</span>
                         </div>
                       </div>
-                      <p className="text-primary font-medium mb-3">{item.institution}</p>
-                      <p className="text-muted-foreground text-pretty">{item.description}</p>
+                      <p className="text-primary font-medium mb-[12px] text-[15px]">{item.institution}</p>
+                      <p className="text-muted-foreground text-pretty text-[14px]">{item.description}</p>
                     </CardContent>
                   </Card>
                 </div>
