@@ -51,14 +51,14 @@ export function CertificatesSection() {
       <div className="container  lg:px-36 md:px-16 px-2 mx-auto">
         <div className="text-center mb-16">
           <h2
-            className={`font-serif text-md sm:text-4xl font-bold text-foreground mb-4 transform transition-all duration-1000 ease-out ${
+            className={`font-serif text-[20px] md:text-[26px] font-bold   text-foreground mb-4 transform transition-all duration-1000 ease-out ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
           >
             {certificatesData.title}
           </h2>
           <p
-            className={`text-lg text-muted-foreground md:max-w-2xl mx-auto text-pretty transform transition-all duration-1000 ease-out ${
+            className={`text-[12px] md:text-[14px] text-muted-foreground md:max-w-2xl px-8 mx-auto text-pretty transform transition-all duration-1000 ease-out ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
             style={{ transitionDelay: "200ms" }}
@@ -84,7 +84,7 @@ export function CertificatesSection() {
                     </div>
                     <Badge
                       variant="secondary"
-                      className="text-xs transition-colors duration-300 group-hover:bg-primary/10 dark:bg-secondary/80 dark:group-hover:bg-primary/20"
+                      className="text-[12px] md:text-[14px] transition-colors duration-300 group-hover:bg-primary/10 dark:bg-secondary/80 dark:group-hover:bg-primary/20"
                     >
                       {cert.category}
                     </Badge>
@@ -93,26 +93,26 @@ export function CertificatesSection() {
                     {cert.status}
                   </Badge>
                 </div>
-                <CardTitle className="md:text-lg text-sm group-hover:text-primary transition-colors duration-300 text-balance">
+                <CardTitle className="md:text-[14px] text-[12px] font-semibold group-hover:text-primary transition-colors duration-300 text-balance">
                   {cert.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="pt-0 relative z-10">
+              <CardContent className="-pt-5  relative z-10">
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center text-muted-foreground transition-colors duration-300 group-hover:text-foreground">
                     <Building className="h-4 w-4 mr-2" />
-                    <span className="text-sm">{cert.issuingBody}</span>
+                    <span className="text-[12px]">{cert.issuingBody}</span>
                   </div>
                   <div className="flex items-center text-muted-foreground transition-colors duration-300 group-hover:text-foreground">
                     <Calendar className="h-4 w-4 mr-2" />
-                    <span className="text-sm">Issued {cert.year}</span>
+                    <span className="text-[12px]">Issued {cert.year}</span>
                   </div>
                 </div>
 
                 <Button
                   variant="outline"
                   size="sm"
-                  className="w-full gap-2 transition-all duration-300 bg-transparent border-2 border-border/80 hover:border-primary/60 hover:bg-primary hover:text-primary-foreground dark:border-border/80 dark:hover:border-primary/70 dark:bg-transparent dark:hover:bg-primary"
+                  className="w-full text-[12px] md:text-[12px] gap-2 transition-all duration-300 bg-transparent border-2 border-border/80 hover:border-primary/60 hover:bg-primary hover:text-primary-foreground dark:border-border/80 dark:hover:border-primary/70 dark:bg-transparent dark:hover:bg-primary"
                   onClick={() => handleViewCertificate(cert)}
                 >
                   <Eye className="h-4 w-4" />

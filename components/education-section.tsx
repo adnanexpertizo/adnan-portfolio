@@ -10,7 +10,7 @@ export function EducationSection() {
           <h2 className="font-serif text-[20px] md:text-[28px] font-bold text-foreground mb-[16px]">
             {educationData.title}
           </h2>
-          <p className="md:text-[16px] text-[14px] sm:text-[18px] text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <p className="md:text-[16px] text-[12px] sm:text-[18px] text-muted-foreground max-w-2xl mx-auto text-pretty">
             {educationData.subtitle}
           </p>
         </div>
@@ -31,15 +31,15 @@ export function EducationSection() {
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-[16px]">
                         <div className="flex items-center mb-[8px] sm:mb-0">
                           <GraduationCap className="h-[20px] w-[20px] text-primary mr-[8px]" />
-                          <h3 className="font-semibold text-foreground text-[15px] sm:text-[18px]">{item.degree}</h3>
+                          <h3 className="font-semibold text-foreground text-[12px] sm:text-[14px]">{item.degree}</h3>
                         </div>
                         <div className="flex items-center text-muted-foreground">
                           <Calendar className="h-[16px] w-[16px] mr-[4px]" />
-                          <span className="text-[13px] sm:text-[15px]">{item.period}</span>
+                          <span className="text-[12px] sm:text-[14px]">{item.period}</span>
                         </div>
                       </div>
-                      <p className="text-primary font-medium mb-[12px] text-[15px]">{item.institution}</p>
-                      <p className="text-muted-foreground text-pretty text-[14px]">{item.description}</p>
+                      <p className="text-primary font-medium mb-[12px] text-[12px] md:text-[14px]">{item.institution}</p>
+                      <p className="text-muted-foreground text-pretty text-[12px] md:text-[14px]">{item.description}</p>
                     </CardContent>
                   </Card>
                 </div>

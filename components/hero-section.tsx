@@ -28,7 +28,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="py-32 flex items-center justify-center flex-wrap bg-gradient-to-br from-background via-background to-muted/20"
+      className="py-32 flex items-center justify-center flex-wrap bg-background"
     >
       <div className="container lg:px-36 md:px-16 px-2 mx-auto">
         {/* Use flex on large screens for 70/30 split, grid for mobile/tablet */}

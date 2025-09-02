@@ -42,14 +42,14 @@ export function ExperienceSection() {
       <div className="containerlg:px-36 md:px-16 px-2 mx-auto">
         <div className="text-center mb-16">
           <h2
-            className={`font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4 transform transition-all duration-1000 ease-out ${
+            className={`font-serif text-[20px] sm:text-[28px] font-bold text-foreground mb-4 transform transition-all duration-1000 ease-out ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
           >
             {experienceData.title}
           </h2>
           <p
-            className={`text-lg text-muted-foreground max-w-2xl mx-auto text-pretty transform transition-all duration-1000 ease-out ${
+            className={`text-[12px] md:text-[14px] text-muted-foreground md:max-w-2xl mx-auto text-pretty transform transition-all duration-1000 ease-out ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
             style={{ transitionDelay: "200ms" }}
@@ -83,19 +83,19 @@ export function ExperienceSection() {
                     <div className="flex-1">
                       <div className="flex items-center mb-2">
                         <Briefcase className="h-5 w-5 text-primary mr-2 transition-transform duration-300 group-hover:scale-105" />
-                        <h3 className="font-serif text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                        <h3 className="font-serif text-[12px] md:text-[14px] font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
                           {exp.title}
                         </h3>
                       </div>
-                      <p className="text-lg font-medium text-primary mb-2">{exp.company}</p>
+                      <p className="text-[12px] md:text-[14px] font-medium text-primary mb-2">{exp.company}</p>
                       <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-muted-foreground">
                         <div className="flex items-center">
                           <MapPin className="h-4 w-4 mr-1" />
-                          <span className="text-sm">{exp.location}</span>
+                          <span className="text-[12px]">{exp.location}</span>
                         </div>
                         <div className="flex items-center">
                           <Calendar className="h-4 w-4 mr-1" />
-                          <span className="text-sm">{exp.period}</span>
+                          <span className="text-[12px]">{exp.period}</span>
                         </div>
                       </div>
                     </div>
@@ -108,14 +108,14 @@ export function ExperienceSection() {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                    <h4 className="font-semibold text-foreground mb-4 group-hover:text-primary transition-colors text-[12px] md:text-[14px] duration-300">
                       Key Responsibilities:
                     </h4>
                     <ul className="space-y-2">
                       {exp.responsibilities.map((responsibility, idx) => (
                         <li key={idx} className="flex items-start">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                          <span className="text-muted-foreground text-pretty group-hover:text-foreground transition-colors duration-300">
+                          <span className="text-muted-foreground text-[12px] md:text-[14px] text-pretty group-hover:text-foreground transition-colors duration-300">
                             {responsibility}
                           </span>
                         </li>

@@ -57,7 +57,7 @@ export function AboutSection() {
             {aboutData.title}
           </h2>
           <p
-            className={`lg:text-[16px] text-[14px] text-muted-foreground max-w-2xl mx-auto text-pretty px-[12px] transform transition-all duration-1000 ease-out ${
+            className={`lg:text-[16px] text-[12px] text-muted-foreground max-w-2xl mx-auto text-pretty px-[12px] transform transition-all duration-1000 ease-out ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
             style={{ transitionDelay: "200ms" }}
@@ -96,7 +96,7 @@ export function AboutSection() {
               {aboutData.mainTitle}
             </h3>
             {aboutData.description.map((paragraph, index) => (
-              <p key={index} className="text-[14px] md:text-[16px] text-muted-foreground mb-[16px] text-pretty">
+              <p key={index} className="text-[12px] md:text-[16px] text-muted-foreground mb-[16px] text-pretty">
                 {paragraph}
               </p>
             ))}
@@ -118,23 +118,23 @@ export function AboutSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[16px]">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[8px] sm:gap-[16px]">
           {aboutData.highlights.map((highlight, index) => {
             const IconComponent = iconMap[highlight.icon as keyof typeof iconMap]
             return (
               <Card
                 key={index}
                 className={`text-center hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 ease-out border-2 border-border/80 hover:border-primary/60 bg-card shadow-lg dark:border-border/80 dark:hover:border-primary/70 dark:shadow-xl dark:hover:shadow-2xl dark:bg-card/98 backdrop-blur-sm group transform ${
-                  visibleCards[index] ? "translate-y-0 opacity-100 scale-100" : "translate-y-8 opacity-0 scale-95"
+                  visibleCards[index] ? "translate-y-0 opacity-100 scale-100" : "translate-y-4 opacity-0 scale-95"
                 }`}
                 style={{ transitionDelay: `${1000 + index * 150}ms` }}
               >
-                <CardContent className="p-[18px]">
-                  <div className="inline-flex items-center justify-center w-[44px] h-[44px] bg-primary/10 rounded-lg mb-[12px] dark:bg-primary/20 transition-all duration-300 ease-out">
-                    <IconComponent className="h-[22px] w-[22px] text-primary transition-transform duration-300" />
+                <CardContent className=" p-[10px] sm:p-[18px]">
+                  <div className="inline-flex items-center justify-center md:w-[44px] md:h-[44px] w-[35px] h-[35px] bg-primary/10 rounded-lg mb-[12px] dark:bg-primary/20 transition-all duration-300 ease-out">
+                    <IconComponent className="md:h-[22px] md:w-[22px] w-[16px] h-[16px] text-primary transition-transform duration-300" />
                   </div>
-                  <h4 className="font-semibold text-foreground mb-[8px] text-[15px]">{highlight.title}</h4>
-                  <p className="text-[13px] text-muted-foreground text-pretty">{highlight.description}</p>
+                  <h4 className="font-semibold text-foreground mb-[8px] text-[12px] md:text-[15px]">{highlight.title}</h4>
+                  <p className="md:text-[14px] text-[12px] text-muted-foreground text-pretty">{highlight.description}</p>
                 </CardContent>
               </Card>
             )
