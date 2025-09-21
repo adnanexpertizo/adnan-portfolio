@@ -34,14 +34,12 @@ export function CertificateModal({ certificate, isOpen, onClose }: CertificateMo
               <Badge variant={certificate.status === "Active" ? "default" : "secondary"}>{certificate.status}</Badge>
             </div>
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
+          <div
             onClick={onClose}
-            className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+            className="absolute right-4 hover:opacity-90 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
           >
             <X className="h-4 w-4" />
-          </Button>
+          </div>
         </DialogHeader>
 
         <div className="space-y-6">
