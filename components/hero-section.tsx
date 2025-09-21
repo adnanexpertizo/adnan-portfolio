@@ -34,24 +34,7 @@ export function HeroSection() {
         {/* Use flex on large screens for 70/30 split, grid for mobile/tablet */}
         <div className="flex flex-wrap items-center justify-between gap-8 lg:gap-[60px]">
           {/* Profile Image - 30% on large screens */}
-          <div className="flex justify-center lg:justify-start order-1 lg:order-1 mb-6 lg:mb-0 w-full lg:w-[30%]">
-            <div className="relative">
-              <div
-                className={`w-40 h-40 xs:w-56 xs:h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl transform transition-all duration-700 ease-out ${
-                  isVisible ? "translate-y-0 opacity-100 scale-100" : "translate-y-4 opacity-0 scale-98"
-                }`}
-              >
-                <Image
-                  src={heroData.profileImage || "/placeholder.svg"}
-                  alt={`${heroData.name} - ${heroData.title}`}
-                  width={320}
-                  height={320}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
+          
 
           {/* Hero Content - 70% on large screens */}
           <div className="w-full lg:w-[60%] text-center lg:text-left order-2 lg:order-2 px-1 xs:px-2 sm:px-0">
@@ -111,6 +94,24 @@ export function HeroSection() {
                   {button.text}
                 </Button>
               ))}
+            </div>
+          </div>
+          <div className="flex justify-center lg:justify-start order-1 lg:order-1 mb-6 lg:mb-0 w-full lg:w-[30%]">
+            <div className="relative">
+              <div
+                className={`w-40 h-40 xs:w-56 xs:h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl transform transition-all duration-700 ease-out ${
+                  isVisible ? "translate-y-0 opacity-100 scale-100" : "translate-y-4 opacity-0 scale-98"
+                }`}
+              >
+                <Image
+                  src={heroData.profileImage || "/placeholder.svg"}
+                  alt={`${heroData.name} - ${heroData.title}`}
+                  width={320}
+                  height={320}
+                  className="w-full border border-red-500 h-full object-cover hover:scale-105 transition-transform duration-500 ease-out"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>

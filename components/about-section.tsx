@@ -47,7 +47,7 @@ export function AboutSection() {
 
   return (
     <section ref={sectionRef} id="about" className="py-[40px] bg-muted/30 overflow-hidden">
-      <div className="container lg:px-[90px] md:px-[64px] px-[8px] mx-auto">
+      <div className="container lg:px-[144px] md:px-[64px] px-[8px] mx-auto">
         <div className="text-center mb-[32px]">
           <h2
             className={`font-serif text-[24px] lg:text-[28px] font-bold text-foreground mb-[16px] transform transition-all duration-1000 ease-out ${

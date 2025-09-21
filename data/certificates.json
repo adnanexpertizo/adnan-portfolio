@@ -8,15 +8,15 @@
       "year": "2022",
       "status": "Active",
       "category": "Health & Safety",
-      "image": "/placeholder.svg?height=400&width=600"
+      "image": "/certificates/.jpeg"
     },
     {
       "title": "OSHA 30-Hour Construction Safety",
       "issuingBody": "OSHA",
       "year": "2023",
       "status": "Active",
-      "category": "Construction Safety",
-      "image": "/placeholder.svg?height=400&width=600"
+      "category": "Safety Suppervission",
+      "image": "/certificates/safety supervission.jpeg"
     },
     {
       "title": "Emergency First Aid at Work",
@@ -24,7 +24,7 @@
       "year": "2023",
       "status": "Active",
       "category": "First Aid",
-      "image": "/placeholder.svg?height=400&width=600"
+      "image": "/certificates/first aid.jpeg"
     },
     {
       "title": "Fire Safety Awareness Certificate",
@@ -32,7 +32,7 @@
       "year": "2022",
       "status": "Active",
       "category": "Fire Safety",
-      "image": "/placeholder.svg?height=400&width=600"
+      "image": "/certificates/fire safety.jpeg"
     },
     {
       "title": "Working at Height Safety",
@@ -40,7 +40,7 @@
       "year": "2023",
       "status": "Active",
       "category": "Height Safety",
-      "image": "/placeholder.svg?height=400&width=600"
+      "image": "/certificates/work at height.jpeg"
     },
     {
       "title": "Risk Assessment Certification",
@@ -48,7 +48,7 @@
       "year": "2022",
       "status": "Active",
       "category": "Risk Management",
-      "image": "/placeholder.svg?height=400&width=600"
+      "image": "/certificates/risk assisment.jpeg"
     },
     {
       "title": "Incident Investigation Training",
@@ -56,7 +56,7 @@
       "year": "2023",
       "status": "Active",
       "category": "Investigation",
-      "image": "/placeholder.svg?height=400&width=600"
+      "image": "/certificates.jpeg"
     }
   ]
 }
