@@ -80,9 +80,10 @@ export function Navbar() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="hover:bg-accent/20 transition-all duration-300 h-10 w-10"
             >
-              <div className={`transition-transform duration-300 ${isMobileMenuOpen ? "rotate-90" : "rotate-0"}`}>
-                {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </div>
+             <div className={`transition-transform duration-300 ${isMobileMenuOpen ? "rotate-90" : "rotate-0"}`}>
+              {isMobileMenuOpen ? <X className="w-[30px] h-[30px]" /> : <Menu className="w-[30px] h-[30px]" />}
+            </div>
+
             </Button>
           </div>
         </div>

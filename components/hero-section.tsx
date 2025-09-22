@@ -72,10 +72,8 @@ export function HeroSection() {
               ))}
             </div>
           </div>
-
-          {/* Profile Image */}
           <div className="flex justify-center lg:justify-end order-1 lg:order-2 w-full lg:w-[30%]">
-            <div className="w-40 h-40 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
+            <div className="w-52 h-52 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
               <Image
                 src={heroData.profileImage || "/placeholder.svg"}
                 alt={`${heroData.name} - ${heroData.title}`}
