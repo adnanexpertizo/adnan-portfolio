@@ -57,7 +57,7 @@ export function HeroSection() {
             <p className="text-sm sm:text-lg text-muted-foreground mb-4">{heroData.subtitle}</p>
             <p className="text-xs sm:text-base text-muted-foreground mb-8">{heroData.description}</p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+            <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start">
               {heroData.buttons.map((button, index) => (
                 <Button
                   key={index}
