@@ -16,13 +16,13 @@ export function HeroSection() {
 
   const typedText = useTypewriter(
     [
-      "I am an experienced Safety Officer",
-      "I am graduated in Computer Science",
-      "I am NEBOSH Certified",
-      "I am IOSH & OSHA Certified",
-      "I am First Aid, Fire Safety, Work at Height Certified",
+      " an experienced Safety Officer",
+      " graduated in Computer Science",
+      " NEBOSH Certified",
+      " IOSH & OSHA Certified",
+      " First Aid, Fire Safety, Work at Height Certified",
     ],
-    70 // typing speed
+    100 // typing speed
   )
 
   const scrollToContact = () => {
@@ -43,14 +43,14 @@ export function HeroSection() {
       <div className="container lg:px-36 md:px-16 px-2 mx-auto">
         <div className="flex flex-wrap items-center justify-between gap-8 lg:gap-[60px]">
           {/* Hero Content */}
-          <div className="w-full lg:w-[60%] text-center lg:text-left order-2 lg:order-1 px-1">
+          <div className="w-full lg:w-[60%] flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1 px-1">
             <h1 className="font-serif text-2xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-4">
               {heroData.name}
             </h1>
 
             {/* ✅ Typewriter text */}
-            <h2 className="text-[12px] sm:[16px] md:text-[20px] te font-semibold text-primary mb-6">
-              {typedText}
+            <h2 className="text-[12px] sm:[16px] md:text-[20px] text-start  font-semibold text-primary mb-6 min-w-[250px] max-w-[400px] lg:max-w-[450px">
+            <span>I am</span>  {typedText}
               <span className="animate-pulse">|</span>
             </h2>
 
