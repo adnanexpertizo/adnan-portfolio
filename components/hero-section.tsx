@@ -49,7 +49,7 @@ export function HeroSection() {
             </h1>
 
             {/* ✅ Typewriter text */}
-            <h2 className="text-[12px] sm:[16px] md:text-[20px] text-start  font-semibold text-primary mb-6 min-w-[250px] max-w-[400px] lg:max-w-[450px">
+            <h2 className="text-[12px] sm:[16px] md:text-[19px] text-start  font-semibold text-primary mb-6 min-w-[250px] max-w-[400px] lg:max-w-[470px]">
             <span>I am</span>  {typedText}
               <span className="animate-pulse">|</span>
             </h2>
@@ -73,7 +73,7 @@ export function HeroSection() {
             </div>
           </div>
           <div className="flex justify-center lg:justify-end order-1 lg:order-2 w-full lg:w-[30%]">
-            <div className="w-52 h-52 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
+            <div className="w-52 h-52 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
               <Image
                 src={heroData.profileImage || "/placeholder.svg"}
                 alt={`${heroData.name} - ${heroData.title}`}

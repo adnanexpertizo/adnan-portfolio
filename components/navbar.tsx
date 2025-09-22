@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import ThemeToggle from "./theme-toggle"
 import heroData from "@/data/hero.json"
+import Image from "next/image"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -53,7 +54,9 @@ export function Navbar() {
       <div className="container mx-auto lg:px-36 md:px-16 px-2 ">
         <div className="flex items-center justify-between h-20 sm:h-16">
           <div className="font-serif font-bold text-lg sm:text-xl text-primary hover:text-primary/80 transition-colors duration-300 cursor-pointer">
-            {heroData.name}
+            <div className="relative md:w-52 md:h-12 w-28 h-8">
+              <Image src={heroData.logo} alt="" layout="fill"/>
+            </div>
           </div>
 
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
@@ -80,12 +83,22 @@ export function Navbar() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="hover:bg-accent/20 transition-all duration-300 h-10 w-10"
             >
-             <div className={`transition-transform duration-300 ${isMobileMenuOpen ? "rotate-90" : "rotate-0"}`}>
-              {isMobileMenuOpen ? <X className="w-[30px] h-[30px]" /> : <Menu className="w-[30px] h-[30px]" />}
-            </div>
-
+              {isMobileMenuOpen ? (
+                <X
+                  className={`w-[30px] h-[30px] transition-transform duration-300 ${
+                    isMobileMenuOpen ? "rotate-90" : "rotate-0"
+                  }`}
+                />
+              ) : (
+                <Menu
+                  className={`w-[30px] h-[30px] transition-transform duration-300 ${
+                    isMobileMenuOpen ? "rotate-90" : "rotate-0"
+                  }`}
+                />
+              )}
             </Button>
           </div>
+
         </div>
 
         {isMobileMenuOpen && (
