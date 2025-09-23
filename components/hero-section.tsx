@@ -4,15 +4,10 @@ import { Button } from "@/components/ui/button"
 import { Download, Mail } from "lucide-react"
 import Image from "next/image"
 import heroData from "@/data/hero.json"
-import { useEffect, useState } from "react"
-import { useTypewriter } from "./useTypewriter" // save the hook in hooks/useTypewriter.ts
+import { useTypewriter } from "./useTypewriter"
 
 export function HeroSection() {
-  const [isVisible, setIsVisible] = useState(false)
 
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
 
   const typedText = useTypewriter(
     [
@@ -22,7 +17,7 @@ export function HeroSection() {
       " IOSH & OSHA Certified",
       " First Aid, Fire Safety, Work at Height Certified",
     ],
-    100 // typing speed
+    100
   )
 
   const scrollToContact = () => {
@@ -31,49 +26,61 @@ export function HeroSection() {
       const navHeight = 120
       const elementPosition =
         element.getBoundingClientRect().top + window.pageYOffset - navHeight
-      window.scrollTo({
-        top: elementPosition,
-        behavior: "smooth",
-      })
+      window.scrollTo({ top: elementPosition, behavior: "smooth" })
     }
   }
 
   return (
-    <section id="home" className="pt-32 pb-20 flex items-center justify-center flex-wrap bg-background">
+    <section
+      id="home"
+      className="pt-32 pb-20 flex items-center justify-center flex-wrap bg-background"
+    >
       <div className="container lg:px-36 md:px-16 px-2 mx-auto">
-        <div className="flex flex-wrap items-center justify-between gap-8 lg:gap-[60px]">
-          {/* Hero Content */}
+        <div className="flex flex-wrap items-center justify-between gap-8 md:gap-[42px] lg:gap-[60px]">
+          {/* LEFT SECTION */}
           <div className="w-full lg:w-[60%] flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1 px-1">
             <h1 className="font-serif text-2xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-4">
               {heroData.name}
             </h1>
 
-            {/* ✅ Typewriter text */}
-            <h2 className="text-[12px] sm:[16px] md:text-[20px] text-start  font-semibold text-primary mb-6 min-w-[250px] max-w-[400px] lg:max-w-[450px">
-            <span>I am</span>  {typedText}
+            <h2 className="text-[12px] sm:[16px] md:text-[16px] text-start font-semibold text-primary mb-6 min-w-[250px] max-w-[400px] lg:max-w-[470px]">
+              <span className="text-[#CD312D]">I am</span> {typedText}
               <span className="animate-pulse">|</span>
             </h2>
 
-            <p className="text-sm sm:text-lg text-muted-foreground mb-4">{heroData.subtitle}</p>
-            <p className="text-xs sm:text-base text-muted-foreground mb-8">{heroData.description}</p>
-
-            <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start">
+            <p className="text-sm sm:text-lg text-muted-foreground mb-4">
+              {heroData.subtitle}
+            </p>
+            <p className="text-xs sm:text-base text-muted-foreground mb-8">
+              {heroData.description}
+            </p>
+            <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start mt-6">
               {heroData.buttons.map((button, index) => (
                 <Button
                   key={index}
                   size="lg"
                   variant={button.type === "primary" ? "default" : "outline"}
-                  onClick={button.action === "scrollToContact" ? scrollToContact : undefined}
+                  onClick={
+                    button.action === "scrollToContact"
+                      ? scrollToContact
+                      : undefined
+                  }
                 >
-                  {button.icon === "Download" && <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />}
-                  {button.icon === "Mail" && <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />}
+                  {button.icon === "Download" && (
+                    <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  )}
+                  {button.icon === "Mail" && (
+                    <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  )}
                   {button.text}
                 </Button>
               ))}
             </div>
           </div>
+
+          {/* RIGHT SECTION */}
           <div className="flex justify-center lg:justify-end order-1 lg:order-2 w-full lg:w-[30%]">
-            <div className="w-52 h-52 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
+            <div className="w-52 h-56 lg:w-76 lg:h-76 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
               <Image
                 src={heroData.profileImage || "/placeholder.svg"}
                 alt={`${heroData.name} - ${heroData.title}`}
