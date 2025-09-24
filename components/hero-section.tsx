@@ -33,10 +33,10 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="pt-32 pb-20 flex items-center justify-center flex-wrap bg-background border border-red-300 mx-auto"
+      className="md:pt-40 pt-24  md:pb-20 pb-12 md:px-36 md:px-16 flex items-center justify-center flex-wrap bg-background mx-auto"
     >
       <div className="container px-2 mx-auto">
-        <div className="flex flex-wrap items-center justify-between gap-8 md:gap-[42px] lg:gap-[60px] border">
+        <div className="flex flex-wrap items-center justify-between gap-8 md:gap-[42px] lg:gap-[60px] ">
           {/* LEFT SECTION */}
           <div className="w-full lg:w-[60%] flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1 px-1">
             <h1 className="font-serif text-2xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-4">
