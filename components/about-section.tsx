@@ -6,6 +6,7 @@ import { Shield, Award, Users, CheckCircle } from "lucide-react"
 import Image from "next/image"
 import aboutData from "@/data/about.json"
 import { useEffect, useRef, useState } from "react"
+import { AskModal } from "./AskModal"
 
 export function AboutSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -18,7 +19,12 @@ export function AboutSection() {
     Users,
     CheckCircle,
   }
+  const [openModal, setOpenModal] = useState(false)
 
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -56,14 +62,12 @@ export function AboutSection() {
           >
             {aboutData.title}
           </h2>
-          <p
-            className={`lg:text-[16px] text-[12px] text-muted-foreground max-w-2xl mx-auto text-pretty px-[12px] transform transition-all duration-1000 ease-out ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-            }`}
-            style={{ transitionDelay: "200ms" }}
-          >
-            {aboutData.subtitle}
-          </p>
+          <div className="flex justify-center">
+            <AskModal
+              openModal={openModal}
+              setOpenModal={setOpenModal}
+            />
+            </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-[32px] items-center mb-[40px]">
@@ -79,7 +83,7 @@ export function AboutSection() {
                   src={aboutData.workImage || "/placeholder.svg"}
                   alt="Adnan Rafiq at work"
                   width={600}
-                  height={400}
+                  height={600}
                   className="w-full h-[192px] object-cover transition-transform duration-700 ease-out"
                 />
               </CardContent>
