@@ -1,35 +1,23 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Download, Mail } from "lucide-react"
-import Image from "next/image"
-import heroData from "@/data/hero.json"
-import { useTypewriter } from "./useTypewriter"
+import { Button } from "@/components/ui/button";
+import { Download, Mail } from "lucide-react";
+import Image from "next/image";
+import heroData from "@/data/hero.json";
+import { AskModal } from "./AskModal";
+import { useState } from "react";
 
 export function HeroSection() {
-
-
-  const typedText = useTypewriter(
-    [
-      " an experienced Safety Officer",
-      " graduated in Computer Science",
-      " NEBOSH Certified",
-      " IOSH & OSHA Certified",
-      " First Aid, Fire Safety, Work at Height Certified",
-    ],
-    100
-  )
-
   const scrollToContact = () => {
-    const element = document.querySelector("#contact")
+    const element = document.querySelector("#contact");
     if (element) {
-      const navHeight = 120
+      const navHeight = 120;
       const elementPosition =
-        element.getBoundingClientRect().top + window.pageYOffset - navHeight
-      window.scrollTo({ top: elementPosition, behavior: "smooth" })
+        element.getBoundingClientRect().top + window.pageYOffset - navHeight;
+      window.scrollTo({ top: elementPosition, behavior: "smooth" });
     }
-  }
-
+  };
+  const [openModal, setOpenModal] = useState(false);
   return (
     <section
       id="home"
@@ -43,17 +31,16 @@ export function HeroSection() {
               {heroData.name}
             </h1>
 
-            <h2 className="text-[12px] sm:[16px] md:text-[16px] text-start font-semibold text-primary mb-6 min-w-[250px] max-w-[400px] lg:max-w-[470px]">
-              <span className="text-[#CD312D]">I am</span> {typedText}
-              <span className="animate-pulse">|</span>
-            </h2>
-
             <p className="text-sm sm:text-lg text-muted-foreground mb-4">
               {heroData.subtitle}
             </p>
             <p className="text-xs sm:text-base text-muted-foreground mb-8">
               {heroData.description}
             </p>
+            <div className="flex justify-start w-full">
+              <AskModal openModal={openModal} setOpenModal={setOpenModal} />
+            </div>
+
             <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start mt-6">
               {heroData.buttons.map((button, index) => (
                 <Button
@@ -84,7 +71,7 @@ export function HeroSection() {
               <Image
                 src={heroData.profileImage || "/placeholder.svg"}
                 alt={`${heroData.name} - ${heroData.title}`}
-              layout="fill"
+                layout="fill"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out"
               />
             </div>
@@ -92,5 +79,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
