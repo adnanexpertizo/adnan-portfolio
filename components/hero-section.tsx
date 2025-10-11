@@ -130,13 +130,13 @@ export function HeroSection() {
       {/* 🎵 Floating Music Button */}
       <button
         onClick={toggleMusic}
-        className="fixed bottom-5 md:right-5 left-4 md:left-auto z-40 bg-primary text-white p-3 rounded-full shadow-lg hover:scale-105 transition-transform"
+        className="fixed bottom-5 md:right-5 left-4 md:left-auto z-40 bg-primary text-white md:p-3 p-1 rounded-full shadow-lg hover:scale-105 transition-transform"
         aria-label="Toggle background music"
       >
         {isPlaying ? (
-          <Volume2 className="md:w-6 md:h-6 w-3 h-3" />
+          <Volume2 className="md:w-6 md:h-6 w-3 h-4" />
         ) : (
-          <VolumeX className="md:w-6 md:h-6 w-3 h-3" />
+          <VolumeX className="md:w-6 md:h-6 w-3 h-4" />
         )}
       </button>
     </section>
