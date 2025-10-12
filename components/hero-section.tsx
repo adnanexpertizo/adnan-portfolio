@@ -6,8 +6,7 @@ import Image from "next/image";
 import heroData from "@/data/hero.json";
 import { AskModal } from "./AskModal";
 import { useState, useEffect } from "react";
-import { CVTemplate } from "./CvTemplate";
-// import CVTemplate from "./CVTemplate"; // ✅ Make sure this path is correct
+import  CVTemplate  from "./CvTemplate";
 
 export function HeroSection() {
   const scrollToContact = () => {
