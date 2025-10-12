@@ -144,19 +144,7 @@ export function HeroSection() {
             >
               <X className="w-6 h-6" />
             </button>
-            <CVTemplate />
-            <div className="mt-6 flex justify-center">
-              <Button
-                onClick={() => {
-                  const link = document.createElement("a");
-                  link.href = "/Adnan-Rafiq-CV.pdf";
-                  link.download = "Adnan-Rafiq-CV.pdf";
-                  link.click();
-                }}
-              >
-                <Download className="mr-2 h-4 w-4" /> Download PDF
-              </Button>
-            </div>
+            <CVTemplate />  
           </div>
         </div>
       )}

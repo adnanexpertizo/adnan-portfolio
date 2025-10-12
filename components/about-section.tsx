@@ -64,7 +64,7 @@ export function AboutSection() {
     <section
       ref={sectionRef}
       id="about"
-      className="py-[40px] bg-muted/30 overflow-hidden"
+      className="py-[40px] bg-muted/30 overflow-hidden md:py-20 py-10"
     >
       <div className="container lg:px-[144px] md:px-[64px] px-[8px] mx-auto">
         <div className="text-center mb-[32px]">
@@ -77,10 +77,7 @@ export function AboutSection() {
           >
             {aboutData.title}
           </h2>
-          <h2 className="text-[12px] sm:[16px] md:text-[16px] text-start font-semibold text-primary mb-6 min-w-[250px] max-w-[400px] lg:max-w-[470px] mx-auto">
-            <span className="text-[#CD312D]">I am</span> {typedText}
-            <span className="animate-pulse">|</span>
-          </h2>
+         
         </div>
 
         <div className="grid lg:grid-cols-2 gap-[32px] items-center mb-[40px]">
@@ -113,13 +110,17 @@ export function AboutSection() {
             }`}
             style={{ transitionDelay: "600ms" }}
           >
-            <h3 className="font-serif text-[16px] md:text-[20px]  font-semibold text-foreground mb-[20px]">
+            <h3 className="font-serif text-[16px] md:text-[20px]  font-semibold text-foreground mb-[6px]">
               {aboutData.mainTitle}
             </h3>
+             <h2 className="text-[12px] sm:[16px] md:text-[16px] text-start font-semibold text-primary mb-2 min-w-[250px] max-w-[400px] lg:max-w-[470px]">
+            <span className="text-[#CD312D]">I am</span> {typedText}
+            <span className="animate-pulse">|</span>
+          </h2>
             {aboutData.description.map((paragraph, index) => (
               <p
                 key={index}
-                className="text-[12px] md:text-[16px] text-muted-foreground mb-[16px] text-pretty"
+                className="text-[12px] md:text-[16px] text-muted-foreground mb-[9px] text-pretty"
               >
                 {paragraph}
               </p>
@@ -144,7 +145,7 @@ export function AboutSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[8px] sm:gap-[16px]">
+        {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-[8px] sm:gap-[16px]">
           {aboutData.highlights.map((highlight, index) => {
             const IconComponent =
               iconMap[highlight.icon as keyof typeof iconMap];
@@ -172,7 +173,7 @@ export function AboutSection() {
               </Card>
             );
           })}
-        </div>
+        </div> */}
       </div>
     </section>
   );
