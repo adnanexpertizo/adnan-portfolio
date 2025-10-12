@@ -1,11 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download, Mail, Volume2, VolumeX } from "lucide-react";
+import { Download, Mail, Volume2, VolumeX, X } from "lucide-react";
 import Image from "next/image";
 import heroData from "@/data/hero.json";
 import { AskModal } from "./AskModal";
 import { useState, useEffect } from "react";
+import { CVTemplate } from "./CvTemplate";
+// import CVTemplate from "./CVTemplate"; // ✅ Make sure this path is correct
 
 export function HeroSection() {
   const scrollToContact = () => {
@@ -18,17 +20,17 @@ export function HeroSection() {
     }
   };
 
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false); // AskModal
+  const [openCVModal, setOpenCVModal] = useState(false); // CV Modal
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const newAudio = new Audio("/islamic-music-240169.mp3");
     newAudio.loop = true;
-    newAudio.volume = 0.1; // 🎧 lowered volume to 10%
+    newAudio.volume = 0.1;
     setAudio(newAudio);
 
-    // Try autoplay (some browsers block it)
     const autoPlay = async () => {
       try {
         await newAudio.play();
@@ -95,11 +97,15 @@ export function HeroSection() {
                   key={index}
                   size="lg"
                   variant={button.type === "primary" ? "default" : "outline"}
-                  onClick={
-                    button.action === "scrollToContact"
-                      ? scrollToContact
-                      : undefined
-                  }
+                  onClick={() => {
+                    console.log("🖱️ Button clicked:", button);
+                    if (button.icon === "Download") {
+                      setOpenCVModal(true);
+                      console.log("✅ CV Modal Opened");
+                    } else if (button.action === "scrollToContact") {
+                      scrollToContact();
+                    }
+                  }}
                 >
                   {button.icon === "Download" && (
                     <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
@@ -126,6 +132,34 @@ export function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* 🧾 CUSTOM CV MODAL */}
+      {openCVModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="relative bg-white rounded-2xl w-[95%] md:w-[80%] lg:w-[70%] max-h-[90vh] overflow-y-auto p-6 shadow-2xl animate-fadeIn">
+            {/* Close Button */}
+            <button
+              onClick={() => setOpenCVModal(false)}
+              className="absolute top-3 right-3 text-gray-600 hover:text-red-500 transition"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <CVTemplate />
+            <div className="mt-6 flex justify-center">
+              <Button
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/Adnan-Rafiq-CV.pdf";
+                  link.download = "Adnan-Rafiq-CV.pdf";
+                  link.click();
+                }}
+              >
+                <Download className="mr-2 h-4 w-4" /> Download PDF
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* 🎵 Floating Music Button */}
       <button

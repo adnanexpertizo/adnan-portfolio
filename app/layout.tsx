@@ -28,7 +28,8 @@ const rubik = Rubik({
 
 export const metadata: Metadata = {
   title: "Adnan Rafiq - Safety Officer Portfolio",
-  description: "NEBOSH Certified Safety Officer | First Aid | Fire Safety | Work at Height | Risk Assessment",
+  description:
+    "NEBOSH Certified Safety Officer | First Aid | Fire Safety | Work at Height | Risk Assessment",
   generator: "v0.app",
 }
 
@@ -40,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${sourceSans.variable} ${playfairDisplay.variable} ${rubik.variable}`}
       >
         <Suspense fallback={null}>{children}</Suspense>

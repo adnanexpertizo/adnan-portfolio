@@ -10,6 +10,7 @@ import { ExperienceSection } from "@/components/experience-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import Animations from "@/components/Animations";
+import { CVTemplate } from '@/components/CvTemplate';
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -49,6 +50,7 @@ export default function Home() {
         <Animations />
         <Navbar />
         <HeroSection />
+    
         <AboutSection />
         <EducationSection />
         <CertificatesSection />
