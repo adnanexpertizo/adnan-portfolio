@@ -96,7 +96,7 @@ export function AboutSection() {
                   alt="Adnan Rafiq at work"
                   width={600}
                   height={600}
-                  className="w-full h-[192px] object-cover transition-transform duration-700 ease-out"
+                  className="w-full h-[250px] md:h-[330px] object-cover transition-transform duration-700 ease-out"
                 />
               </CardContent>
             </Card>
