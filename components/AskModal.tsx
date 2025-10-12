@@ -49,8 +49,8 @@ export function AskModal({ openModal, setOpenModal }: AskModalProps) {
         {/* Animated Border Wrapper with theme color */}
         <div
           className="rounded-full p-[2px] bg-gradient-to-r from-primary to-primary/70 
-                  animate-[gradientShift_6s_linear_infinite] focus-within:shadow-lg 
-                  focus-within:shadow-primary/30 transition"
+                  animate-[gradientShift_6s_linear_infinite] focus-within:shadow-sm 
+                  focus-within:shadow-primary/10 transition"
         >
           <div className="relative">
             <input
@@ -75,13 +75,13 @@ export function AskModal({ openModal, setOpenModal }: AskModalProps) {
 
         <button
           onClick={handleSend}
-          className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full 
+          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full 
                bg-primary text-primary-foreground hover:bg-primary/90 
                transition transform hover:scale-105 
-               animate-[pulseGlow_2.5s_infinite]"
+               "
           aria-label="Send"
         >
-          <Send size={20} />
+          <Send size={20} className="rotate-45" />
         </button>
       </div>
 
