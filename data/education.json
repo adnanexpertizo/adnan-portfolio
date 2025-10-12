@@ -1,30 +1,31 @@
 {
   "title": "Education & Training",
-  "subtitle": "Academic background and professional development in safety management",
+  "subtitle": "Academic qualifications and internationally recognized safety certifications",
   "education": [
     {
-      "degree": "Bachelor of Science in Occupational Health & Safety",
-      "institution": "University of Safety Sciences",
-      "location": "Dubai, UAE",
-      "period": "2018 - 2021",
+      "degree": "Bachelor’s Degree in Computer Science",
+      "institution": "University of Karachi",
+      "location": "Peshawar, Pakistan",
+      "period": "2020 - 2024",
       "status": "Graduated",
-      "description": "Comprehensive study of workplace safety, risk management, and occupational health principles."
+      "description": "Studied computer systems, programming, and database management with practical knowledge in digital safety tools and automation."
     },
-    {
-      "degree": "NEBOSH International General Certificate",
-      "institution": "NEBOSH Accredited Training Center",
-      "location": "Dubai, UAE",
-      "period": "2022",
+        {
+      "degree": "Professional International Safety Certifications",
+      "institution": "Accredited Global Safety Training Bodies",
+      "location": "UAE & Pakistan",
+      "period": "2021 - 2024",
       "status": "Certified",
-      "description": "International qualification in occupational health and safety management."
+      "description": "Holds multiple internationally recognized safety certifications including NEBOSH IGC, IOSH Managing Safely, OSHA Safety & Health, Fire Safety, First Aid, Work at Height, and Risk Assessment Training."
     },
     {
-      "degree": "Advanced Safety Management Diploma",
-      "institution": "Safety Institute of Excellence",
-      "location": "Abu Dhabi, UAE",
-      "period": "2023",
+      "degree": "Diploma in Information Technology (DIT)",
+      "institution": "Technical Education Board",
+      "location": "Peshawar, Pakistan",
+      "period": "2015 - 2016",
       "status": "Completed",
-      "description": "Advanced training in safety leadership, incident investigation, and regulatory compliance."
+      "description": "Comprehensive training in computer fundamentals, networking, software development, and AI-based web and app solutions."
     }
+
   ]
 }

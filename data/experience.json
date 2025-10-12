@@ -1,35 +1,34 @@
 {
   "title": "Professional Experience",
-  "subtitle": "Proven track record in safety management and workplace safety implementation",
+  "subtitle": "Proven track record in workplace safety management and implementation of international safety standards",
   "experiences": [
     {
       "title": "Safety Officer",
-      "company": "Industrial Construction Ltd.",
-      "location": "Dubai, UAE",
-      "period": "2022 - Present",
+      "company": "BRT Metro Project (TransPeshawar)",
+      "location": "Peshawar, Pakistan",
+      "period": "2019 - 2024",
       "type": "Full-time",
       "responsibilities": [
-        "Conduct comprehensive risk assessments for construction sites and industrial facilities",
-        "Develop and implement safety protocols and procedures in compliance with local regulations",
-        "Provide safety training and induction programs for new employees and contractors",
-        "Investigate incidents and near-misses, preparing detailed reports and corrective action plans",
-        "Perform regular safety audits and inspections to ensure compliance with safety standards",
-        "Coordinate with management to establish safety policies and emergency response procedures"
+        "Led safety operations for major infrastructure and construction activities at BRT Metro Project.",
+        "Conducted comprehensive risk assessments and implemented preventive safety measures.",
+        "Ensured compliance with NEBOSH and OSHA-based safety protocols on-site.",
+        "Organized regular safety trainings, toolbox talks, and emergency response drills.",
+        "Investigated accidents and near-misses, recommending effective corrective actions.",
+        "Maintained accurate safety documentation, inspection logs, and compliance reports."
       ]
     },
     {
-      "title": "Assistant Safety Officer",
-      "company": "Metro Construction Group",
-      "location": "Abu Dhabi, UAE",
-      "period": "2021 - 2022",
-      "type": "Full-time",
+      "title": "Safety Assistant / Trainee",
+      "company": "Industrial Services & Construction Company",
+      "location": "Karachi, Pakistan",
+      "period": "2018 - 2019",
+      "type": "Internship / Training",
       "responsibilities": [
-        "Assisted in conducting safety inspections and risk assessments",
-        "Maintained safety documentation and incident reporting systems",
-        "Supported safety training programs and toolbox talks",
-        "Monitored compliance with personal protective equipment (PPE) requirements",
-        "Participated in safety committee meetings and contributed to safety improvement initiatives",
-        "Helped coordinate emergency drills and evacuation procedures"
+        "Assisted senior officers in daily site safety inspections and audits.",
+        "Monitored PPE usage and promoted compliance with safety regulations.",
+        "Helped prepare risk assessment and incident investigation reports.",
+        "Supported safety awareness programs and workforce training initiatives.",
+        "Gained practical exposure to ISO 45001 and workplace safety documentation."
       ]
     }
   ]

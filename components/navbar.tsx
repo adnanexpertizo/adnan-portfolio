@@ -1,24 +1,23 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
-import ThemeToggle from "./theme-toggle"
-import heroData from "@/data/hero.json"
-import Image from "next/image"
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import ThemeToggle from "./theme-toggle";
+import heroData from "@/data/hero.json";
+import Image from "next/image";
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 50
-      setIsScrolled(scrolled)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { href: "#home", label: "Home" },
@@ -27,21 +26,21 @@ export function Navbar() {
     { href: "#certificates", label: "Certificates" },
     { href: "#experience", label: "Experience" },
     { href: "#contact", label: "Contact" },
-  ]
+  ];
 
   const scrollToSection = (href: string) => {
-    const targetId = href.replace("#", "")
-    const element = document.getElementById(targetId)
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
     if (element) {
-      const navHeight = 120
-      const elementPosition = element.offsetTop - navHeight
+      const navHeight = 120;
+      const elementPosition = element.offsetTop - navHeight;
       window.scrollTo({
         top: elementPosition,
         behavior: "smooth",
-      })
-      setIsMobileMenuOpen(false)
+      });
+      setIsMobileMenuOpen(false);
     }
-  }
+  };
 
   return (
     <nav
@@ -51,14 +50,16 @@ export function Navbar() {
           : "bg-background/80 backdrop-blur-sm"
       }`}
     >
-      <div className="container mx-auto lg:px-36 md:px-16 px-2 ">
+      <div className="container mx-auto lg:px-36 md:px-16 px-2">
         <div className="flex items-center justify-between h-20 sm:h-16">
+          {/* Logo */}
           <div className="font-serif font-bold text-lg sm:text-xl text-primary hover:text-primary/80 transition-colors duration-300 cursor-pointer">
             <div className="relative md:w-52 md:h-12 w-28 h-8">
-              <Image src={heroData.logo} alt="" layout="fill"/>
+              <Image src={heroData.logo} alt="Logo" layout="fill" />
             </div>
           </div>
 
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               <button
@@ -75,32 +76,37 @@ export function Navbar() {
             </div>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="hover:bg-accent/20 transition-all duration-300 h-10 w-10"
+              className="hover:bg-accent/20 transition-all duration-300 h-12 w-12 p-0 flex items-center justify-center"
             >
               {isMobileMenuOpen ? (
                 <X
-                  className={`w-[30px] h-[30px] transition-transform duration-300 ${
+                  size={36} // ✅ This makes the icon larger
+                  strokeWidth={2.5} // ✅ Makes the lines thicker (bolder)
+                  className={`transition-transform duration-300 ${
                     isMobileMenuOpen ? "rotate-90" : "rotate-0"
                   }`}
                 />
               ) : (
                 <Menu
-                  className={`w-[30px] h-[30px] transition-transform duration-300 ${
+                  size={36} // ✅ Larger icon
+                  strokeWidth={2.5}
+                  className={`transition-transform duration-300 ${
                     isMobileMenuOpen ? "rotate-90" : "rotate-0"
                   }`}
                 />
               )}
             </Button>
           </div>
-
         </div>
 
+        {/* Mobile Dropdown Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden bg-background/98 backdrop-blur-md border-t border-border shadow-lg">
             <div className="px-2 pt-4 pb-6 space-y-2">
@@ -118,5 +124,5 @@ export function Navbar() {
         )}
       </div>
     </nav>
-  )
+  );
 }
