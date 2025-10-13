@@ -16,7 +16,6 @@ export function CertificatesSection() {
   const [selectedCertificate, setSelectedCertificate] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // ✅ refs for working navigation buttons
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const [swiperReady, setSwiperReady] = useState(false);
@@ -26,7 +25,6 @@ export function CertificatesSection() {
     setIsModalOpen(true);
   };
 
-  // ✅ Fix Swiper navigation bug
   useEffect(() => {
     setSwiperReady(true);
   }, []);
@@ -61,9 +59,9 @@ export function CertificatesSection() {
               nextEl: nextRef.current,
             }}
             onBeforeInit={(swiper) => {
-              // @ts-ignore
+      
               swiper.params.navigation.prevEl = prevRef.current;
-              // @ts-ignore
+      
               swiper.params.navigation.nextEl = nextRef.current;
             }}
             breakpoints={{
