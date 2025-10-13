@@ -59,9 +59,9 @@ export function CertificatesSection() {
               nextEl: nextRef.current,
             }}
             onBeforeInit={(swiper) => {
-      
+              // @ts-ignore
               swiper.params.navigation.prevEl = prevRef.current;
-      
+              // @ts-ignore
               swiper.params.navigation.nextEl = nextRef.current;
             }}
             breakpoints={{
