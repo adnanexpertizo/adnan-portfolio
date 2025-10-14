@@ -25,7 +25,8 @@ export function HeroSection() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
-    const newAudio = new Audio("/islamic-music-240169.mp3");
+    // const newAudio = new Audio("/islamic-music-240169.mp3");
+    const newAudio = new Audio("/interview.wav");
     newAudio.loop = true;
     newAudio.volume = 0.1;
     setAudio(newAudio);
