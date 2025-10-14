@@ -30,7 +30,7 @@ export function CertificatesSection() {
   }, []);
 
   return (
-    <section id="certificates" className="py-20 bg-muted/30 overflow-hidden relative">
+    <section id="certificates" className="py-20 bg-background   overflow-hidden relative">
       <div className="container lg:px-36 md:px-16 px-4 mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
@@ -73,7 +73,7 @@ export function CertificatesSection() {
           >
             {certificatesData.certificates.map((cert, index) => (
               <SwiperSlide key={index}>
-                <Card className="min-w-[310px] my-1 group transition-all duration-500 relative overflow-hidden border-2 border-border/80 hover:border-primary/60 bg-card shadow-lg hover:shadow-xl">
+                <Card className="min-w-[310px] my-1 group transition-all duration-500 relative overflow-hidden border-2 border-border/80 hover:border-primary/60 bg-muted/40 shadow-lg hover:shadow-xl">
                   <CardHeader className="pb-4">
                     <div className="flex items-start justify-between">
                       <div className="flex items-center">

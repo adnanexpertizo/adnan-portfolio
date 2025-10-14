@@ -17,6 +17,7 @@
   --primary: #1c885e;
   --primary-foreground: #f7fdf8;
   --secondary: #eef7ec;
+  --bgcolor: #eef7ec;
   --secondary-foreground: #3a523c;
   --muted: #f2f8ef;
   --muted-foreground: #00152d99;
@@ -53,6 +54,7 @@
   --primary: #28a472;
   --primary-foreground: #141c14;
   --secondary: #263526;
+  --bgcolor: #00152d73;
   --secondary-foreground: #e8f6ea;
   --muted: #1f2d1f;
   --muted-foreground: #809180;
@@ -79,9 +81,8 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-rubik);
-  --font-serif: var(--font-playfair);
   --color-background: var(--background);
+  --color-bgcolor: var(--bgcolor);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);

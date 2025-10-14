@@ -38,7 +38,7 @@ export function ExperienceSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="experience" className="py-20 overflow-hidden">
+    <section ref={sectionRef} id="experience" className="py-20 overflow-hidden bg-background">
       <div className="containerlg:px-36 md:px-16 px-2 mx-auto">
         <div className="text-center mb-16">
           <h2
