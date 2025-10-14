@@ -77,7 +77,6 @@ export function CertificatesSection() {
                   <CardHeader className="pb-4">
                     <div className="flex items-start justify-between">
                       <div className="flex items-center">
-                        <div className="text-center text-red-500">slider</div>
                         <div className="p-2 bg-primary/10 rounded-lg mr-3 border border-primary/20">
                           <Award className="h-5 w-5 text-primary" />
                         </div>
