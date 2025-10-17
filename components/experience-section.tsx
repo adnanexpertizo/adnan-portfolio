@@ -114,7 +114,7 @@ export function ExperienceSection() {
               {experienceData.experiences.map((exp, index) => (
                 <SwiperSlide key={index} className="flex">
                   <Card
-                    className={`flex flex-col justify-between my-10 h-full min-h-[420px] max-h-[420px] transition-all duration-500 ease-out group border-2 border-border/80 hover:border-primary/60 dark:border-border/80 dark:hover:border-primary/70 shadow-lg hover:shadow-xl bg-muted/70 backdrop-blur-sm transform hover:-translate-y-1 ${
+                    className={`flex flex-col justify-between my-10 h-full min-h-[420px] max-h-[420px] transition-all duration-500 ease-out group border-2 border-border/80 hover:border-primary/60 dark:border-border/80 dark:hover:border-primary/70 shadow-lg hover:shadow-xl bg-muted/40 backdrop-blur-sm transform hover:-translate-y-1 ${
                       visibleCards[index]
                         ? "translate-x-0 opacity-100"
                         : "translate-x-6 opacity-0"

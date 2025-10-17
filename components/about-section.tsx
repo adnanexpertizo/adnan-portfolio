@@ -64,7 +64,7 @@ export function AboutSection() {
     <section
       ref={sectionRef}
       id="about"
- className="relative py-[40px] bg-muted/70 overflow-hidden md:py-20 py-10 "
+ className="relative py-[40px] bg-muted/50 overflow-hidden md:py-20 py-10 "
     >
       <div className="container lg:px-[144px] md:px-[64px] px-[8px] mx-auto">
         <div className="text-center mb-[32px]">

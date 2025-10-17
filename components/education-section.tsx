@@ -4,7 +4,7 @@ import educationData from "@/data/education.json"
 
 export function EducationSection() {
   return (
-    <section id="education" className="py-[40px] bg-muted/70">
+    <section id="education" className="py-[40px] bg-muted/50">
       <div className="container lg:px-[90px] md:px-[64px] px-[8px] mx-auto">
         <div className="text-center mb-[32px]">
           <h2 className="font-serif text-[20px] md:text-[28px] font-bold text-foreground mb-[16px]">
@@ -26,7 +26,7 @@ export function EducationSection() {
                   {/* Timeline dot */}
                   <div className="hidden sm:flex absolute left-[24px] w-[16px] h-[16px] bg-primary rounded-full border-[4px] border-background shadow-lg"></div>
 
-                  <Card className="w-full sm:ml-[64px] hover:shadow-lg transition-all duration-300 border-2 border-border/80 hover:border-primary/60 bg-card shadow-md dark:border-border/80 dark:hover:border-primary/70 dark:shadow-lg dark:hover:shadow-xl dark:bg-card/98 backdrop-blur-sm">
+                  <Card className="w-full sm:ml-[64px] hover:shadow-lg transition-all duration-300 border-2 border-border/80 hover:border-primary/60 bg-card shadow-md dark:border-border/80 dark:hover:border-primary/70 dark:shadow-lg dark:hover:shadow-xl dark:bg-muted/50 backdrop-blur-sm">
                     <CardContent className="p-[24px]">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-[16px]">
                         <div className="flex items-center mb-[8px] sm:mb-0">
