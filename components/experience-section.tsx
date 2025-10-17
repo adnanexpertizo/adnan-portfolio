@@ -106,65 +106,67 @@ export function ExperienceSection() {
               }}
               spaceBetween={24}
               breakpoints={{
-                0: { slidesPerView: 1, spaceBetween: 16 }, 
-                1000: { slidesPerView: 2, spaceBetween: 24 }, 
+                0: { slidesPerView: 1, spaceBetween: 16 },
+                1100: { slidesPerView: 2, spaceBetween: 24 },
               }}
               className="my-10"
             >
               {experienceData.experiences.map((exp, index) => (
                 <SwiperSlide key={index} className="flex">
                   <Card
-                    className={`flex flex-col justify-between my-10 h-full min-h-[500px] max-h-[500px] transition-all duration-500 ease-out group border-2 border-border/80 hover:border-primary/60 dark:border-border/80 dark:hover:border-primary/70 shadow-lg hover:shadow-xl bg-muted/40 backdrop-blur-sm transform hover:-translate-y-1 ${
+                    className={`flex flex-col justify-between my-10 h-full min-h-[420px] max-h-[420px] transition-all duration-500 ease-out group border-2 border-border/80 hover:border-primary/60 dark:border-border/80 dark:hover:border-primary/70 shadow-lg hover:shadow-xl bg-muted/70 backdrop-blur-sm transform hover:-translate-y-1 ${
                       visibleCards[index]
                         ? "translate-x-0 opacity-100"
                         : "translate-x-6 opacity-0"
                     }`}
                     style={{ transitionDelay: `${600 + index * 200}ms` }}
                   >
-                    <CardContent className="p-8 flex flex-col h-full">
+                    <CardContent className="p-2 md:p-4 lg:p-8 flex flex-col h-full">
                       {/* Top Info */}
-                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4 md:mb-6">
                         <div className="flex-1">
                           <div className="flex items-center mb-2">
-                            <Briefcase className="h-5 w-5 text-primary mr-2 transition-transform duration-300 group-hover:scale-105" />
-                            <h3 className="font-serif text-[12px] md:text-[14px] font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                            <Briefcase className="h-4 w-4 md:h-5 md:w-5 text-primary mr-2 transition-transform duration-300 group-hover:scale-105" />
+                            <h3 className="font-serif text-[11px] md:text-[14px] font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
                               {exp.title}
                             </h3>
                           </div>
-                          <p className="text-[12px] md:text-[14px] font-medium text-primary mb-2">
+                          <p className="text-[11px] md:text-[14px] font-medium text-primary mb-2">
                             {exp.company}
                           </p>
-                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-muted-foreground">
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-muted-foreground">
                             <div className="flex items-center">
-                              <MapPin className="h-4 w-4 mr-1" />
-                              <span className="text-[12px]">
+                              <MapPin className="h-3 w-3 md:h-4 md:w-4 mr-1" />
+                              <span className="text-[11px] md:text-[13px]">
                                 {exp.location}
                               </span>
                             </div>
                             <div className="flex items-center">
-                              <Calendar className="h-4 w-4 mr-1" />
-                              <span className="text-[12px]">{exp.period}</span>
+                              <Calendar className="h-3 w-3 md:h-4 md:w-4 mr-1" />
+                              <span className="text-[11px] md:text-[13px]">
+                                {exp.period}
+                              </span>
                             </div>
                           </div>
                         </div>
                         <Badge
                           variant="secondary"
-                          className="mt-4 lg:mt-0 transition-colors duration-300 group-hover:bg-primary/15 border border-border/60 hover:border-primary/50"
+                          className="mt-3 lg:mt-0 transition-colors duration-300 group-hover:bg-primary/15 border border-border/60 hover:border-primary/50 text-[10px] md:text-[12px] py-1 px-2"
                         >
                           {exp.type}
                         </Badge>
                       </div>
 
                       {/* Responsibilities */}
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-foreground mb-4 group-hover:text-primary transition-colors text-[12px] md:text-[14px] duration-300">
+                      <div className="">
+                        <h4 className="font-semibold text-foreground mb-2 md:mb-4 group-hover:text-primary transition-colors text-[11px] md:text-[14px] duration-300">
                           Key Responsibilities:
                         </h4>
-                        <ul className="space-y-2">
+                        <ul className="space-y-1 md:space-y-2 pr-2 flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-primary/40 scrollbar-track-transparent max-h-[200px]">
                           {exp.responsibilities.map((responsibility, idx) => (
                             <li key={idx} className="flex items-start">
-                              <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                              <span className="text-muted-foreground text-[12px] md:text-[14px] text-pretty group-hover:text-foreground transition-colors duration-300">
+                              <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full mt-1.5 md:mt-2 mr-2 md:mr-3 flex-shrink-0"></div>
+                              <span className="text-muted-foreground text-[11px] md:text-[13px] text-pretty group-hover:text-foreground transition-colors duration-300">
                                 {responsibility}
                               </span>
                             </li>
@@ -178,7 +180,7 @@ export function ExperienceSection() {
             </Swiper>
           )}
 
-          {/* Floating Navigation Buttons */}
+          {/* Floating Navigation Buttons (Always visible) */}
           <button
             ref={prevRef}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full border border-border bg-background/90 hover:bg-primary hover:text-white transition-all shadow-md"

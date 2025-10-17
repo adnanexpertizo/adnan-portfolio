@@ -4,7 +4,7 @@ import educationData from "@/data/education.json"
 
 export function EducationSection() {
   return (
-    <section id="education" className="py-[40px] bg-muted/30">
+    <section id="education" className="py-[40px] bg-muted/70">
       <div className="container lg:px-[90px] md:px-[64px] px-[8px] mx-auto">
         <div className="text-center mb-[32px]">
           <h2 className="font-serif text-[20px] md:text-[28px] font-bold text-foreground mb-[16px]">
