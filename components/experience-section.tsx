@@ -181,7 +181,7 @@ export function ExperienceSection() {
           )}
 
           {/* Floating Navigation Buttons (Always visible) */}
-          <button
+          {/* <button
             ref={prevRef}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full border border-border bg-background/90 hover:bg-primary hover:text-white transition-all shadow-md"
             aria-label="Previous"
@@ -194,7 +194,7 @@ export function ExperienceSection() {
             aria-label="Next"
           >
             <ChevronRight className="w-5 h-5" />
-          </button>
+          </button> */}
         </div>
       </div>
     </section>
