@@ -42,7 +42,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-muted/50">
       <div className="container lg:px-36 md:px-16 px-4 mx-auto">
-        {/* Header */}
+      
         <div className="text-center mb-16">
           <h2 className="font-serif text-[20px] md:text-[26px] font-bold text-foreground mb-4">
             Get in Touch
