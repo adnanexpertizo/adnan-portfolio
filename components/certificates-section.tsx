@@ -82,7 +82,7 @@ export function CertificatesSection() {
             {certificatesData.certificates.map((cert, index) => (
               <SwiperSlide key={index}>
                 <Card className="min-w-[310px] my-1 group transition-all duration-500 relative overflow-hidden border-2 border-border/80 hover:border-primary/60 bg-muted/40 shadow-lg hover:shadow-xl">
-                  <CardHeader className="pb-4">
+                  <CardHeader className="pb-2">
                     <div className="flex items-start justify-between">
                       <div className="flex items-center">
                         <div className="p-2 bg-primary/10 rounded-lg mr-3 border border-primary/20">
@@ -104,7 +104,7 @@ export function CertificatesSection() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="space-y-2 mb-4">
+                    <div className="space-y-1 mb-6 flex justify-between">
                       <div className="flex items-center text-muted-foreground">
                         <Building className="h-4 w-4 mr-2" />
                         <span className="text-[12px]">{cert.issuingBody}</span>
