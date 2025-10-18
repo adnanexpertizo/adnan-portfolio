@@ -1,91 +1,101 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { X, Download, Calendar, Building } from "lucide-react"
-import Image from "next/image"
-import { Dialog } from '@/components/ui/dialog';
-import { DialogContent } from '@/components/ui/dialog';
-import { DialogHeader } from '@/components/ui/dialog';
-import { DialogTitle } from '@/components/ui/dialog';
-
-interface Certificate {
-  title: string
-  issuingBody: string
-  year: string
-  status: string
-  category: string
-  image: string
-}
+import { Button } from "@/components/ui/button";
+import { X, ShieldAlert } from "lucide-react";
 
 interface CertificateModalProps {
-  certificate: Certificate | null
-  isOpen: boolean
-  onClose: () => void
+  certificate: any;
+  isOpen: boolean;
+  onClose: () => void;
+  permission: boolean;
 }
 
-export function CertificateModal({ certificate, isOpen, onClose }: CertificateModalProps) {
-  if (!certificate) return null
+export function CertificateModal({
+  certificate,
+  isOpen,
+  onClose,
+  permission,
+}: CertificateModalProps) {
+  if (!isOpen) return null;
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <DialogHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-          <div className="flex-1">
-            <DialogTitle className="text-xl font-semibold text-balance pr-8">{certificate.title}</DialogTitle>
-            <div className="flex items-center gap-2 mt-2">
-              <Badge variant="secondary">{certificate.category}</Badge>
-              <Badge variant={certificate.status === "Active" ? "default" : "secondary"}>{certificate.status}</Badge>
-            </div>
-          </div>
-          <div
-            onClick={onClose}
-            className="absolute right-4 hover:opacity-90 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-          >
-            <X className="h-4 w-4" />
-          </div>
-        </DialogHeader>
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-50 px-4">
+      <div
+        className="
+          relative bg-white dark:bg-neutral-900 rounded-2xl shadow-2xl
+          max-w-lg w-full
+          animate-fadeIn
+        "
+      >
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 text-gray-500 hover:text-red-500 transition-all"
+        >
+          <X className="w-5 h-5" />
+        </button>
 
-        <div className="space-y-6">
-          {/* Certificate Details */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-muted/30 rounded-lg">
-            <div className="flex items-center text-muted-foreground">
-              <Building className="h-4 w-4 mr-2 text-primary" />
-              <span className="text-sm font-medium">Issuing Body:</span>
-              <span className="ml-2">{certificate.issuingBody}</span>
-            </div>
-            <div className="flex items-center text-muted-foreground">
-              <Calendar className="h-4 w-4 mr-2 text-primary" />
-              <span className="text-sm font-medium">Year Issued:</span>
-              <span className="ml-2">{certificate.year}</span>
-            </div>
-          </div>
-
-          {/* Certificate Image */}
-          <div className="relative bg-white rounded-lg p-4 shadow-sm border">
-            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-md">
-              <Image
-                src={certificate.image || "/placeholder.svg"}
-                alt={`${certificate.title} Certificate`}
-                fill
-                className="object-contain transition-transform duration-300 hover:scale-105"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-              />
-            </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex justify-end gap-3 pt-4 border-t">
-            <Button variant="outline" onClick={onClose}>
-              Close
-            </Button>
-            <Button className="gap-2">
-              <Download className="h-4 w-4" />
-              Download Certificate
+        {/* Permission Required */}
+        {!permission ? (
+          <div className="flex flex-col items-center justify-center text-center p-10">
+            <ShieldAlert className="w-12 h-12 text-yellow-500 mb-3" />
+            <h2 className="text-lg font-semibold mb-2">Permission Required</h2>
+            <p className="text-sm text-muted-foreground mb-5">
+              This candidate has chosen not to publicly share their certificates.
+              <br />
+              Please contact them directly for verification.
+            </p>
+            <Button
+              className="bg-green-600 hover:bg-green-700 text-white text-sm"
+              onClick={() =>
+                window.open(
+                  "https://wa.me/923001234567?text=Hello!%20I%20would%20like%20to%20verify%20your%20certificate.",
+                  "_blank"
+                )
+              }
+            >
+              Contact on WhatsApp
             </Button>
           </div>
-        </div>
-      </DialogContent>
-    </Dialog>
-  )
+        ) : (
+          <>
+            {/* Certificate Details */}
+            <div className="p-6 text-center">
+              <h3 className="text-lg font-semibold mb-3">
+                {certificate?.title}
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                {certificate?.issuingBody} • {certificate?.year}
+              </p>
+
+              {/* ✅ Scroll only inside image area */}
+              <div
+                className="
+                  rounded-lg overflow-hidden border shadow-inner
+                  max-h-[60vh] overflow-y-auto
+                  scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent
+                "
+              >
+                <img
+                  src={certificate?.image || "/placeholder-certificate.jpg"}
+                  alt={certificate?.title}
+                  className="w-full object-contain"
+                />
+              </div>
+
+              <div className="mt-6 flex justify-center">
+                <Button
+                  variant="outline"
+                  onClick={onClose}
+                  className="border-2 border-border hover:bg-primary hover:text-white text-sm"
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
 }

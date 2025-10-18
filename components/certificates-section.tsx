@@ -8,13 +8,21 @@ import "swiper/css/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Award, Calendar, Building, Eye, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Award,
+  Calendar,
+  Building,
+  Eye,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { CertificateModal } from "./certificate-modal";
 import certificatesData from "@/data/certificates.json";
 
 export function CertificatesSection() {
   const [selectedCertificate, setSelectedCertificate] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [permission, setPermission] = useState(false); // ✅ control permission state
 
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
@@ -30,7 +38,7 @@ export function CertificatesSection() {
   }, []);
 
   return (
-    <section id="certificates" className="py-20 bg-background   overflow-hidden relative">
+    <section id="certificates" className="py-20 bg-background overflow-hidden relative">
       <div className="container lg:px-36 md:px-16 px-4 mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
@@ -80,10 +88,7 @@ export function CertificatesSection() {
                         <div className="p-2 bg-primary/10 rounded-lg mr-3 border border-primary/20">
                           <Award className="h-5 w-5 text-primary" />
                         </div>
-                        <Badge
-                          variant="secondary"
-                          className="text-[12px] md:text-[14px]"
-                        >
+                        <Badge variant="secondary" className="text-[12px] md:text-[14px]">
                           {cert.category}
                         </Badge>
                       </div>
@@ -98,7 +103,6 @@ export function CertificatesSection() {
                       {cert.title}
                     </CardTitle>
                   </CardHeader>
-
                   <CardContent>
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center text-muted-foreground">
@@ -116,8 +120,7 @@ export function CertificatesSection() {
                       className="w-full text-[12px] gap-2 border-2 border-border/80 hover:border-primary/60 hover:bg-primary hover:text-primary-foreground"
                       onClick={() => handleViewCertificate(cert)}
                     >
-                      <Eye className="h-4 w-4" />
-                      View Certificate
+                      <Eye className="h-4 w-4" /> View Certificate
                     </Button>
                   </CardContent>
                 </Card>
@@ -126,7 +129,7 @@ export function CertificatesSection() {
           </Swiper>
         )}
 
-        {/* ✅ Stylish Bottom Navigation Buttons */}
+        {/* ✅ Navigation Buttons */}
         <div className="flex justify-center items-center gap-4 mt-8">
           <button
             ref={prevRef}
@@ -135,7 +138,6 @@ export function CertificatesSection() {
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
-
           <button
             ref={nextRef}
             className="flex items-center justify-center w-10 h-10 rounded-full border border-border hover:bg-primary hover:text-white transition-all shadow-md"
@@ -146,11 +148,12 @@ export function CertificatesSection() {
         </div>
       </div>
 
-      {/* Certificate Modal */}
+      {/* ✅ Custom Modal */}
       <CertificateModal
         certificate={selectedCertificate}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        permission={permission}
       />
     </section>
   );
