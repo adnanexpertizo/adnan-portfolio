@@ -79,42 +79,42 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="icon"
+
+            {/* ✅ Custom larger button */}
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="hover:bg-accent/20 transition-all duration-300 h-12 w-12 p-0 flex items-center justify-center"
+              className="flex items-center justify-center rounded-lg hover:bg-accent/20 transition-all duration-300 h-14 w-14 bg-transparent"
             >
               {isMobileMenuOpen ? (
                 <X
-                  size={36} // ✅ This makes the icon larger
-                  strokeWidth={2.5} // ✅ Makes the lines thicker (bolder)
+                  size={28} // larger icon
+                  strokeWidth={2.8} // thicker lines
                   className={`transition-transform duration-300 ${
                     isMobileMenuOpen ? "rotate-90" : "rotate-0"
                   }`}
                 />
               ) : (
                 <Menu
-                  size={36} // ✅ Larger icon
-                  strokeWidth={2.5}
+                  size={28}
+                  strokeWidth={2.8}
                   className={`transition-transform duration-300 ${
                     isMobileMenuOpen ? "rotate-90" : "rotate-0"
                   }`}
                 />
               )}
-            </Button>
+            </button>
           </div>
         </div>
 
         {/* Mobile Dropdown Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden bg-background/98 backdrop-blur-md border-t border-border shadow-lg">
-            <div className="px-2 pt-4 pb-6 space-y-2">
+            <div className="px-2 pt-4 pb-6 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-4 py-3 text-foreground hover:text-primary hover:bg-accent/20 rounded-lg transition-all duration-300 font-medium text-base"
+                  className="block w-full text-left px-4 py-3 text-foreground text-[13px] hover:text-primary hover:bg-accent/20 rounded-lg transition-all duration-300 font-medium"
                 >
                   {item.label}
                 </button>

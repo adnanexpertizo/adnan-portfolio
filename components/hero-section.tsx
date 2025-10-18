@@ -6,7 +6,7 @@ import Image from "next/image";
 import heroData from "@/data/hero.json";
 import { AskModal } from "./AskModal";
 import { useState, useEffect } from "react";
-import  CVTemplate  from "./CvTemplate";
+import CVTemplate from "./CvTemplate";
 
 export function HeroSection() {
   const scrollToContact = () => {
@@ -23,9 +23,9 @@ export function HeroSection() {
   const [openCVModal, setOpenCVModal] = useState(false); // CV Modal
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [showMusicButton, setShowMusicButton] = useState(false); // ✅ for scroll visibility
 
   useEffect(() => {
-    // const newAudio = new Audio("/islamic-music-240169.mp3");
     const newAudio = new Audio("/interview.wav");
     newAudio.loop = true;
     newAudio.volume = 0.1;
@@ -47,6 +47,7 @@ export function HeroSection() {
     };
   }, []);
 
+  // 🎵 Toggle music play/pause
   const toggleMusic = async () => {
     if (!audio) return;
     if (isPlaying) {
@@ -61,6 +62,19 @@ export function HeroSection() {
       }
     }
   };
+
+  // 🧭 Show button only after scrolling 100px
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setShowMusicButton(true);
+      } else {
+        setShowMusicButton(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   if (!heroData || !heroData.name) {
     console.error("heroData is missing or invalid:", heroData);
@@ -98,10 +112,8 @@ export function HeroSection() {
                   size="lg"
                   variant={button.type === "primary" ? "default" : "outline"}
                   onClick={() => {
-                    console.log("🖱️ Button clicked:", button);
                     if (button.icon === "Download") {
                       setOpenCVModal(true);
-                      console.log("✅ CV Modal Opened");
                     } else if (button.action === "scrollToContact") {
                       scrollToContact();
                     }
@@ -137,30 +149,31 @@ export function HeroSection() {
       {openCVModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
           <div className="relative bg-white rounded-2xl w-[95%] md:w-[80%] lg:w-[70%] max-h-[90vh] overflow-y-auto p-6 shadow-2xl animate-fadeIn">
-            {/* Close Button */}
             <button
               onClick={() => setOpenCVModal(false)}
               className="absolute top-3 right-3 text-gray-600 hover:text-red-500 transition"
             >
               <X className="w-6 h-6" />
             </button>
-            <CVTemplate />  
+            <CVTemplate />
           </div>
         </div>
       )}
 
-      {/* 🎵 Floating Music Button */}
-      <button
-        onClick={toggleMusic}
-        className="fixed bottom-5 md:right-5 left-4 md:left-auto z-40 bg-primary text-white md:p-3 p-2 rounded-full shadow-lg hover:scale-105 transition-transform"
-        aria-label="Toggle background music"
-      >
-        {isPlaying ? (
-          <Volume2 className="md:w-6 md:h-6 w-5 h-5" />
-        ) : (
-          <VolumeX className="md:w-6 md:h-6 w-5 h-5" />
-        )}
-      </button>
+      {/* 🎵 Floating Music Button (only visible after scroll 100px) */}
+      {showMusicButton && (
+        <button
+          onClick={toggleMusic}
+          className="fixed bottom-5 md:right-5 left-4 md:left-auto z-40 bg-primary text-white md:p-3 p-2 rounded-full shadow-lg hover:scale-105 transition-transform"
+          aria-label="Toggle background music"
+        >
+          {isPlaying ? (
+            <Volume2 className="md:w-6 md:h-6 w-5 h-5" />
+          ) : (
+            <VolumeX className="md:w-6 md:h-6 w-5 h-5" />
+          )}
+        </button>
+      )}
     </section>
   );
 }
