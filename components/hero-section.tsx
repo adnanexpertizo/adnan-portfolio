@@ -20,11 +20,11 @@ export function HeroSection() {
     }
   };
 
-  const [openModal, setOpenModal] = useState(false); // AskModal
-  const [openCVModal, setOpenCVModal] = useState(false); // CV Modal
+  const [openModal, setOpenModal] = useState(false);
+  const [openCVModal, setOpenCVModal] = useState(false);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [showMusicButton, setShowMusicButton] = useState(false); // 🎵 visibility
+  const [showMusicButton, setShowMusicButton] = useState(false);
 
   useEffect(() => {
     const newAudio = new Audio("/interview.wav");
@@ -65,15 +65,27 @@ export function HeroSection() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setShowMusicButton(true);
-      } else {
-        setShowMusicButton(false);
-      }
+      setShowMusicButton(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // ✅ Smart WhatsApp Redirect Handler
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "923077522229";
+    const message = encodeURIComponent(
+      "Hello! I would like to get in touch with you."
+    );
+
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    const url = isMobile
+      ? `whatsapp://send?phone=${phoneNumber}&text=${message}` // Opens mobile WhatsApp app
+      : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${message}`; // Fallback for desktop
+
+    window.open(url, "_blank");
+  };
 
   if (!heroData || !heroData.name) {
     console.error("heroData is missing or invalid:", heroData);
@@ -159,7 +171,7 @@ export function HeroSection() {
         </div>
       )}
 
-      {/* 🎵 Floating Music Button */}
+      {/* 🎵 Floating Music + WhatsApp Buttons */}
       {showMusicButton && (
         <>
           {/* Music Button (Left Side) */}
@@ -175,15 +187,14 @@ export function HeroSection() {
             )}
           </button>
 
-          <a
-            href="https://web.whatsapp.com/send?phone=923077522229&text=Hello!%20I%20would%20like%20to%20get%20in%20touch%20with%20you."
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* ✅ WhatsApp Button (Smart Redirect) */}
+          <button
+            onClick={handleWhatsAppClick}
             className="fixed bottom-5 right-4 md:right-5 z-40 bg-green-500 text-white md:p-3 p-2 rounded-full shadow-lg hover:bg-green-600 hover:scale-105 transition-transform"
             aria-label="Chat on WhatsApp"
           >
             <FaWhatsapp className="md:w-6 md:h-6 w-5 h-5" />
-          </a>
+          </button>
         </>
       )}
     </section>
