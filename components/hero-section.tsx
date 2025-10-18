@@ -176,14 +176,14 @@ export function HeroSection() {
           </button>
 
           <a
-  href="https://web.whatsapp.com/send?phone=923077522229&text=Hello!%20I%20would%20like%20to%20get%20in%20touch%20with%20you."
-  target="_blank"
-  rel="noopener noreferrer"
-  className="fixed bottom-5 right-4 md:right-5 z-40 bg-green-500 text-white md:p-3 p-2 rounded-full shadow-lg hover:bg-green-600 hover:scale-105 transition-transform"
-  aria-label="Chat on WhatsApp"
->
-  <FaWhatsapp className="md:w-6 md:h-6 w-5 h-5" />
-</a>
+            href="https://web.whatsapp.com/send?phone=923077522229&text=Hello!%20I%20would%20like%20to%20get%20in%20touch%20with%20you."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fixed bottom-5 right-4 md:right-5 z-40 bg-green-500 text-white md:p-3 p-2 rounded-full shadow-lg hover:bg-green-600 hover:scale-105 transition-transform"
+            aria-label="Chat on WhatsApp"
+          >
+            <FaWhatsapp className="md:w-6 md:h-6 w-5 h-5" />
+          </a>
         </>
       )}
     </section>
