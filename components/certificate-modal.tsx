@@ -41,14 +41,17 @@ export function CertificateModal({
             <ShieldAlert className="w-12 h-12 text-yellow-500 mb-3" />
             <h2 className="text-lg font-semibold mb-2">Permission Required</h2>
             <p className="text-sm text-muted-foreground mb-5">
-              For privacy reasons, my certificates are not publicly shared.<br />
-              To verify them, please reach out directly and include your <strong>company name</strong>, <strong>designation</strong>, and <strong>purpose</strong> of verification.
+              For privacy reasons, my certificates are not publicly shared.
+              <br />
+              To verify them, please reach out directly and include your{" "}
+              <strong>company name</strong>, <strong>designation</strong>, and{" "}
+              <strong>purpose</strong> of verification.
             </p>
             <Button
               className="bg-green-600 hover:bg-green-700 text-white text-sm"
               onClick={() =>
                 window.open(
-                  "https://wa.me/923077522229?text=Hello!%20I%20would%20like%20to%20verify%20your%20certificate.",
+                  "https://api.whatsapp.com/send?phone=923077522229&text=Hello!%20I%20would%20like%20to%20verify%20your%20certificate.",
                   "_blank"
                 )
               }
