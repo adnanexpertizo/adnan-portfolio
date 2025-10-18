@@ -134,7 +134,7 @@ export function ExperienceSection() {
                           <p className="text-[11px] md:text-[14px] font-medium text-primary mb-2">
                             {exp.company}
                           </p>
-                          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-muted-foreground">
+                          <div className="flex flex items-center justify-between gap-1 sm:gap-4 text-muted-foreground">
                             <div className="flex items-center">
                               <MapPin className="h-3 w-3 md:h-4 md:w-4 mr-1" />
                               <span className="text-[11px] md:text-[13px]">

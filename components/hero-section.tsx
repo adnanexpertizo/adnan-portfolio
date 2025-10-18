@@ -7,6 +7,7 @@ import heroData from "@/data/hero.json";
 import { AskModal } from "./AskModal";
 import { useState, useEffect } from "react";
 import CVTemplate from "./CvTemplate";
+import { FaWhatsapp } from "react-icons/fa";
 
 export function HeroSection() {
   const scrollToContact = () => {
@@ -23,7 +24,7 @@ export function HeroSection() {
   const [openCVModal, setOpenCVModal] = useState(false); // CV Modal
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [showMusicButton, setShowMusicButton] = useState(false); // ✅ for scroll visibility
+  const [showMusicButton, setShowMusicButton] = useState(false); // 🎵 visibility
 
   useEffect(() => {
     const newAudio = new Audio("/interview.wav");
@@ -47,7 +48,6 @@ export function HeroSection() {
     };
   }, []);
 
-  // 🎵 Toggle music play/pause
   const toggleMusic = async () => {
     if (!audio) return;
     if (isPlaying) {
@@ -63,7 +63,6 @@ export function HeroSection() {
     }
   };
 
-  // 🧭 Show button only after scrolling 100px
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -145,7 +144,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* 🧾 CUSTOM CV MODAL */}
+      {/* 📄 CV MODAL */}
       {openCVModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
           <div className="relative bg-white rounded-2xl w-[95%] md:w-[80%] lg:w-[70%] max-h-[90vh] overflow-y-auto p-6 shadow-2xl animate-fadeIn">
@@ -160,19 +159,33 @@ export function HeroSection() {
         </div>
       )}
 
-      {/* 🎵 Floating Music Button (only visible after scroll 100px) */}
+      {/* 🎵 Floating Music Button */}
       {showMusicButton && (
-        <button
-          onClick={toggleMusic}
-          className="fixed bottom-5 md:right-5 left-4 md:left-auto z-40 bg-primary text-white md:p-3 p-2 rounded-full shadow-lg hover:scale-105 transition-transform"
-          aria-label="Toggle background music"
-        >
-          {isPlaying ? (
-            <Volume2 className="md:w-6 md:h-6 w-5 h-5" />
-          ) : (
-            <VolumeX className="md:w-6 md:h-6 w-5 h-5" />
-          )}
-        </button>
+        <>
+          {/* Music Button (Left Side) */}
+          <button
+            onClick={toggleMusic}
+            className="fixed bottom-5 left-4 md:left-5 z-40 bg-primary text-white md:p-3 p-2 rounded-full shadow-lg hover:scale-105 transition-transform"
+            aria-label="Toggle background music"
+          >
+            {isPlaying ? (
+              <Volume2 className="md:w-6 md:h-6 w-5 h-5" />
+            ) : (
+              <VolumeX className="md:w-6 md:h-6 w-5 h-5" />
+            )}
+          </button>
+
+          {/* 💬 WhatsApp Button (Right Side) */}
+          <a
+            href="https://wa.me/923077522229"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fixed bottom-5 right-4 md:right-5 z-40 bg-green-500 text-white md:p-3 p-2 rounded-full shadow-lg hover:bg-green-600 hover:scale-105 transition-transform"
+            aria-label="Chat on WhatsApp"
+          >
+            <FaWhatsapp className="md:w-6 md:h-6 w-5 h-5" />
+          </a>
+        </>
       )}
     </section>
   );
