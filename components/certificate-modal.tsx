@@ -41,15 +41,15 @@ export function CertificateModal({
             <ShieldAlert className="w-12 h-12 text-yellow-500 mb-3" />
             <h2 className="text-lg font-semibold mb-2">Permission Required</h2>
             <p className="text-sm text-muted-foreground mb-5">
-              This candidate has chosen not to publicly share their certificates.
+              These certificates are kept private for security reasons.
               <br />
-              Please contact them directly for verification.
+              Feel free to contact me directly for quick verification.
             </p>
             <Button
               className="bg-green-600 hover:bg-green-700 text-white text-sm"
               onClick={() =>
                 window.open(
-                  "https://wa.me/923001234567?text=Hello!%20I%20would%20like%20to%20verify%20your%20certificate.",
+                  "https://wa.me/923077522229?text=Hello!%20I%20would%20like%20to%20verify%20your%20certificate.",
                   "_blank"
                 )
               }
