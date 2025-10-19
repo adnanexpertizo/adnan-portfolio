@@ -71,17 +71,17 @@ export function HeroSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Smart WhatsApp Redirect Handler
+  // ✅ Smart WhatsApp Redirect Handler (with structured message)
   const handleWhatsAppClick = () => {
     const phoneNumber = "923077522229";
     const message = encodeURIComponent(
-      "Hello! I would like to get in touch with you."
+      `Hello! I would like to get in touch with you.\n\nPlease provide the following details:\n• Your Full Name:\n• Company Name:\n• Designation:\n• Purpose of Contact:\n\nThank you!`
     );
 
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     const url = isMobile
-      ? `whatsapp://send?phone=${phoneNumber}&text=${message}` // Opens mobile WhatsApp app
+      ? `whatsapp://send?phone=${phoneNumber}&text=${message}` // Opens mobile WhatsApp
       : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${message}`; // Fallback for desktop
 
     window.open(url, "_blank");
@@ -174,7 +174,7 @@ export function HeroSection() {
       {/* 🎵 Floating Music + WhatsApp Buttons */}
       {showMusicButton && (
         <>
-          {/* Music Button (Left Side) */}
+          {/* Music Button */}
           <button
             onClick={toggleMusic}
             className="fixed bottom-5 left-4 md:left-5 z-40 bg-primary text-white md:p-3 p-2 rounded-full shadow-lg hover:scale-105 transition-transform"
@@ -187,7 +187,7 @@ export function HeroSection() {
             )}
           </button>
 
-          {/* ✅ WhatsApp Button (Smart Redirect) */}
+          {/* ✅ WhatsApp Button (with structured message) */}
           <button
             onClick={handleWhatsAppClick}
             className="fixed bottom-5 right-4 md:right-5 z-40 bg-green-500 text-white md:p-3 p-2 rounded-full shadow-lg hover:bg-green-600 hover:scale-105 transition-transform"

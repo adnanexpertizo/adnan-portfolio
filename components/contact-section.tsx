@@ -6,7 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, Eye, EyeOff } from "lucide-react";
-import { FaWhatsapp, FaEnvelope, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaEnvelope,
+  FaLinkedin,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -33,8 +38,21 @@ export function ContactSection() {
     }));
   };
 
-  const whatsappNumber = "03077522229";
-  const whatsappLink = `https://wa.me/9663077522229`;
+  // ✅ WhatsApp logic (mobile + desktop support)
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "923077522229";
+    const message = encodeURIComponent(
+      "Hello! 👋\n\nI’d like to get in touch.\n\nHere are my details:\n• Full Name:\n• Company Name:\n• Message / Inquiry:\n\nThank you!"
+    );
+
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const url = isMobile
+      ? `whatsapp://send?phone=${phoneNumber}&text=${message}`
+      : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+
+    window.open(url, "_blank");
+  };
+
   const email = "adnanrafiq7522@gmail.com";
   const location = "Saudi Arabia";
   const linkedin = "https://linkedin.com/in/adnanrafiq";
@@ -42,7 +60,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-muted/50">
       <div className="container lg:px-36 md:px-16 px-4 mx-auto">
-      
+        {/* Section Heading */}
         <div className="text-center mb-16">
           <h2 className="font-serif text-[20px] md:text-[26px] font-bold text-foreground mb-4">
             Get in Touch
@@ -53,9 +71,9 @@ export function ContactSection() {
           </p>
         </div>
 
-        {/* Grid */}
+        {/* Grid Layout */}
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Left: Contact Info */}
+          {/* Left Side: Contact Info */}
           <div className="space-y-8">
             {/* Desktop version */}
             <div className="hidden md:block space-y-6">
@@ -76,8 +94,11 @@ export function ContactSection() {
               </div>
 
               {/* WhatsApp */}
-              <div className="flex items-center">
-                <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 hover:bg-[#25D366]/30 transition">
+              <div className="flex items-center cursor-pointer">
+                <div
+                  onClick={handleWhatsAppClick}
+                  className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 hover:bg-[#25D366]/30 transition"
+                >
                   <FaWhatsapp className="text-[#25D366] text-[24px]" />
                 </div>
                 <div>
@@ -95,14 +116,12 @@ export function ContactSection() {
                       )}
                     </button>
                   </p>
-                  <a
-                    href={whatsappLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={handleWhatsAppClick}
                     className="text-[13px] md:text-[14px] text-muted-foreground hover:text-green-600 transition-colors"
                   >
-                    {showNumber ? whatsappNumber : "•••••••••••"}
-                  </a>
+                    {showNumber ? "0307 7522229" : "•••••••••••"}
+                  </button>
                 </div>
               </div>
 
@@ -138,7 +157,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* Mobile version — only icons in one line */}
+            {/* Mobile version — Only icons */}
             <div className="flex md:hidden items-center justify-around gap-4">
               <a
                 href={`mailto:${email}`}
@@ -147,14 +166,12 @@ export function ContactSection() {
                 <FaEnvelope className="text-primary text-[22px]" />
               </a>
 
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={handleWhatsAppClick}
                 className="p-3 rounded-full bg-[#25D366]/20 hover:bg-[#25D366]/30 transition"
               >
                 <FaWhatsapp className="text-[#25D366] text-[24px]" />
-              </a>
+              </button>
 
               <div className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition">
                 <FaMapMarkerAlt className="text-primary text-[22px]" />
@@ -171,7 +188,7 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Right: Contact Form */}
+          {/* Right Side: Contact Form */}
           <Card className="border-2 border-border/60 dark:border-border/80 shadow-lg bg-muted/40 backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="font-serif text-[16px] md:text-xl">
