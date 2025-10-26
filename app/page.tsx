@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <main ref={containerRef} className="min-h-screen relative bg-bgcolor overflow-hidden">
       <div>
-        <Animations />
+        {/* <Animations /> */}
         <Navbar />
         <HeroSection />
         <AboutSection />

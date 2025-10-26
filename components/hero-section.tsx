@@ -1,12 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download, Mail, Volume2, VolumeX, X } from "lucide-react";
+import { Download, Mail, Volume2, VolumeX, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import heroData from "@/data/hero.json";
 import { AskModal } from "./AskModal";
 import { useState, useEffect } from "react";
-import CVTemplate from "./CvTemplate";
 import { FaWhatsapp } from "react-icons/fa";
 
 export function HeroSection() {
@@ -21,11 +20,12 @@ export function HeroSection() {
   };
 
   const [openModal, setOpenModal] = useState(false);
-  const [openCVModal, setOpenCVModal] = useState(false);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showMusicButton, setShowMusicButton] = useState(false);
+  const [showScrollHint, setShowScrollHint] = useState(false);
 
+  // 🎵 Initialize background audio
   useEffect(() => {
     const newAudio = new Audio("/interview.wav");
     newAudio.loop = true;
@@ -48,6 +48,7 @@ export function HeroSection() {
     };
   }, []);
 
+  // 🎵 Toggle play/pause
   const toggleMusic = async () => {
     if (!audio) return;
     if (isPlaying) {
@@ -63,6 +64,7 @@ export function HeroSection() {
     }
   };
 
+  // 🎵 Show floating buttons after scroll
   useEffect(() => {
     const handleScroll = () => {
       setShowMusicButton(window.scrollY > 50);
@@ -71,7 +73,17 @@ export function HeroSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Smart WhatsApp Redirect Handler (with structured message)
+  // 👇 Show "Scroll Down" hint briefly
+  useEffect(() => {
+    const showTimeout = setTimeout(() => setShowScrollHint(true), 5000);
+    const hideTimeout = setTimeout(() => setShowScrollHint(false), 15000);
+    return () => {
+      clearTimeout(showTimeout);
+      clearTimeout(hideTimeout);
+    };
+  }, []);
+
+  // ✅ WhatsApp redirect handler
   const handleWhatsAppClick = () => {
     const phoneNumber = "923077522229";
     const message = encodeURIComponent(
@@ -81,10 +93,21 @@ export function HeroSection() {
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     const url = isMobile
-      ? `whatsapp://send?phone=${phoneNumber}&text=${message}` // Opens mobile WhatsApp
-      : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${message}`; // Fallback for desktop
+      ? `whatsapp://send?phone=${phoneNumber}&text=${message}`
+      : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
 
     window.open(url, "_blank");
+  };
+
+  // ✅ Handle CV download directly from heroData.cvLink
+  const handleDownloadCV = () => {
+    const cvLink = heroData.cvLink || "/Adnan_Rafiq_CV.pdf";
+    const link = document.createElement("a");
+    link.href = cvLink;
+    link.download = "Adnan_Rafiq_CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   if (!heroData || !heroData.name) {
@@ -95,7 +118,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="md:pt-40 pt-24 min-h-[90vh] md:pb-20 pb-12 md:px-36 px-4 flex items-center justify-center flex-wrap bg-background mx-auto relative"
+      className="md:pt-40 min-h-[85vh] pt-24 md:pb-20 pb-12 md:px-36 px-4 flex items-center justify-center flex-wrap bg-background mx-auto relative"
     >
       <div className="container px-2 mx-auto">
         <div className="flex flex-wrap items-center justify-between gap-8 md:gap-[42px] lg:gap-[60px]">
@@ -105,7 +128,7 @@ export function HeroSection() {
               {heroData.name}
             </h1>
 
-            <p className="text-sm sm:text-lg font-simebold text-muted-foreground mb-4">
+            <p className="text-sm sm:text-lg font-semibold text-muted-foreground mb-4">
               {heroData.subtitle}
             </p>
             <p className="text-xs sm:text-base text-muted-foreground mb-8">
@@ -124,7 +147,7 @@ export function HeroSection() {
                   variant={button.type === "primary" ? "default" : "outline"}
                   onClick={() => {
                     if (button.icon === "Download") {
-                      setOpenCVModal(true);
+                      handleDownloadCV();
                     } else if (button.action === "scrollToContact") {
                       scrollToContact();
                     }
@@ -156,28 +179,13 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* 📄 CV MODAL */}
-      {openCVModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-          <div className="relative bg-white rounded-2xl w-[95%] md:w-[80%] lg:w-[70%] max-h-[90vh] overflow-y-auto p-6 shadow-2xl animate-fadeIn">
-            <button
-              onClick={() => setOpenCVModal(false)}
-              className="absolute top-3 right-3 text-gray-600 hover:text-red-500 transition"
-            >
-              <X className="w-6 h-6" />
-            </button>
-            <CVTemplate />
-          </div>
-        </div>
-      )}
-
       {/* 🎵 Floating Music + WhatsApp Buttons */}
       {showMusicButton && (
         <>
           {/* Music Button */}
           <button
             onClick={toggleMusic}
-            className="fixed bottom-5 left-4 md:left-5 z-40 bg-primary text-white md:p-3 p-2 rounded-full shadow-lg hover:scale-105 transition-transform"
+            className="fixed bottom-5 left-4 cursor-pointer md:left-5 z-40 bg-primary text-white md:p-3 p-2 rounded-full shadow-lg hover:scale-105 transition-transform"
             aria-label="Toggle background music"
           >
             {isPlaying ? (
@@ -187,15 +195,23 @@ export function HeroSection() {
             )}
           </button>
 
-          {/* ✅ WhatsApp Button (with structured message) */}
+          {/* WhatsApp Button */}
           <button
             onClick={handleWhatsAppClick}
-            className="fixed bottom-5 right-4 md:right-5 z-40 bg-green-500 text-white md:p-3 p-2 rounded-full shadow-lg hover:bg-green-600 hover:scale-105 transition-transform"
+            className="fixed bottom-5 right-4 cursor-pointer md:right-5 z-40 bg-green-500 text-white md:p-3 p-2 rounded-full shadow-lg hover:bg-green-600 hover:scale-105 transition-transform"
             aria-label="Chat on WhatsApp"
           >
             <FaWhatsapp className="md:w-6 md:h-6 w-5 h-5" />
           </button>
         </>
+      )}
+
+      {/* 👇 Scroll Hint Animation */}
+      {showScrollHint && (
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-30 text-primary/80 flex flex-col items-center">
+          <ChevronDown className="w-8 h-8" />
+          <p className="text-xs text-muted-foreground mt-1">Scroll Down</p>
+        </div>
       )}
     </section>
   );

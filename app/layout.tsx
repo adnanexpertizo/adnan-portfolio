@@ -31,6 +31,8 @@ export const metadata: Metadata = {
   description:
     "Dedicated and proactive Safety Officer with over 5 years of experience in implementing workplace safety programs, conducting risk assessments, and ensuring compliance with international health and safety standards.",
   keywords: [
+    "adnan's portfolio",
+    "Adnan Rafiq",
     "Safety Officer",
     "NEBOSH Certified",
     "Workplace Safety",
