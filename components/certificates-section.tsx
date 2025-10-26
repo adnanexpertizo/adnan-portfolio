@@ -117,7 +117,7 @@ export function CertificatesSection() {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="w-full text-[12px] gap-2 border-2 border-border/80 hover:border-primary/60 hover:bg-primary hover:text-primary-foreground"
+                      className="w-full h-[32px] md:h-[36px] text-[12px] gap-2 border-2 border-border/80 hover:border-primary/60 hover:bg-primary hover:text-primary-foreground"
                       onClick={() => handleViewCertificate(cert)}
                     >
                       <Eye className="h-4 w-4" /> View Certificate

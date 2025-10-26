@@ -27,10 +27,39 @@ const rubik = Rubik({
 })
 
 export const metadata: Metadata = {
-  title: "Adnan Rafiq - Safety Officer Portfolio",
+  title: "Adnan Rafiq – Professional Safety Officer",
   description:
-    "NEBOSH Certified Safety Officer | First Aid | Fire Safety | Work at Height | Risk Assessment",
-  generator: "v0.app",
+    "Dedicated and proactive Safety Officer with over 5 years of experience in implementing workplace safety programs, conducting risk assessments, and ensuring compliance with international health and safety standards.",
+  keywords: [
+    "Safety Officer",
+    "NEBOSH Certified",
+    "Workplace Safety",
+    "Fire Safety",
+    "Risk Assessment",
+    "Health and Safety",
+    "Adnan Rafiq Safety Portfolio",
+  ],
+  robots: "index, follow",
+  openGraph: {
+    title: "Adnan Rafiq – Safety Officer Portfolio",
+    description:
+      "Explore Adnan Rafiq’s professional experience, certifications, and safety management projects.",
+    url: "https://adnan-portfolio-seven.vercel.app/",
+    type: "website",
+    images: [
+      {
+        url: "/profile-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Adnan Rafiq Safety Portfolio Preview",
+      },
+    ],
+  },
+  icons: {
+    icon: "/adnan2.png",
+  },
+  generator: "Next.js 14",
+  metadataBase: new URL("https://adnan-safety-portfolio.vercel.app"),
 }
 
 export default function RootLayout({

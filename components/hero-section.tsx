@@ -95,7 +95,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="md:pt-40 pt-24 md:pb-20 pb-12 md:px-36 px-4 flex items-center justify-center flex-wrap bg-background mx-auto relative"
+      className="md:pt-40 pt-24 min-h-[90vh] md:pb-20 pb-12 md:px-36 px-4 flex items-center justify-center flex-wrap bg-background mx-auto relative"
     >
       <div className="container px-2 mx-auto">
         <div className="flex flex-wrap items-center justify-between gap-8 md:gap-[42px] lg:gap-[60px]">
@@ -105,7 +105,7 @@ export function HeroSection() {
               {heroData.name}
             </h1>
 
-            <p className="text-sm sm:text-lg text-muted-foreground mb-4">
+            <p className="text-sm sm:text-lg font-simebold text-muted-foreground mb-4">
               {heroData.subtitle}
             </p>
             <p className="text-xs sm:text-base text-muted-foreground mb-8">
@@ -144,7 +144,7 @@ export function HeroSection() {
 
           {/* RIGHT SECTION */}
           <div className="flex justify-center md:justify-end order-1 lg:order-2 w-full lg:w-[30%]">
-            <div className="w-56 h-56 lg:w-76 lg:h-76 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl relative">
+            <div className="w-56 h-56 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl relative">
               <Image
                 src={heroData.profileImage || "/placeholder.svg"}
                 alt={`${heroData.name} - ${heroData.title}`}
