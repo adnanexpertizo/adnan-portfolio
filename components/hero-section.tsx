@@ -208,11 +208,16 @@ export function HeroSection() {
 
       {/* 👇 Scroll Hint Animation */}
       {showScrollHint && (
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-30 text-primary/80 flex flex-col items-center">
-          <ChevronDown className="w-8 h-8" />
-          <p className="text-xs text-muted-foreground mt-1">Scroll Down</p>
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-30 flex flex-col items-center">
+          <div className="flex flex-col items-center space-y-1">
+            <span className="arrow-green block w-4 h-4 border-b-2 border-r-2 rotate-45 animate-arrow1"></span>
+            <span className="arrow-green block w-4 h-4 border-b-2 border-r-2 rotate-45 animate-arrow2"></span>
+            <span className="arrow-green block w-4 h-4 border-b-2 border-r-2 rotate-45 animate-arrow3"></span>
+          </div>
         </div>
       )}
+
+
     </section>
   );
 }
