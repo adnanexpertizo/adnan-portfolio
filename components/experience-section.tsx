@@ -15,6 +15,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Image from "next/image";
 
 export function ExperienceSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -57,9 +58,19 @@ export function ExperienceSection() {
     <section
       ref={sectionRef}
       id="experience"
-      className="py-20 overflow-hidden bg-background relative"
+      className="overflow-hidden relative ba-background"
     >
-      <div className="container lg:px-36 md:px-16 px-4 mx-auto relative">
+      <div className="absolute w-full md:h-[900px] z-5 overflow-hidden">
+                      <div className="relative w-full h-full">
+                        <Image
+                          src="/Background Noise.svg"
+                          alt="a;t"
+                          fill
+                          className="object-cover w-full h-full hover:scale-105 transition-transform duration-500 ease-out"
+                        />
+                      </div>
+                    </div>
+      <div className="container py-28 z-10 lg:px-36 md:px-16 px-4 mx-auto relative">
         {/* Header */}
         <div className="text-center mb-10">
           <h2

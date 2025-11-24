@@ -2,7 +2,7 @@
 
 import { Linkedin, Mail, Phone } from "lucide-react";
 import footerData from "@/data/footer.json";
-
+import Image from "next/image";
 export function Footer() {
   const iconMap = {
     Mail,
@@ -11,8 +11,18 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-background text-secondary-foreground py-10 md:py-12">
-      <div className="container lg:px-36 md:px-16 px-4 mx-auto">
+    <footer className="bg-background text-secondary-foreground ">
+        <div className="absolute w-full h-[500px] lg:h-[700px] z-5">
+                      <div className="relative w-full h-[500px] lg:h-[700px]">
+                        <Image
+                          src="/Background Noise.svg"
+                          alt="a;t"
+                          fill
+                          className="object-cover w-full h-full hover:scale-105 transition-transform duration-500 ease-out"
+                        />
+                      </div>
+                    </div>
+      <div className="container lg:px-36 md:px-16 px-4 mx-auto  py-10 md:py-12 relative z-10">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           {/* Left Side: Name and Title */}
           <div className="text-center md:text-left">

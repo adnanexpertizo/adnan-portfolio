@@ -118,106 +118,116 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="md:pt-40 min-h-[85vh] pt-24 md:pb-20 pb-12 md:px-36 px-4 flex items-center justify-center flex-wrap bg-background mx-auto relative"
+      className="bg-background mx-auto relative overflow-hidden"
     >
-      <div className="container px-2 mx-auto">
-        <div className="flex flex-wrap items-center justify-between gap-8 md:gap-[42px] lg:gap-[60px]">
-          {/* LEFT SECTION */}
-          <div className="w-full lg:w-[60%] flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1 px-1">
-            <h1 className="font-serif text-2xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-4">
-              {heroData.name}
-            </h1>
-
-            <p className="text-sm sm:text-lg font-semibold text-muted-foreground mb-4">
-              {heroData.subtitle}
-            </p>
-            <p className="text-xs sm:text-base text-muted-foreground mb-8">
-              {heroData.description}
-            </p>
-
-            <div className="flex justify-start w-full">
-              <AskModal openModal={openModal} setOpenModal={setOpenModal} />
-            </div>
-
-            <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start mt-6">
-              {heroData.buttons.map((button, index) => (
-                <Button
-                  key={index}
-                  size="lg"
-                  variant={button.type === "primary" ? "default" : "outline"}
-                  onClick={() => {
-                    if (button.icon === "Download") {
-                      handleDownloadCV();
-                    } else if (button.action === "scrollToContact") {
-                      scrollToContact();
-                    }
-                  }}
-                >
-                  {button.icon === "Download" && (
-                    <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                  )}
-                  {button.icon === "Mail" && (
-                    <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                  )}
-                  {button.text}
-                </Button>
-              ))}
-            </div>
-          </div>
-
-          {/* RIGHT SECTION */}
-          <div className="flex justify-center md:justify-end order-1 lg:order-2 w-full lg:w-[30%]">
-            <div className="w-56 h-56 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl relative">
-              <Image
-                src={heroData.profileImage || "/placeholder.svg"}
-                alt={`${heroData.name} - ${heroData.title}`}
-                layout="fill"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out"
-              />
-            </div>
-          </div>
+      <div className="absolute w-full h-[500px] lg:h-[700px] z-5">
+        <div className="relative w-full h-[500px] lg:h-[700px]">
+          <Image
+            src="/Background Noise.svg"
+            alt="a;t"
+            fill
+            className="object-cover w-full h-full hover:scale-105 transition-transform duration-500 ease-out"
+          />
         </div>
       </div>
+      <div className="relative z-10 md:pt-40 min-h-[85vh] pt-24 md:pb-20 pb-12 md:px-36 px-4 flex items-center justify-center flex-wrap ">
+        <div className="container px-2 mx-auto">
+          <div className="flex flex-wrap items-center justify-between gap-8 md:gap-[42px] lg:gap-[60px]">
+            {/* LEFT SECTION */}
+            <div className="w-full lg:w-[60%] flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1 px-1">
+              <h1 className="font-serif text-2xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-4">
+                {heroData.name}
+              </h1>
 
-      {/* 🎵 Floating Music + WhatsApp Buttons */}
-      {showMusicButton && (
-        <>
-          {/* Music Button */}
-          <button
-            onClick={toggleMusic}
-            className="fixed bottom-5 left-4 cursor-pointer md:left-5 z-40 bg-primary text-white md:p-3 p-2 rounded-full shadow-lg hover:scale-105 transition-transform"
-            aria-label="Toggle background music"
-          >
-            {isPlaying ? (
-              <Volume2 className="md:w-6 md:h-6 w-5 h-5" />
-            ) : (
-              <VolumeX className="md:w-6 md:h-6 w-5 h-5" />
-            )}
-          </button>
+              <p className="text-sm sm:text-lg font-semibold text-muted-foreground mb-4">
+                {heroData.subtitle}
+              </p>
+              <p className="text-xs sm:text-base text-muted-foreground mb-8">
+                {heroData.description}
+              </p>
 
-          {/* WhatsApp Button */}
-          <button
-            onClick={handleWhatsAppClick}
-            className="fixed bottom-5 right-4 cursor-pointer md:right-5 z-40 bg-green-500 text-white md:p-3 p-2 rounded-full shadow-lg hover:bg-green-600 hover:scale-105 transition-transform"
-            aria-label="Chat on WhatsApp"
-          >
-            <FaWhatsapp className="md:w-6 md:h-6 w-5 h-5" />
-          </button>
-        </>
-      )}
+              <div className="flex justify-start w-full">
+                <AskModal openModal={openModal} setOpenModal={setOpenModal} />
+              </div>
 
-      {/* 👇 Scroll Hint Animation */}
-      {showScrollHint && (
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-30 flex flex-col items-center">
-          <div className="flex flex-col items-center space-y-1">
-            <span className="arrow-green block w-4 h-4 border-b-2 border-r-2 rotate-45 animate-arrow1"></span>
-            <span className="arrow-green block w-4 h-4 border-b-2 border-r-2 rotate-45 animate-arrow2"></span>
-            <span className="arrow-green block w-4 h-4 border-b-2 border-r-2 rotate-45 animate-arrow3"></span>
+              <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start mt-6">
+                {heroData.buttons.map((button, index) => (
+                  <Button
+                    key={index}
+                    size="lg"
+                    variant={button.type === "primary" ? "default" : "outline"}
+                    onClick={() => {
+                      if (button.icon === "Download") {
+                        handleDownloadCV();
+                      } else if (button.action === "scrollToContact") {
+                        scrollToContact();
+                      }
+                    }}
+                  >
+                    {button.icon === "Download" && (
+                      <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                    )}
+                    {button.icon === "Mail" && (
+                      <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                    )}
+                    {button.text}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT SECTION */}
+            <div className="flex justify-center md:justify-end order-1 lg:order-2 w-full lg:w-[30%]">
+              <div className="w-56 h-56 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl relative">
+                <Image
+                  src={heroData.profileImage || "/placeholder.svg"}
+                  alt={`${heroData.name} - ${heroData.title}`}
+                  layout="fill"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out"
+                />
+              </div>
+            </div>
           </div>
         </div>
-      )}
 
+        {/* 🎵 Floating Music + WhatsApp Buttons */}
+        {showMusicButton && (
+          <>
+            {/* Music Button */}
+            <button
+              onClick={toggleMusic}
+              className="fixed  z-50 bottom-5 left-4 cursor-pointer md:left-5 z-50 bg-primary text-white md:p-3 p-2 rounded-full shadow-lg hover:scale-105 transition-transform"
+              aria-label="Toggle background music"
+            >
+              {isPlaying ? (
+                <Volume2 className="md:w-6 md:h-6 w-5 h-5" />
+              ) : (
+                <VolumeX className="md:w-6 md:h-6 w-5 h-5" />
+              )}
+            </button>
 
+            {/* WhatsApp Button */}
+            <button
+              onClick={handleWhatsAppClick}
+              className=" fixed bottom-5 right-4 cursor-pointer md:right-5 z-50 bg-green-500 text-white md:p-3 p-2 rounded-full shadow-lg hover:bg-green-600 hover:scale-105 transition-transform"
+              aria-label="Chat on WhatsApp"
+            >
+              <FaWhatsapp className="md:w-6 md:h-6 w-5 h-5" />
+            </button>
+          </>
+        )}
+
+        {/* 👇 Scroll Hint Animation */}
+        {showScrollHint && (
+          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-30 flex flex-col items-center">
+            <div className="flex flex-col items-center space-y-1">
+              <span className="arrow-green block w-4 h-4 border-b-2 border-r-2 rotate-45 animate-arrow1"></span>
+              <span className="arrow-green block w-4 h-4 border-b-2 border-r-2 rotate-45 animate-arrow2"></span>
+              <span className="arrow-green block w-4 h-4 border-b-2 border-r-2 rotate-45 animate-arrow3"></span>
+            </div>
+          </div>
+        )}
+      </div>
     </section>
   );
 }

@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { CertificateModal } from "./certificate-modal";
 import certificatesData from "@/data/certificates.json";
+import Image from "next/image";
 
 export function CertificatesSection() {
   const [selectedCertificate, setSelectedCertificate] = useState<any>(null);
@@ -38,8 +39,18 @@ export function CertificatesSection() {
   }, []);
 
   return (
-    <section id="certificates" className="py-20 bg-background overflow-hidden relative">
-      <div className="container lg:px-36 md:px-16 px-4 mx-auto">
+    <section id="certificates" className=" overflow-hidden relative bg-background">
+      <div className="absolute w-full h-[500px] lg:h-[700px] z-5">
+                      <div className="relative w-full h-[500px] lg:h-[700px]">
+                        <Image
+                          src="/Background Noise.svg"
+                          alt="a;t"
+                          fill
+                          className="object-cover w-full h-full hover:scale-105 transition-transform duration-500 ease-out"
+                        />
+                      </div>
+                    </div>
+      <div className="container py-32  lg:px-36 md:px-16 px-4 mx-auto z-10 relative">
 
         {/* Header */}
         <div className="text-center mb-10">
