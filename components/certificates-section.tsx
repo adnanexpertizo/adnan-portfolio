@@ -40,8 +40,8 @@ export function CertificatesSection() {
 
   return (
     <section id="certificates" className=" overflow-hidden relative bg-background">
-      <div className="absolute w-full h-[500px] lg:h-[700px] z-5">
-                      <div className="relative w-full h-[500px] lg:h-[700px]">
+      <div className="absolute w-full h-full lg:h-[700px] z-5">
+                      <div className="relative w-full h-full lg:h-[700px]">
                         <Image
                           src="/Background Noise.svg"
                           alt="a;t"
@@ -50,7 +50,7 @@ export function CertificatesSection() {
                         />
                       </div>
                     </div>
-      <div className="container py-32  lg:px-36 md:px-16 px-4 mx-auto z-10 relative">
+      <div className="container py-32  lg:px-36 md:px-16 px-4 mx-auto z-7 relative">
 
         {/* Header */}
         <div className="text-center mb-10">

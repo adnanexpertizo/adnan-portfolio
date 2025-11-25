@@ -120,8 +120,8 @@ export function HeroSection() {
       id="home"
       className="bg-background mx-auto relative overflow-hidden"
     >
-      <div className="absolute w-full h-[500px] lg:h-[700px] z-5">
-        <div className="relative w-full h-[500px] lg:h-[700px]">
+      <div className="absolute w-full h-full lg:h-[700px] z-5">
+        <div className="relative w-full h-full lg:h-[700px]">
           <Image
             src="/Background Noise.svg"
             alt="a;t"

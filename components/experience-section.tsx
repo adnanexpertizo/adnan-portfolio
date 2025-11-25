@@ -58,9 +58,9 @@ export function ExperienceSection() {
     <section
       ref={sectionRef}
       id="experience"
-      className="overflow-hidden relative ba-background"
+      className="overflow-hidden relative bg-background"
     >
-      <div className="absolute w-full md:h-[900px] z-5 overflow-hidden">
+      <div className="absolute w-full md:h-[900px] h-full z-5 overflow-hidden">
                       <div className="relative w-full h-full">
                         <Image
                           src="/Background Noise.svg"
@@ -70,7 +70,7 @@ export function ExperienceSection() {
                         />
                       </div>
                     </div>
-      <div className="container py-28 z-10 lg:px-36 md:px-16 px-4 mx-auto relative">
+      <div className="container py-28 z-7 lg:px-36 md:px-16 px-4 mx-auto relative">
         {/* Header */}
         <div className="text-center mb-10">
           <h2
