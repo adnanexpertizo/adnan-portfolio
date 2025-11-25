@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { GraduationCap, Calendar } from "lucide-react"
 import educationData from "@/data/education.json"
-
+import Image from "next/image";
 export function EducationSection() {
   return (
     <section id="education" className="py-[40px] bg-muted/50">
