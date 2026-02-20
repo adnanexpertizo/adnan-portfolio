@@ -3,7 +3,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Award, Users, CheckCircle } from "lucide-react";
-import Image from "next/image";
 import aboutData from "@/data/about.json";
 import { useEffect, useRef, useState } from "react";
 import { AskModal } from "./AskModal";
@@ -12,6 +11,7 @@ export function AboutSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [visibleCards, setVisibleCards] = useState<boolean[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const iconMap = {
     Shield,
@@ -60,6 +60,30 @@ export function AboutSection() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const videoObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (!video) return;
+
+        if (entry.isIntersecting) {
+          video.play().catch((err) => {
+            console.log("Autoplay prevented:", err);
+          });
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.55 }
+    );
+
+    videoObserver.observe(video);
+
+    return () => videoObserver.disconnect();
+  }, []);
+
   return (
     <section
       ref={sectionRef}
@@ -70,9 +94,7 @@ export function AboutSection() {
         <div className="text-center mb-[32px]">
           <h2
             className={`font-serif text-[24px] lg:text-[28px] font-bold text-foreground mb-[16px] transform transition-all duration-1000 ease-out ${
-              isVisible
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
           >
             {aboutData.title}
@@ -91,13 +113,19 @@ export function AboutSection() {
               style={{ transitionDelay: "400ms" }}
             >
               <CardContent className="p-0">
-                <Image
-                  src={aboutData.workImage || "/placeholder.svg"}
-                  alt="Adnan Rafiq at work"
-                  width={600}
-                  height={600}
-                  className="w-full h-[250px] md:h-[330px] object-cover transition-transform duration-700 ease-out"
-                />
+<video
+  ref={videoRef}
+  src="https://res.cloudinary.com/dpvsay7rw/video/upload/v1771599346/Adnan_Rafiq_-_Landscape_Portfolio_Rule_of_Thirds_jgo7qc.mp4"
+  poster="https://res.cloudinary.com/dpvsay7rw/video/upload/v1771599346/so_0/Adnan_Rafiq_-_Landscape_Portfolio_Rule_of_Thirds_jgo7qc.jpg"
+  muted
+  loop
+  playsInline
+  preload="metadata"
+  controls                   // ← Add this line (or remove comment)
+  width={600}
+  height={600}
+  className="w-full h-[250px] md:h-[330px] object-cover transition-transform duration-700 ease-out"
+/>
               </CardContent>
             </Card>
           </div>
@@ -144,36 +172,6 @@ export function AboutSection() {
             </div>
           </div>
         </div>
-
-        {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-[8px] sm:gap-[16px]">
-          {aboutData.highlights.map((highlight, index) => {
-            const IconComponent =
-              iconMap[highlight.icon as keyof typeof iconMap];
-            return (
-              <Card
-                key={index}
-                className={`text-center hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 ease-out border-2 border-border/80 hover:border-primary/60 bg-card shadow-lg dark:border-border/80 dark:hover:border-primary/70 dark:shadow-xl dark:hover:shadow-2xl dark:bg-card/98 backdrop-blur-sm group transform ${
-                  visibleCards[index]
-                    ? "translate-y-0 opacity-100 scale-100"
-                    : "translate-y-4 opacity-0 scale-95"
-                }`}
-                style={{ transitionDelay: `${1000 + index * 150}ms` }}
-              >
-                <CardContent className=" p-[10px] sm:p-[18px]">
-                  <div className="inline-flex items-center justify-center md:w-[44px] md:h-[44px] w-[35px] h-[35px] bg-primary/10 rounded-lg mb-[12px] dark:bg-primary/20 transition-all duration-300 ease-out">
-                    <IconComponent className="md:h-[22px] md:w-[22px] w-[16px] h-[16px] text-primary transition-transform duration-300" />
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-[8px] text-[12px] md:text-[15px]">
-                    {highlight.title}
-                  </h4>
-                  <p className="md:text-[14px] text-[12px] text-muted-foreground text-pretty">
-                    {highlight.description}
-                  </p>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div> */}
       </div>
     </section>
   );
