@@ -30,7 +30,7 @@ export function AboutSection() {
     ],
     100
   );
-console.log("...............")
+console.log("aboutData:", aboutData);
   useEffect(() => {
     setIsVisible(true);
   }, []);
