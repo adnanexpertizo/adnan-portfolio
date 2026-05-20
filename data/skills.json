@@ -1,0 +1,74 @@
+{
+  "title": "Technical Skills",
+  "subtitle": "A unique blend of occupational safety expertise and computer science skills — bridging the gap between field safety and modern technology.",
+  "categories": [
+    {
+      "name": "HSE & Safety",
+      "icon": "ShieldCheck",
+      "color": "primary",
+      "skills": [
+        { "name": "Risk Assessment", "level": 95 },
+        { "name": "Incident Investigation", "level": 90 },
+        { "name": "Permit to Work (PTW)", "level": 92 },
+        { "name": "Safety Auditing", "level": 88 },
+        { "name": "Emergency Response Planning", "level": 85 },
+        { "name": "Tool Box Talks (TBT)", "level": 95 },
+        { "name": "Fire Safety Management", "level": 90 },
+        { "name": "Work at Height Safety", "level": 88 }
+      ]
+    },
+    {
+      "name": "Tech & Automation",
+      "icon": "Code2",
+      "color": "accent",
+      "skills": [
+        { "name": "MS Excel & VBA Automation", "level": 92 },
+        { "name": "React / Next.js", "level": 80 },
+        { "name": "Node.js & REST APIs", "level": 75 },
+        { "name": "Database (MongoDB/SQL)", "level": 72 },
+        { "name": "Power BI / Data Dashboards", "level": 78 },
+        { "name": "Python (Scripting)", "level": 68 },
+        { "name": "GitHub & Version Control", "level": 75 },
+        { "name": "Mobile App Development", "level": 70 }
+      ]
+    },
+    {
+      "name": "Standards & Compliance",
+      "icon": "ClipboardCheck",
+      "color": "primary",
+      "skills": [
+        { "name": "NEBOSH IGC", "level": 95 },
+        { "name": "OSHA 30-Hour Standards", "level": 90 },
+        { "name": "IOSH Managing Safely", "level": 88 },
+        { "name": "ISO 45001 Awareness", "level": 82 },
+        { "name": "HSE Legislation & Compliance", "level": 88 },
+        { "name": "PPE Management", "level": 92 }
+      ]
+    },
+    {
+      "name": "Soft Skills",
+      "icon": "Users",
+      "color": "accent",
+      "skills": [
+        { "name": "Safety Leadership", "level": 92 },
+        { "name": "Team Training & Coaching", "level": 90 },
+        { "name": "Report Writing", "level": 88 },
+        { "name": "Problem Solving", "level": 90 },
+        { "name": "Communication", "level": 92 },
+        { "name": "Time Management", "level": 85 }
+      ]
+    }
+  ],
+  "tools": [
+    { "name": "MS Excel", "icon": "📊" },
+    { "name": "Power BI", "icon": "📈" },
+    { "name": "React", "icon": "⚛️" },
+    { "name": "Node.js", "icon": "🟢" },
+    { "name": "MongoDB", "icon": "🍃" },
+    { "name": "Firebase", "icon": "🔥" },
+    { "name": "GitHub", "icon": "🐙" },
+    { "name": "Figma", "icon": "🎨" },
+    { "name": "Python", "icon": "🐍" },
+    { "name": "AutoCAD", "icon": "📐" }
+  ]
+}

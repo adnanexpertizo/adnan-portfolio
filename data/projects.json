@@ -1,0 +1,75 @@
+{
+  "title": "Projects & Innovations",
+  "subtitle": "Where computer science meets occupational safety — building tools that make workplaces safer and smarter.",
+  "projects": [
+    {
+      "id": "sms",
+      "title": "Safety Management System",
+      "tagline": "Full-stack web app for HSE compliance tracking",
+      "description": "A comprehensive safety management platform built as a Final Year Project. Features dual-role access for Admins and Safety Officers to manage incidents, inspections, permits, and compliance reports in real-time.",
+      "category": "Web Application",
+      "tech": ["React", "Node.js", "MongoDB", "Express", "JWT Auth"],
+      "features": [
+        "Admin & Officer role-based dashboards",
+        "Incident reporting & investigation workflow",
+        "Permit-to-Work (PTW) digital management",
+        "Real-time compliance tracking & alerts",
+        "Inspection checklists & audit trails",
+        "Automated report generation"
+      ],
+      "liveLink": "",
+      "videoLink": "",
+      "githubLink": "",
+      "status": "Completed",
+      "year": "2023",
+      "highlight": true,
+      "icon": "Shield"
+    },
+    {
+      "id": "safety-learning",
+      "title": "Safety Learning App",
+      "tagline": "Mobile-first e-learning platform for HSE training",
+      "description": "An interactive learning application designed to deliver safety training modules, quizzes, and awareness content. Built to help workers and officers stay current with HSE regulations and best practices.",
+      "category": "Mobile App",
+      "tech": ["React Native", "Firebase", "Node.js", "REST API"],
+      "features": [
+        "Safety training modules with video content",
+        "Interactive quizzes & knowledge checks",
+        "Progress tracking & certificates",
+        "NEBOSH, OSHA & Fire Safety content",
+        "Offline-capable learning modules",
+        "Push notifications for safety updates"
+      ],
+      "liveLink": "",
+      "videoLink": "",
+      "githubLink": "",
+      "status": "Completed",
+      "year": "2024",
+      "highlight": true,
+      "icon": "BookOpen"
+    },
+    {
+      "id": "automation-toolkit",
+      "title": "Safety Automation Toolkit",
+      "tagline": "Excel & automation tools for HSE professionals",
+      "description": "A suite of automated Excel-based tools designed to eliminate manual paperwork for safety officers. Includes dynamic risk assessment calculators, incident log templates, inspection schedulers, and KPI dashboards — all formula-driven with zero manual data entry.",
+      "category": "Automation Tool",
+      "tech": ["MS Excel", "VBA Macros", "Power Query", "Formulas & Dashboards"],
+      "features": [
+        "Automated Risk Assessment Matrix (5×5)",
+        "Incident log with auto-calculated KPIs",
+        "Inspection scheduler with reminders",
+        "Monthly HSE performance dashboard",
+        "PTW (Permit to Work) auto-template filler",
+        "Tool Box Talk (TBT) attendance tracker"
+      ],
+      "liveLink": "",
+      "videoLink": "",
+      "githubLink": "",
+      "status": "In Use",
+      "year": "2022",
+      "highlight": false,
+      "icon": "FileSpreadsheet"
+    }
+  ]
+}

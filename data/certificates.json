@@ -1,6 +1,6 @@
 {
   "title": "Certificates & Qualifications",
-  "subtitle": "Professional certifications demonstrating expertise in safety management",
+  "subtitle": "Professional certifications demonstrating expertise in safety management, health & safety compliance, and occupational risk control.",
   "certificates": [
     {
       "title": "NEBOSH International General Certificate",
@@ -8,15 +8,17 @@
       "year": "2022",
       "status": "Active",
       "category": "Health & Safety",
-      "image": "/certificates/.jpeg"
+      "image": "/certificates/nebosh.jpeg",
+      "color": "primary"
     },
     {
       "title": "OSHA 30-Hour Construction Safety",
       "issuingBody": "OSHA",
       "year": "2023",
       "status": "Active",
-      "category": "Safety Suppervission",
-      "image": "/certificates/safety supervission.jpeg"
+      "category": "Safety Supervision",
+      "image": "/certificates/safety supervission.jpeg",
+      "color": "primary"
     },
     {
       "title": "Emergency First Aid at Work",
@@ -24,7 +26,8 @@
       "year": "2023",
       "status": "Active",
       "category": "First Aid",
-      "image": "/certificates/first aid.jpeg"
+      "image": "/certificates/first aid.jpeg",
+      "color": "primary"
     },
     {
       "title": "Fire Safety Awareness Certificate",
@@ -32,7 +35,8 @@
       "year": "2022",
       "status": "Active",
       "category": "Fire Safety",
-      "image": "/certificates/fire safety.jpeg"
+      "image": "/certificates/fire safety.jpeg",
+      "color": "primary"
     },
     {
       "title": "Working at Height Safety",
@@ -40,7 +44,8 @@
       "year": "2023",
       "status": "Active",
       "category": "Height Safety",
-      "image": "/certificates/work at height.jpeg"
+      "image": "/certificates/work at height.jpeg",
+      "color": "primary"
     },
     {
       "title": "Risk Assessment Certification",
@@ -48,7 +53,8 @@
       "year": "2022",
       "status": "Active",
       "category": "Risk Management",
-      "image": "/certificates/risk assisment.jpeg"
+      "image": "/certificates/risk assisment.jpeg",
+      "color": "primary"
     },
     {
       "title": "Incident Investigation Training",
@@ -56,7 +62,8 @@
       "year": "2023",
       "status": "Active",
       "category": "Investigation",
-      "image": "/certificates.jpeg"
+      "image": "/certificates/incident.jpeg",
+      "color": "primary"
     }
   ]
 }

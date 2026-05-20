@@ -6,214 +6,152 @@
 @import "swiper/css/navigation";
 @import "swiper/css/autoplay";
 
-/* Updated to attractive green theme with better contrast */
+/* ═══════════════════════════════════════════════════
+   THEME: Deep Navy × Professional Teal
+   Authority + Trust + Modern Safety Professional
+═══════════════════════════════════════════════════ */
+
 :root {
-  --background: #f9fefa;
-  --foreground: #00152D;
-  --card: #f7fdf8;
-  --card-foreground: #242d24;
-  --popover: #f7fdf8;
-  --popover-foreground: #242d24;
-  --primary: #1c885e;
-  --primary-foreground: #f7fdf8;
-  --secondary: #eef7ec;
-  --bgcolor: #eef7ec;
-  --secondary-foreground: #3a523c;
-  --muted: #f2f8ef;
-  --muted-foreground: #333333;
-  --accent: #14684d;
-  --accent-foreground: #f7fdf8;
-  --destructive: #c1442d;
-  --destructive-foreground: #f7fdf8;
-  --border: #e2f0e2;
-  --input: #e2f0e2;
-  --ring: #1c885e;
-  --chart-1: #179464;
-  --chart-2: #22755e;
-  --chart-3: #89b573;
-  --chart-4: #0f6855;
-  --chart-5: #52865f;
-  --radius: 0.625rem;
-  --sidebar: #f4fcf6;
-  --sidebar-foreground: #242d24;
-  --sidebar-primary: #1c885e;
-  --sidebar-primary-foreground: #f7fdf8;
-  --sidebar-accent: #eef7ec;
-  --sidebar-accent-foreground: #3a523c;
-  --sidebar-border: #e2f0e2;
-  --sidebar-ring: #1c885e;
+  /* Surfaces */
+  --background:          #f8fafc;
+  --foreground:          #0d1b2a;
+  --card:                #ffffff;
+  --card-foreground:     #0d1b2a;
+  --popover:             #ffffff;
+  --popover-foreground:  #0d1b2a;
+
+  /* Brand */
+  --primary:             #0e7490;   /* Deep teal — professional, safety-coded */
+  --primary-foreground:  #f0fdff;
+
+  /* Supporting */
+  --secondary:           #e8f4f8;
+  --bgcolor:             #eef4f7;
+  --secondary-foreground:#1e4a5c;
+  --muted:               #f0f6fa;
+  --muted-foreground:    #3d5a6b;
+  --accent:              #155e75;
+  --accent-foreground:   #f0fdff;
+
+  /* Destructive */
+  --destructive:         #b91c1c;
+  --destructive-foreground: #fff5f5;
+
+  /* Utility */
+  --border:              #cde4ed;
+  --input:               #cde4ed;
+  --ring:                #0e7490;
+  --radius:              0.625rem;
+
+  /* Charts */
+  --chart-1:             #0e7490;
+  --chart-2:             #0891b2;
+  --chart-3:             #22d3ee;
+  --chart-4:             #155e75;
+  --chart-5:             #a5f3fc;
+
+  /* Sidebar */
+  --sidebar:             #f0f8fc;
+  --sidebar-foreground:  #0d1b2a;
+  --sidebar-primary:     #0e7490;
+  --sidebar-primary-foreground: #f0fdff;
+  --sidebar-accent:      #e0f2f8;
+  --sidebar-accent-foreground:  #1e4a5c;
+  --sidebar-border:      #cde4ed;
+  --sidebar-ring:        #0e7490;
 }
 
 .dark {
-  --background: #00152D;
-  --foreground: #f7fef9;
-  --card: #1a251a;
-  --card-foreground: #f7fef9;
-  --popover: #1a251a;
-  --popover-foreground: #f7fef9;
-  --primary: #28a472;
-  --primary-foreground: #141c14;
-  --secondary: #263526;
-  --bgcolor: #00152d73;
-  --secondary-foreground: #e8f6ea;
-  --muted: #1f2d1f;
---muted-foreground: #f0f0f0;
-  --accent: #1b7d59;
-  --accent-foreground: #141c14;
-  --destructive: #d44f32;
-  --destructive-foreground: #f7fef9;
-  --border: #3c523c;
-  --input: #3c523c;
-  --ring: #28a472;
-  --chart-1: #32b07e;
-  --chart-2: #2b8c69;
-  --chart-3: #9fcf83;
-  --chart-4: #1e7f69;
-  --chart-5: #4e9967;
-  --sidebar: #1d291d;
-  --sidebar-foreground: #f7fef9;
-  --sidebar-primary: #28a472;
-  --sidebar-primary-foreground: #141c14;
-  --sidebar-accent: #263526;
-  --sidebar-accent-foreground: #e8f6ea;
-  --sidebar-border: #3c523c;
-  --sidebar-ring: #28a472;
+  /* Surfaces — deep navy */
+  --background:          #0a1628;
+  --foreground:          #e2f4f8;
+  --card:                #112035;
+  --card-foreground:     #e2f4f8;
+  --popover:             #112035;
+  --popover-foreground:  #e2f4f8;
+
+  /* Brand — lighter teal for dark bg */
+  --primary:             #22d3ee;
+  --primary-foreground:  #0a1628;
+
+  /* Supporting */
+  --secondary:           #142840;
+  --bgcolor:             #0a1628cc;
+  --secondary-foreground:#a5e8f5;
+  --muted:               #142030;
+  --muted-foreground:    #94c5d6;
+  --accent:              #0891b2;
+  --accent-foreground:   #0a1628;
+
+  /* Destructive */
+  --destructive:         #ef4444;
+  --destructive-foreground: #fff5f5;
+
+  /* Utility */
+  --border:              #1e3a50;
+  --input:               #1e3a50;
+  --ring:                #22d3ee;
+
+  /* Charts */
+  --chart-1:             #22d3ee;
+  --chart-2:             #0891b2;
+  --chart-3:             #67e8f9;
+  --chart-4:             #0e7490;
+  --chart-5:             #a5f3fc;
+
+  /* Sidebar */
+  --sidebar:             #0e1e30;
+  --sidebar-foreground:  #e2f4f8;
+  --sidebar-primary:     #22d3ee;
+  --sidebar-primary-foreground: #0a1628;
+  --sidebar-accent:      #142840;
+  --sidebar-accent-foreground:  #a5e8f5;
+  --sidebar-border:      #1e3a50;
+  --sidebar-ring:        #22d3ee;
 }
 
+/* ── Theme token mapping ─────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-bgcolor: var(--bgcolor);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --color-background:              var(--background);
+  --color-bgcolor:                 var(--bgcolor);
+  --color-foreground:              var(--foreground);
+  --color-card:                    var(--card);
+  --color-card-foreground:         var(--card-foreground);
+  --color-popover:                 var(--popover);
+  --color-popover-foreground:      var(--popover-foreground);
+  --color-primary:                 var(--primary);
+  --color-primary-foreground:      var(--primary-foreground);
+  --color-secondary:               var(--secondary);
+  --color-secondary-foreground:    var(--secondary-foreground);
+  --color-muted:                   var(--muted);
+  --color-muted-foreground:        var(--muted-foreground);
+  --color-accent:                  var(--accent);
+  --color-accent-foreground:       var(--accent-foreground);
+  --color-destructive:             var(--destructive);
+  --color-destructive-foreground:  var(--destructive-foreground);
+  --color-border:                  var(--border);
+  --color-input:                   var(--input);
+  --color-ring:                    var(--ring);
+  --color-chart-1:                 var(--chart-1);
+  --color-chart-2:                 var(--chart-2);
+  --color-chart-3:                 var(--chart-3);
+  --color-chart-4:                 var(--chart-4);
+  --color-chart-5:                 var(--chart-5);
+  --radius-sm:  calc(var(--radius) - 4px);
+  --radius-md:  calc(var(--radius) - 2px);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) + 4px);
+  --color-sidebar:                       var(--sidebar);
+  --color-sidebar-foreground:            var(--sidebar-foreground);
+  --color-sidebar-primary:               var(--sidebar-primary);
+  --color-sidebar-primary-foreground:    var(--sidebar-primary-foreground);
+  --color-sidebar-accent:                var(--sidebar-accent);
+  --color-sidebar-accent-foreground:     var(--sidebar-accent-foreground);
+  --color-sidebar-border:                var(--sidebar-border);
+  --color-sidebar-ring:                  var(--sidebar-ring);
 }
 
-
-/* Enhanced smooth transitions for theme switching and all interactions */
-*,
-*::before,
-*::after {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.2s ease, transform 0.2s
-    ease, opacity 0.3s ease;
-}
-
-html {
-  scroll-behavior: smooth;
-  transition: background-color 0.3s ease;
-}
-
-/* Professional button and interactive element transitions */
-button,
-a,
-[role="button"],
-.cursor-pointer {
-  transition: all 0.2s ease;
-}
-
-button:hover,
-a:hover,
-[role="button"]:hover,
-.cursor-pointer:hover {
-  transform: translateY(-1px);
-}
-
-button:active,
-a:active,
-[role="button"]:active,
-.cursor-pointer:active {
-  transform: translateY(0px) scale(0.98);
-}
-
-/* Subtle card hover effects */
-.group:hover {
-  transform: translateY(-2px);
-}
-
-/* Simplified fade-in animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-/* Professional scale animation for modals */
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.animate-scale-in {
-  animation: scaleIn 0.3s ease forwards;
-}
-
-/* Removed excessive animations and simplified transitions */
-/* Professional scale utilities */
-.scale-102 {
-  transform: scale(1.02);
-}
-
-.hover\:scale-102:hover {
-  transform: scale(1.02);
-}
-
-/* Removed excessive stagger animations and kept only essential ones */
-.animate-stagger-1 {
-  animation-delay: 0.1s;
-}
-.animate-stagger-2 {
-  animation-delay: 0.2s;
-}
-.animate-stagger-3 {
-  animation-delay: 0.3s;
-}
-
+/* ── Base layer ─────────────────────────────────── */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -224,70 +162,111 @@ a:active,
     -moz-osx-font-smoothing: grayscale;
   }
 }
-@keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 6px rgba(var(--primary-rgb), 0.6), 0 0 12px rgba(var(--primary-rgb), 0.3); }
-  50%      { box-shadow: 0 0 12px rgba(var(--primary-rgb), 0.8), 0 0 24px rgba(var(--primary-rgb), 0.4); }
+
+/* ── Global transitions ────────────────────────── */
+*,
+*::before,
+*::after {
+  transition:
+    background-color 0.3s ease,
+    color            0.3s ease,
+    border-color     0.3s ease,
+    box-shadow       0.2s ease,
+    transform        0.2s ease,
+    opacity          0.3s ease;
 }
 
-/* If you want subtle gradient movement with the same theme color */
-@keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+html {
+  scroll-behavior: smooth;
 }
+
+/* Interactive elements */
+button,
+a,
+[role="button"],
+.cursor-pointer {
+  transition: all 0.2s ease;
+}
+
+button:hover,
+a:hover,
+[role="button"]:hover {
+  transform: translateY(-1px);
+}
+
+button:active,
+a:active,
+[role="button"]:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Prevent double-translate on group cards */
+.group:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Animations ────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.animate-scale-in {
+  animation: scaleIn 0.3s ease forwards;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
 @keyframes gradient-x {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%, 100% { background-position: 0%   50%; }
+  50%      { background-position: 100% 50%; }
 }
 .animate-gradient-x {
   background-size: 200% 200%;
   animation: gradient-x 5s ease infinite;
 }
+
 @keyframes pulse-slow {
   0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
+  50%      { opacity: 1; }
 }
 .animate-pulse-slow {
   animation: pulse-slow 4s ease-in-out infinite;
 }
 
-/* @keyframes moveUp {
-  0% {
-    transform: translateY(100vh);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh);
-    opacity: 0;
-  }
-}
+/* Stagger helpers */
+.animate-stagger-1 { animation-delay: 0.1s; }
+.animate-stagger-2 { animation-delay: 0.2s; }
+.animate-stagger-3 { animation-delay: 0.3s; }
 
-@keyframes initialMove {
-  0% { transform: translateY(100px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-} */
+/* Scale utilities */
+.scale-102          { transform: scale(1.02); }
+.hover\:scale-102:hover { transform: scale(1.02); }
 
-.animate-initial-move {
-  animation: initialMove 1s ease-out forwards;
-  position: absolute;
-} 
-.tabs {
-  position: absolute;
-  transition: all 0.1s ease-out;
-}
-/* Custom Scrollbar Styling */
-.scrollbar-thin::-webkit-scrollbar {
-  width: 6px;
-}
-
+/* ── Custom scrollbar ──────────────────────────── */
+.scrollbar-thin::-webkit-scrollbar       { width: 5px; }
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: rgba(59, 130, 246, 0.4); /* Tailwind primary/40 */
+  background-color: var(--primary);
+  opacity: 0.4;
   border-radius: 8px;
 }
-
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(59, 130, 246, 0.6);
+  opacity: 0.7;
+}
+
+/* Swiper nav button override — inherit theme */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary) !important;
 }
