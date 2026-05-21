@@ -2,42 +2,52 @@
   "title": "About Me",
   "subtitle": "Passionate about creating safer workplaces through comprehensive safety management and training",
   "mainTitle": "Professional Safety Officer",
-   "description": [
-        "Computer Science graduate with solid technical knowledge, using digital tools to improve safety and efficiency.",
+  "description": [
+    "Computer Science graduate with solid technical knowledge, using digital tools to improve safety and efficiency.",
     "NEBOSH-certified Safety Officer with 5 years of experience in risk assessment, compliance, and safety program implementation.",
     "Skilled in hazard identification, risk control, and promoting a strong safety culture."
   ],
   "workVideo": "https://player.cloudinary.com/embed/?cloud_name=dpvsay7rw&public_id=Adnan_Rafiq_-_Landscape_Portfolio_Rule_of_Thirds_jgo7qcl.mp4&transformation[width]=600&transformation[height]=400&transformation[crop]=fill",
-  "skills": [
-    "NEBOSH IGC",
-    "First Aid",
-    "Fire Safety",
-    "Risk Assessment",
-    "Work at Height",
-    "Safety Training",
-    "Incident Investigation",
-    "Safety Auditing"
-  ],
   "highlights": [
     {
       "icon": "Shield",
-      "title": "2+ Years Experience",
+      "title": "5+ Years Experience",
       "description": "Professional safety officer experience"
     },
     {
       "icon": "Award",
-      "title": "NEBOSH Certified",
-      "description": "International safety qualification"
+      "title": "NEBOSH IGC",
+      "description": "International General Certificate in Occupational Health and Safety"
+    },
+    {
+      "icon": "Shield",
+      "title": "OSHA 30-Hour",
+      "description": "Comprehensive workplace safety and health training certification"
+    },
+    {
+      "icon": "Users",
+      "title": "IOSH Managing Safely",
+      "description": "Certified training in managing workplace health and safety"
+    },
+    {
+      "icon": "CheckCircle",
+      "title": "ISO 45001 Awareness",
+      "description": "Knowledge of occupational health and safety management systems"
+    },
+    {
+      "icon": "Shield",
+      "title": "HSE Legislation",
+      "description": "Understanding of workplace health, safety, and environmental laws"
+    },
+    {
+      "icon": "Award",
+      "title": "PPE Management",
+      "description": "Experience in personal protective equipment selection and compliance"
     },
     {
       "icon": "Users",
       "title": "Team Safety Training",
       "description": "Conducted safety training for 100+ employees"
-    },
-    {
-      "icon": "CheckCircle",
-      "title": "Zero Incidents",
-      "description": "Maintained excellent safety record"
-    }
+    } 
   ]
 }

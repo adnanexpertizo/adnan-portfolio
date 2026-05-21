@@ -51,7 +51,7 @@ export function AboutSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="relative py-20 sm:py-28 bg-muted/30 overflow-hidden">
+    <section ref={sectionRef} id="about" className="relative py-16 sm:py-20 bg-muted/30 overflow-hidden">
       {/* Decorative background accent */}
       <div className="absolute top-0 right-0 w-72 h-72 lg:w-96 lg:h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none -translate-y-1/3 translate-x-1/4" />
 
@@ -119,8 +119,8 @@ export function AboutSection() {
 
         </div>
         {aboutData.highlights && (
-          <div className="grid grid-cols-2 md:grid-cols-4 md:gap-3 gap-1 mt-4">
-            {aboutData.highlights.slice(0, 4).map((item: any, i: number) => {
+          <div className="grid grid-cols-2 md:grid-cols-4 md:gap-3 gap-1 md:mt-4 mt-2">
+            {aboutData.highlights.map((item: any, i: number) => {
               const Icon = iconMap[item.icon as keyof typeof iconMap] || Shield;
               return (
                 <div

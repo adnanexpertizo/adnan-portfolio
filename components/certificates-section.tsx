@@ -188,19 +188,14 @@ export function CertificatesSection() {
   const bodyCount = new Set(certificatesData.certificates.map((c) => c.issuingBody)).size;
 
   return (
-    <section ref={sectionRef} id="certificates" className="relative py-20 sm:py-28 bg-background overflow-hidden">
-      <div className="absolute w-full md:h-[900px] h-full z-0 overflow-hidden">
-        <div className="relative w-full h-full">
-          <Image
-            src="/Background Noise.svg"
-            alt="a;t"
-            fill
-            className="object-cover w-full h-full hover:scale-105 z-5 transition-transform duration-500 ease-out"
-          />
-        </div>
+<section id="certificates" className="relative z-0 bg-background overflow-hidden">
+      {/* Background texture */}
+      <div className="absolute inset-0 z-2 pointer-events-none">
+        <Image src="/Background Noise.svg" alt="" fill className="object-cover opacity-60" priority />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_40%,var(--color-primary)_0%,transparent_70%)] opacity-[0.07] dark:opacity-[0.12]" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 z-10 sm:px-8 lg:px-16">
+      <div className="relative max-w-7xl mx-auto py-10 md:py-16 px-4 z-10 sm:px-8 lg:px-16">
 
         {/* Header */}
         <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
@@ -264,9 +259,8 @@ export function CertificatesSection() {
                           <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                             <Award className="w-5 h-5 text-primary" />
                           </div>
-                          <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-primary/8 border border-primary/20">
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                            <span className="text-[10px] font-semibold text-primary">{cert.status}</span>
+                          <div className="flex items-center gap-1.5 p-2 rounded-full bg-primary/8 border border-primary/20">
+                            <span className="text-[10px] font-semibold text-primary">{i+1}/{certificatesData.certificates.length}</span>
                           </div>
                         </div>
 

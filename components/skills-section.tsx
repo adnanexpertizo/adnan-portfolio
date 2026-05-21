@@ -10,14 +10,14 @@ import {
 
 /* ─── Safety skill cards ─── */
 const safetySkills = [
-  { icon: ShieldCheck,     label: "Risk Assessment" },
-  { icon: AlertTriangle,   label: "Incident Investigation" },
-  { icon: ClipboardList,   label: "Safety Auditing" },
-  { icon: Flame,           label: "Fire Safety" },
+  { icon: ShieldCheck, label: "Risk Assessment" },
+  { icon: AlertTriangle, label: "Incident Investigation" },
+  { icon: ClipboardList, label: "Safety Auditing" },
+  { icon: Flame, label: "Fire Safety" },
   { icon: ArrowUpFromLine, label: "Work at Height" },
-  { icon: FileText,        label: "Permit to Work" },
-  { icon: Users,           label: "Safety Training" },
-  { icon: ShieldCheck,     label: "Emergency Response" },
+  { icon: FileText, label: "Permit to Work" },
+  { icon: Users, label: "Safety Training" },
+  { icon: ShieldCheck, label: "Emergency Response" },
 ];
 
 /* ─── Tech advantage cards — plain English ─── */
@@ -64,14 +64,12 @@ export function SkillsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="skills" className="relative py-20 sm:py-28 bg-background overflow-hidden">
-          <div className="absolute inset-0 z-0 pointer-events-none">
-            <Image src="/Background Noise.svg" alt="" fill className="object-cover opacity-60" priority />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_40%,var(--color-primary)_0%,transparent_70%)] opacity-[0.07] dark:opacity-[0.12]" />
-          </div>
+    <section ref={sectionRef} id="skills" className="relative py-16 sm:py-20 bg-muted/30 overflow-hidden">
+      {/* Decorative background accent */}
+      <div className="absolute top-0 right-0 w-72 h-72 lg:w-96 lg:h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none -translate-y-1/3 translate-x-1/4" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-8 lg:px-16">
-        <div className={`text-center mb-14 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+        <div className={`text-center mb-10 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <span className="inline-block text-xs font-semibold text-primary uppercase tracking-widest mb-3">What I Bring</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">Skills & Expertise</h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
@@ -81,7 +79,7 @@ export function SkillsSection() {
         </div>
 
         {/* ── Block 1: Core Safety Skills ── */}
-        <div className={`mb-14 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+        <div className={`mb-10 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div className="flex items-center gap-3 mb-6">
             <div className="p-2 rounded-xl bg-primary/10 border border-primary/20">
               <ShieldCheck className="w-5 h-5 text-primary" />
@@ -91,11 +89,11 @@ export function SkillsSection() {
               <p className="text-xs text-muted-foreground">Hands-on HSE expertise from the field</p>
             </div>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:gap-3 gap-2">
             {safetySkills.map(({ icon: Icon, label }, i) => (
               <div
                 key={label}
-                className={`flex items-center md:gap-3 gap-2 md:p-3.5 p-2 rounded-xl bg-muted/60 border border-border/60 hover:border-primary/40 hover:bg-primary/5 hover:-translate-y-0.5 transition-all duration-200 cursor-default ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                className={`flex items-center md:gap-3 gap-2 md:p-3.5 p-1 rounded-xl bg-muted/60 border border-border/60 hover:border-primary/40 hover:bg-primary/5 hover:-translate-y-0.5 transition-all duration-200 cursor-default ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
                 style={{ transitionDelay: `${150 + i * 55}ms` }}
               >
                 <div className="p-1.5 rounded-lg bg-primary/10 flex-shrink-0">
@@ -107,46 +105,24 @@ export function SkillsSection() {
           </div>
         </div>
 
-        {/* ── Block 2: Standards ── */}
-        <div className={`md:mb-10 mb-8 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <div className="flex items-center gap-3 mb-5">
-            <div className="p-2 rounded-xl bg-primary/10 border border-primary/20">
-              <ClipboardList className="w-5 h-5 text-primary" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-base sm:text-lg text-foreground">Standards & Frameworks</h3>
-              <p className="text-xs text-muted-foreground">International safety regulations I work with daily</p>
-            </div>
-          </div>
-          <div className="flex flex-wrap gap-1.5 md:gap-2.5">
-            {standards.map((s, i) => (
-              <div
-                key={s}
-                className={`md:px-4 md:py-2 px-2 py-1 text-xs md:text-lg rounded-full border border-primary/25 bg-primary/8 text-primary md:font-medium hover:bg-primary/15 transition-all duration-200 cursor-default ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
-                style={{ transitionDelay: `${260 + i * 50}ms` }}
-              >
-                {s}
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* ── Block 3: Tech advantage ── */}
         <div className={`transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           {/* Callout banner */}
-          <div className="mb-6 p-4 sm:p-5 rounded-2xl border border-primary/25 bg-primary/5 flex items-start gap-4">
+          <div className="hover:scale-105 duration-1000 mb-6 p-4 sm:p-5 rounded-2xl border border-primary/64 bg-primary/5 flex items-start gap-4">
             <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/20 flex-shrink-0 mt-0.5">
               <Laptop className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h3 className="font-semibold text-base sm:text-lg text-foreground mb-1">
+              <h3 className="font-semibold text-base sm:text-lg text-foreground mb-1 ">
                 My Technology Advantage
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                I hold a <span className="text-foreground font-medium">Computer Science degree</span> alongside my safety qualifications.
-                This means I can build tools, automate paperwork, and create digital systems that make safety management
-                faster and easier —{" "}
-                <span className="text-foreground font-medium">something most safety officers simply cannot do.</span>
+                What makes me different from other HSE officers is my unique combination of{" "}
+                <span className="text-foreground font-medium">Safety and Technology skills</span>.
+                Along with professional safety qualifications, I also have a{" "}
+                <span className="text-foreground font-medium">Computer Science background</span>,
+                which helps me build digital systems, automate reporting, and make safety
+                management faster, smarter, and more efficient.
               </p>
             </div>
           </div>
@@ -156,7 +132,7 @@ export function SkillsSection() {
             {techImpact.map(({ icon: Icon, title, plain }, i) => (
               <div
                 key={title}
-                className={`group flex gap-4 p-5 rounded-2xl border border-border/60 bg-muted/40 hover:border-primary/40 hover:bg-background hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+                className={`group flex gap-4 p-5 rounded-2xl border border-primary/42 bg-muted/40 hover:border-primary/40 hover:bg-background hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
                 style={{ transitionDelay: `${400 + i * 80}ms` }}
               >
                 <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/20 flex-shrink-0 h-fit group-hover:bg-primary/20 transition-colors">

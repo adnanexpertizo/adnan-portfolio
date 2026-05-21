@@ -12,6 +12,7 @@ import {
   FaLinkedin,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import Image from "next/image";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -58,8 +59,13 @@ export function ContactSection() {
   const linkedin = "https://linkedin.com/in/adnanrafiq";
 
   return (
-    <section id="contact" className="py-20 bg-muted/50">
-      <div className="container lg:px-36 md:px-16 px-4 mx-auto">
+    <section id="contact" className="relative z-0 bg-background overflow-hidden">
+      {/* Background texture */}
+      <div className="absolute inset-0 z-2 pointer-events-none">
+        <Image src="/Background Noise.svg" alt="" fill className="object-cover opacity-60" priority />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_40%,var(--color-primary)_0%,transparent_70%)] opacity-[0.07] dark:opacity-[0.12]" />
+      </div>
+      <div className="container lg:px-36 md:px-16 px-4 mx-auto md:py-16 py-10">
         {/* Section Heading */}
         <div className="text-center mb-16">
           <h2 className="font-serif text-[20px] md:text-[26px] font-bold text-foreground mb-4">

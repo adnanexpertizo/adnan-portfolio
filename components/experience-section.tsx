@@ -58,9 +58,9 @@
       <section
         ref={sectionRef}
         id="experience"
-        className="overflow-hidden relative bg-background"
-      >
-       components/experience-section.tsx
+       className="relative py-10 sm:py-16 bg-muted/30 overflow-hidden">
+      {/* Decorative background accent */}
+      <div className="absolute top-0 right-0 w-72 h-72 lg:w-96 lg:h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none -translate-y-1/3 translate-x-1/4" />
         <div className="container py-28 z-7 lg:px-36 md:px-16 px-4 mx-auto relative">
           {/* Header */}
           <div className="text-center mb-10">

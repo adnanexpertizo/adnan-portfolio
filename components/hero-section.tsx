@@ -33,7 +33,7 @@ export function HeroSection() {
     newAudio.loop = true;
     newAudio.volume = 0.1;
     setAudio(newAudio);
-    newAudio.play().catch(() => {});
+    newAudio.play().catch(() => { });
     return () => { newAudio.pause(); newAudio.currentTime = 0; };
   }, []);
 
@@ -46,7 +46,7 @@ export function HeroSection() {
   const toggleMusic = async () => {
     if (!audio) return;
     if (isPlaying) { audio.pause(); setIsPlaying(false); }
-    else { await audio.play().catch(() => {}); setIsPlaying(true); }
+    else { await audio.play().catch(() => { }); setIsPlaying(true); }
   };
 
   const scrollToContact = () => {
@@ -74,38 +74,49 @@ export function HeroSection() {
     <section id="home" className="relative z-0 bg-background overflow-hidden">
       {/* Background texture */}
       <div className="absolute inset-0 z-2 pointer-events-none">
-                 <Image src="/Background Noise.svg" alt="" fill className="object-cover opacity-60" priority />
-                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_40%,var(--color-primary)_0%,transparent_70%)] opacity-[0.07] dark:opacity-[0.12]" />
-               </div>
+        <Image src="/Background Noise.svg" alt="" fill className="object-cover opacity-60" priority />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_40%,var(--color-primary)_0%,transparent_70%)] opacity-[0.07] dark:opacity-[0.12]" />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-8 lg:px-16 pt-24 pb-16 sm:pt-28 sm:pb-20">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-10">
-          
+
           {/* Left: Text */}
           <div
-            className={`flex-1 text-center lg:text-left transition-all duration-700 ease-out ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
+            className={`flex-1 text-center lg:text-left transition-all duration-700 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
           >
             {/* Eyebrow tag */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/8 text-primary text-xs font-medium mb-5 sm:mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/8 text-primary text-xs font-medium mb-3 sm:mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
               Available for Opportunities
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-4 leading-tight">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-2 leading-tight">
               {heroData.name}
             </h1>
 
             {/* Animated role */}
-            <p className="text-lg sm:text-xl font-semibold text-primary mb-3 min-h-[1.75rem]">
+            {/* <p className="text-lg sm:text-xl font-semibold text-primary mb-2 min-h-[1.75rem]">
               {typedText}
               <span className="animate-pulse text-primary/60">|</span>
-            </p>
+            </p> */}
 
-            <p className="text-sm sm:text-base text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-sm sm:text-base text-muted-foreground mb-4 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               {heroData.description}
             </p>
+            <div className="flex flex-wrap gap-6 mb-6 justify-center lg:justify-start">
+              {[
+                { label: "Years Experience", value: "5+" },
+                { label: "Certifications", value: "8+" },
+                { label: "Projects Completed", value: "30+" },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center lg:text-left">
+                  <p className="text-2xl sm:text-3xl font-bold text-primary">{stat.value}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">{stat.label}</p>
+                </div>
+              ))}
+            </div>
 
             {/* Ask modal */}
             <div className="flex justify-center lg:justify-start mb-5">
@@ -119,11 +130,10 @@ export function HeroSection() {
                   key={i}
                   size="lg"
                   variant={button.type === "primary" ? "default" : "outline"}
-                  className={`gap-2 text-sm font-medium px-6 transition-all duration-200 ${
-                    button.type === "primary"
-                      ? "shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:-translate-y-0.5"
-                      : "hover:-translate-y-0.5"
-                  }`}
+                  className={`gap-2 text-sm font-medium px-6 transition-all duration-200 ${button.type === "primary"
+                    ? "shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:-translate-y-0.5"
+                    : "hover:-translate-y-0.5"
+                    }`}
                   onClick={() => {
                     if (button.icon === "Download") handleDownloadCV();
                     else if (button.action === "scrollToContact") scrollToContact();
@@ -135,27 +145,12 @@ export function HeroSection() {
                 </Button>
               ))}
             </div>
-
-            {/* Stats strip */}
-            <div className="flex flex-wrap gap-6 mt-6 justify-center lg:justify-start">
-              {[
-                { label: "Years Experience", value: "5+" },
-                { label: "Certifications", value: "8+" },
-                { label: "Projects Completed", value: "30+" },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center lg:text-left">
-                  <p className="text-2xl sm:text-3xl font-bold text-primary">{stat.value}</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">{stat.label}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Right: Profile image */}
           <div
-            className={`flex-shrink-0 transition-all duration-700 delay-200 ease-out ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
+            className={`flex-shrink-0 transition-all duration-700 delay-200 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
           >
             <div className="relative">
               {/* Decorative rings */}
