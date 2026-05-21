@@ -71,16 +71,15 @@ export function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-background">
+    <section id="home" className="relative z-0 bg-background overflow-hidden">
       {/* Background texture */}
-      <div className="absolute inset-0 z-0 pointer-events-none ">
-        <Image src="/Background Noise.svg" alt="" fill className="object-cover opacity-60" priority />
-        {/* Subtle radial glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_40%,var(--color-primary)_0%,transparent_70%)] opacity-[0.07] dark:opacity-[0.12]" />
-      </div>
+      <div className="absolute inset-0 z-2 pointer-events-none">
+                 <Image src="/Background Noise.svg" alt="" fill className="object-cover opacity-60" priority />
+                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_40%,var(--color-primary)_0%,transparent_70%)] opacity-[0.07] dark:opacity-[0.12]" />
+               </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-8 lg:px-16 pt-24 pb-16 sm:pt-28 sm:pb-20">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-16">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-10">
           
           {/* Left: Text */}
           <div
@@ -109,7 +108,7 @@ export function HeroSection() {
             </p>
 
             {/* Ask modal */}
-            <div className="flex justify-center lg:justify-start mb-6">
+            <div className="flex justify-center lg:justify-start mb-5">
               <AskModal openModal={openModal} setOpenModal={setOpenModal} />
             </div>
 
@@ -138,7 +137,7 @@ export function HeroSection() {
             </div>
 
             {/* Stats strip */}
-            <div className="flex flex-wrap gap-6 mt-10 justify-center lg:justify-start">
+            <div className="flex flex-wrap gap-6 mt-6 justify-center lg:justify-start">
               {[
                 { label: "Years Experience", value: "5+" },
                 { label: "Certifications", value: "8+" },
@@ -163,7 +162,7 @@ export function HeroSection() {
               <div className="absolute inset-0 rounded-full border-2 border-primary/20 scale-110" />
               <div className="absolute inset-0 rounded-full border border-primary/10 scale-125" />
               {/* Image */}
-              <div className="relative w-52 h-52 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/10">
+              <div className="relative w-48 h-48  sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/10">
                 <Image
                   src={heroData.profileImage || "/placeholder.svg"}
                   alt={heroData.name}
@@ -185,33 +184,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-60 animate-bounce">
-        <div className="w-5 h-8 rounded-full border-2 border-muted-foreground flex items-start justify-center pt-1.5">
-          <div className="w-1 h-1.5 rounded-full bg-muted-foreground" />
-        </div>
-      </div>
-
-      {/* Floating buttons */}
-      {showFloating && (
-        <>
-          <button
-            onClick={toggleMusic}
-            className="fixed bottom-5 left-4 z-50 w-10 h-10 sm:w-12 sm:h-12 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center"
-            aria-label="Toggle background music"
-          >
-            {isPlaying ? <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" /> : <VolumeX className="w-4 h-4 sm:w-5 sm:h-5" />}
-          </button>
-          <button
-            onClick={handleWhatsApp}
-            className="fixed bottom-5 right-4 z-50 w-10 h-10 sm:w-12 sm:h-12 bg-[color:var(--color-success,#22c55e)] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center"
-            style={{ backgroundColor: "hsl(142 71% 45%)" }}
-            aria-label="Chat on WhatsApp"
-          >
-            <FaWhatsapp className="w-5 h-5 sm:w-6 sm:h-6" />
-          </button>
-        </>
-      )}
     </section>
   );
 }

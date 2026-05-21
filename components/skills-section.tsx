@@ -65,16 +65,12 @@ export function SkillsSection() {
 
   return (
     <section ref={sectionRef} id="skills" className="relative py-20 sm:py-28 bg-background overflow-hidden">
-      {/* Soft background glow */}
           <div className="absolute inset-0 z-0 pointer-events-none">
             <Image src="/Background Noise.svg" alt="" fill className="object-cover opacity-60" priority />
-            {/* Subtle radial glow */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_40%,var(--color-primary)_0%,transparent_70%)] opacity-[0.07] dark:opacity-[0.12]" />
           </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-8 lg:px-16">
-
-        {/* ── Header ── */}
         <div className={`text-center mb-14 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <span className="inline-block text-xs font-semibold text-primary uppercase tracking-widest mb-3">What I Bring</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">Skills & Expertise</h2>
@@ -99,7 +95,7 @@ export function SkillsSection() {
             {safetySkills.map(({ icon: Icon, label }, i) => (
               <div
                 key={label}
-                className={`flex items-center gap-3 p-3.5 rounded-xl bg-muted/60 border border-border/60 hover:border-primary/40 hover:bg-primary/5 hover:-translate-y-0.5 transition-all duration-200 cursor-default ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                className={`flex items-center md:gap-3 gap-2 md:p-3.5 p-2 rounded-xl bg-muted/60 border border-border/60 hover:border-primary/40 hover:bg-primary/5 hover:-translate-y-0.5 transition-all duration-200 cursor-default ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
                 style={{ transitionDelay: `${150 + i * 55}ms` }}
               >
                 <div className="p-1.5 rounded-lg bg-primary/10 flex-shrink-0">
@@ -112,7 +108,7 @@ export function SkillsSection() {
         </div>
 
         {/* ── Block 2: Standards ── */}
-        <div className={`mb-14 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+        <div className={`md:mb-10 mb-8 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div className="flex items-center gap-3 mb-5">
             <div className="p-2 rounded-xl bg-primary/10 border border-primary/20">
               <ClipboardList className="w-5 h-5 text-primary" />
@@ -122,11 +118,11 @@ export function SkillsSection() {
               <p className="text-xs text-muted-foreground">International safety regulations I work with daily</p>
             </div>
           </div>
-          <div className="flex flex-wrap gap-2.5">
+          <div className="flex flex-wrap gap-1.5 md:gap-2.5">
             {standards.map((s, i) => (
               <div
                 key={s}
-                className={`px-4 py-2 rounded-full border border-primary/25 bg-primary/8 text-primary text-sm font-medium hover:bg-primary/15 transition-all duration-200 cursor-default ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+                className={`md:px-4 md:py-2 px-2 py-1 text-xs md:text-lg rounded-full border border-primary/25 bg-primary/8 text-primary md:font-medium hover:bg-primary/15 transition-all duration-200 cursor-default ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
                 style={{ transitionDelay: `${260 + i * 50}ms` }}
               >
                 {s}

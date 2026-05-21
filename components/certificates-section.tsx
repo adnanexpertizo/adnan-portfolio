@@ -189,18 +189,18 @@ export function CertificatesSection() {
 
   return (
     <section ref={sectionRef} id="certificates" className="relative py-20 sm:py-28 bg-background overflow-hidden">
-      <div className="absolute w-full md:h-[900px] h-full z-5 overflow-hidden">
+      <div className="absolute w-full md:h-[900px] h-full z-0 overflow-hidden">
         <div className="relative w-full h-full">
           <Image
             src="/Background Noise.svg"
             alt="a;t"
             fill
-            className="object-cover w-full h-full hover:scale-105 transition-transform duration-500 ease-out"
+            className="object-cover w-full h-full hover:scale-105 z-5 transition-transform duration-500 ease-out"
           />
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
+      <div className="relative max-w-7xl mx-auto px-4 z-10 sm:px-8 lg:px-16">
 
         {/* Header */}
         <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
@@ -211,13 +211,13 @@ export function CertificatesSection() {
         </div>
 
         {/* Stats row */}
-        <div className={`flex flex-wrap justify-center gap-3 mb-10 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+        <div className={`flex flex-wrap justify-center md:gap-3 gap-1 mb-10 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
           {[
             { label: "Total Certificates", value: certificatesData.certificates.length },
             { label: "Currently Active", value: activeCount },
             { label: "Issuing Bodies", value: bodyCount },
           ].map((s) => (
-            <div key={s.label} className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-background border border-border/60 shadow-sm">
+            <div key={s.label} className="flex items-center gap-1 md:gap-2.5 md:px-4 md:py-2 py-1 px-2 rounded-full bg-background border border-border/60 shadow-sm">
               <span className="text-base font-bold text-primary">{s.value}</span>
               <span className="text-xs text-muted-foreground">{s.label}</span>
             </div>

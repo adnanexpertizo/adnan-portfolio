@@ -221,17 +221,11 @@ export function ProjectsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="projects" className="relative py-20 sm:py-28 bg-background overflow-hidden">
-       <div className="absolute w-full md:h-[900px] h-full z-5 overflow-hidden">
-                        <div className="relative w-full h-full">
-                          <Image
-                            src="/Background Noise.svg"
-                            alt="a;t"
-                            fill
-                            className="object-cover w-full h-full hover:scale-105 transition-transform duration-500 ease-out"
-                          />
-                        </div>
-                      </div>
+    <section ref={sectionRef} id="projects" className="relative z-0 py-20 sm:py-28 bg-background overflow-hidden">
+ <div className="absolute inset-0 z-2 pointer-events-none">
+            <Image src="/Background Noise.svg" alt="" fill className="object-cover opacity-60" priority />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_40%,var(--color-primary)_0%,transparent_70%)] opacity-[0.07] dark:opacity-[0.12]" />
+          </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-8 lg:px-16">
 
