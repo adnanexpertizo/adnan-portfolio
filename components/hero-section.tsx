@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download, Mail, Volume2, VolumeX } from "lucide-react";
+import { Download, Mail, Volume2, VolumeX, ArrowDown } from "lucide-react";
 import Image from "next/image";
 import heroData from "@/data/hero.json";
 import { AskModal } from "./AskModal";
@@ -10,7 +10,7 @@ import { createPortal } from "react-dom";
 import { FaWhatsapp } from "react-icons/fa";
 import { useTypewriter } from "./useTypewriter";
 
-/* ─── Floating buttons rendered in document.body via portal ─── */
+/* ─── Floating buttons via portal ─── */
 function FloatingButtons({
   isPlaying,
   onToggleMusic,
@@ -52,13 +52,13 @@ function FloatingButtons({
   );
 }
 
-/* ─── Hero Section ─── */
 export function HeroSection() {
-  const [openModal, setOpenModal]     = useState(false);
-  const [audio, setAudio]             = useState<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying]     = useState(false);
-  const [showFloating, setShowFloating] = useState(false);
-  const [mounted, setMounted]         = useState(false);
+  const [openModal, setOpenModal]         = useState(false);
+  const [audio, setAudio]                 = useState<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying]         = useState(false);
+  const [showFloating, setShowFloating]   = useState(false);
+  const [mounted, setMounted]             = useState(false);
+  const [showScrollHint, setShowScrollHint] = useState(false);
 
   const typedText = useTypewriter(
     [
@@ -73,12 +73,19 @@ export function HeroSection() {
 
   useEffect(() => {
     setMounted(true);
+    const t1 = setTimeout(() => setShowScrollHint(true), 3000);
+    const t2 = setTimeout(() => setShowScrollHint(false), 10000);
     const newAudio = new Audio("/interview.wav");
-    newAudio.loop   = true;
+    newAudio.loop = true;
     newAudio.volume = 0.1;
     setAudio(newAudio);
     newAudio.play().catch(() => {});
-    return () => { newAudio.pause(); newAudio.currentTime = 0; };
+    return () => {
+      newAudio.pause();
+      newAudio.currentTime = 0;
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
   }, []);
 
   useEffect(() => {
@@ -152,13 +159,7 @@ export function HeroSection() {
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-2 leading-tight">
                 {heroData.name}
               </h1>
-
-              {/* Typewriter */}
-              <p className="text-base sm:text-lg font-semibold text-primary mb-3 min-h-[1.75rem]">
-                {typedText}
-                <span className="animate-pulse text-primary/50">|</span>
-              </p>
-
+    
               <p className="text-sm sm:text-base text-muted-foreground mb-5 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 {heroData.description}
               </p>
@@ -210,10 +211,23 @@ export function HeroSection() {
             {/* ── Right: Profile image ── */}
             <div className={`flex-shrink-0 transition-all duration-700 delay-200 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
               <div className="relative">
-                <div className="absolute inset-0 rounded-full border-2 border-primary/20 scale-110" />
-                <div className="absolute inset-0 rounded-full border   border-primary/10 scale-125" />
 
-                <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/10">
+                {/* Outer ring — clockwise */}
+                <div
+                  className="absolute rounded-full border-2 border-dashed border-primary/30"
+                  style={{ inset: "-28px", animation: "orbit-cw 130s linear infinite" }}
+                />
+                {/* Inner ring — counter-clockwise */}
+                <div
+                  className="absolute rounded-full border-[2px] border-dashed border-primary/30"
+                  style={{ inset: "-52px", animation: "orbit-ccw 130s linear infinite" }}
+                />
+
+                {/* Glow behind image */}
+                <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl scale-110 pointer-events-none" />
+
+                {/* Photo */}
+                <div className="relative w-52 h-52 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-[360px] xl:h-[360px] rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
                   <Image
                     src={heroData.profileImage || "/placeholder.svg"}
                     alt={heroData.name}
@@ -224,21 +238,48 @@ export function HeroSection() {
                 </div>
 
                 {/* NEBOSH badge */}
-                <div className="absolute -bottom-2 -right-2 sm:bottom-4 sm:right-4 bg-card border border-border rounded-xl px-3 py-2 shadow-lg flex items-center gap-2">
-                  <span className="text-lg">🛡️</span>
+                <div className="absolute -bottom-3 -right-3 sm:bottom-3 sm:right-3 bg-card border border-border rounded-2xl px-3 py-2 shadow-xl flex items-center gap-2.5 hover:-translate-y-0.5 transition-transform">
+                  <span className="text-xl">🛡️</span>
                   <div>
-                    <p className="text-xs font-semibold text-foreground leading-none">NEBOSH</p>
-                    <p className="text-[10px] text-muted-foreground">Certified</p>
+                    <p className="text-xs font-bold text-foreground leading-none">NEBOSH</p>
+                    <p className="text-[10px] text-muted-foreground mt-0.5">Certified</p>
                   </div>
                 </div>
+
+                {/* Experience badge — top left */}
+                <div className="absolute -top-3 -left-3 sm:top-3 sm:left-3 bg-card border border-border rounded-2xl px-3 py-2 shadow-xl flex items-center gap-2.5 hover:-translate-y-0.5 transition-transform">
+                  <span className="text-xl">⭐</span>
+                  <div>
+                    <p className="text-xs font-bold text-foreground leading-none">5+ Years</p>
+                    <p className="text-[10px] text-muted-foreground mt-0.5">Experience</p>
+                  </div>
+                </div>
+
               </div>
             </div>
 
           </div>
         </div>
+
+        {/* Scroll hint */}
+        <div
+          className={`absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 transition-all duration-700 ${
+            showScrollHint ? "opacity-60 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"
+          }`}
+        >
+          <p className="text-[10px] font-medium text-muted-foreground uppercase tracking-widest">Scroll</p>
+          <div className="w-5 h-8 rounded-full border border-muted-foreground/40 flex items-start justify-center pt-1.5">
+            <div className="w-1 h-2 rounded-full bg-primary animate-bounce" />
+          </div>
+        </div>
+
+        {/* Spin keyframe */}
+        <style>{`
+          @keyframes orbit-cw  { from { transform: rotate(0deg);    } to { transform: rotate(360deg);  } }
+          @keyframes orbit-ccw { from { transform: rotate(0deg);    } to { transform: rotate(-360deg); } }
+        `}</style>
       </section>
 
-      {/* Floating buttons — rendered in document.body, above ALL sections */}
       {showFloating && (
         <FloatingButtons
           isPlaying={isPlaying}

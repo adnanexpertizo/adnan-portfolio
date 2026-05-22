@@ -64,7 +64,7 @@ export function AboutSection() {
           <span className="inline-block text-xs font-semibold text-primary uppercase tracking-widest mb-3">
             About Me
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground mb-4">
             {aboutData.title}
           </h2>
           <div className="w-12 h-1 bg-primary rounded-full" />

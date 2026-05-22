@@ -17,20 +17,20 @@ import certificatesData from "@/data/certificates.json";
 type Cert = (typeof certificatesData.certificates)[0];
 
 const categoryColors: Record<string, string> = {
-  "Health & Safety":    "bg-primary/10 text-primary border-primary/30",
+  "Health & Safety": "bg-primary/10 text-primary border-primary/30",
   "Safety Supervision": "bg-primary/10 text-primary border-primary/30",
-  "First Aid":          "bg-destructive/10 text-destructive border-destructive/30",
-  "Fire Safety":        "bg-destructive/10 text-destructive border-destructive/30",
-  "Height Safety":      "bg-primary/10 text-primary border-primary/30",
-  "Risk Management":    "bg-primary/10 text-primary border-primary/30",
-  "Investigation":      "bg-primary/10 text-primary border-primary/30",
+  "First Aid": "bg-destructive/10 text-destructive border-destructive/30",
+  "Fire Safety": "bg-destructive/10 text-destructive border-destructive/30",
+  "Height Safety": "bg-primary/10 text-primary border-primary/30",
+  "Risk Management": "bg-primary/10 text-primary border-primary/30",
+  "Investigation": "bg-primary/10 text-primary border-primary/30",
 };
 
 /* ─── Modal ─── */
 function CertificateModal({ cert, onClose }: { cert: Cert; onClose: () => void }) {
   const [orientation, setOrientation] = useState<"landscape" | "portrait" | "loading">("loading");
   const [loaded, setLoaded] = useState(false);
-  const [error, setError]   = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     setLoaded(false); setError(false); setOrientation("loading");
@@ -113,8 +113,8 @@ function CertificateModal({ cert, onClose }: { cert: Cert; onClose: () => void }
                 draggable={false}
                 className={`rounded-xl border border-border shadow-lg select-none transition-opacity duration-300
                   ${orientation === "landscape" ? "w-full h-auto object-contain" : ""}
-                  ${orientation === "portrait"  ? "max-h-[65vh] w-auto object-contain mx-auto" : ""}
-                  ${orientation === "loading"   ? "max-h-[60vh] w-auto object-contain" : ""}
+                  ${orientation === "portrait" ? "max-h-[65vh] w-auto object-contain mx-auto" : ""}
+                  ${orientation === "loading" ? "max-h-[60vh] w-auto object-contain" : ""}
                   ${loaded ? "opacity-100" : "opacity-0 absolute pointer-events-none"}
                 `}
               />
@@ -161,12 +161,12 @@ function CertificateModal({ cert, onClose }: { cert: Cert; onClose: () => void }
 
 /* ─── Section ─── */
 export function CertificatesSection() {
-  const [activeCert, setActiveCert]   = useState<Cert | null>(null);
+  const [activeCert, setActiveCert] = useState<Cert | null>(null);
   const [swiperReady, setSwiperReady] = useState(false);
-  const [isVisible, setIsVisible]     = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-  const prevRef    = useRef<HTMLButtonElement | null>(null);
-  const nextRef    = useRef<HTMLButtonElement | null>(null);
+  const prevRef = useRef<HTMLButtonElement | null>(null);
+  const nextRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => { setSwiperReady(true); }, []);
 
@@ -180,7 +180,7 @@ export function CertificatesSection() {
   }, []);
 
   const activeCount = certificatesData.certificates.filter((c) => c.status === "Active").length;
-  const bodyCount   = new Set(certificatesData.certificates.map((c) => c.issuingBody)).size;
+  const bodyCount = new Set(certificatesData.certificates.map((c) => c.issuingBody)).size;
 
   return (
     /* Same pattern as education: bg-background, no overflow-hidden, Image texture + z layers */
@@ -205,8 +205,8 @@ export function CertificatesSection() {
         <div className={`flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
           {[
             { label: "Total Certificates", value: certificatesData.certificates.length },
-            { label: "Currently Active",   value: activeCount },
-            { label: "Issuing Bodies",     value: bodyCount },
+            { label: "Currently Active", value: activeCount },
+            { label: "Issuing Bodies", value: bodyCount },
           ].map((s) => (
             <div key={s.label} className="flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border shadow-sm">
               <span className="text-base font-bold text-primary">{s.value}</span>
@@ -231,9 +231,9 @@ export function CertificatesSection() {
                 swiper.params.navigation.nextEl = nextRef.current;
               }}
               breakpoints={{
-                0:    { slidesPerView: 1 },
-                480:  { slidesPerView: 2, spaceBetween: 14 },
-                900:  { slidesPerView: 3, spaceBetween: 16 },
+                0: { slidesPerView: 1 },
+                480: { slidesPerView: 2, spaceBetween: 14 },
+                900: { slidesPerView: 3, spaceBetween: 16 },
                 1200: { slidesPerView: 4, spaceBetween: 20 },
               }}
               className="pb-2"
@@ -247,11 +247,11 @@ export function CertificatesSection() {
                       className="group relative h-full bg-card rounded-2xl border border-border hover:border-primary/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col cursor-pointer select-none"
                     >
                       {/* Top accent bar */}
-                      <div className="h-1 w-full rounded-t-2xl bg-gradient-to-r from-primary/40 via-primary to-primary/40 group-hover:from-primary group-hover:to-primary transition-all duration-500" />
+                      <div className="h-[2px] w-full bg-primary absolute top-5 left-0" />
 
                       <div className="flex flex-col flex-1 p-4 sm:p-5">
                         {/* Icon + counter */}
-                        <div className="flex items-start justify-between mb-4">
+                        <div className="flex mt-4 items-start justify-between mb-4">
                           <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                             <Award className="w-5 h-5 text-primary" />
                           </div>

@@ -71,7 +71,7 @@ export function SkillsSection() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-8 lg:px-16">
         <div className={`text-center mb-10 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <span className="inline-block text-xs font-semibold text-primary uppercase tracking-widest mb-3">What I Bring</span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">Skills & Expertise</h2>
+          <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground mb-4">Skills & Expertise</h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
             Strong safety fundamentals — and a technology edge that makes me more effective than the average safety officer.
           </p>
