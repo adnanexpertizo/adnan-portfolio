@@ -8,150 +8,156 @@
 
 /* ═══════════════════════════════════════════════════
    THEME: Deep Navy × Professional Teal
-   Authority + Trust + Modern Safety Professional
+   Light mode: clean white/slate
+   Dark mode:  high-contrast navy with visible cards
 ═══════════════════════════════════════════════════ */
 
 :root {
   /* Surfaces */
-  --background:          #f8fafc;
-  --foreground:          #0d1b2a;
-  --card:                #ffffff;
-  --card-foreground:     #0d1b2a;
-  --popover:             #ffffff;
-  --popover-foreground:  #0d1b2a;
+  --background:         #f8fafc;
+  --foreground:         #0d1b2a;
+  --card:               #ffffff;
+  --card-foreground:    #0d1b2a;
+  --popover:            #ffffff;
+  --popover-foreground: #0d1b2a;
 
   /* Brand */
-  --primary:             #0e7490;   /* Deep teal — professional, safety-coded */
-  --primary-foreground:  #f0fdff;
+  --primary:            #0e7490;
+  --primary-foreground: #f0fdff;
 
   /* Supporting */
-  --secondary:           #e8f4f8;
-  --bgcolor:             #eef4f7;
-  --secondary-foreground:#1e4a5c;
-  --muted:               #f0f6fa;
-  --muted-foreground:    #3d5a6b;
-  --accent:              #155e75;
-  --accent-foreground:   #f0fdff;
+  --secondary:          #e8f4f8;
+  --bgcolor:            #eef4f7;
+  --secondary-foreground: #1e4a5c;
+  --muted:              #f0f6fa;
+  --muted-foreground:   #3d5a6b;
+  --accent:             #155e75;
+  --accent-foreground:  #f0fdff;
 
   /* Destructive */
-  --destructive:         #b91c1c;
+  --destructive:        #b91c1c;
   --destructive-foreground: #fff5f5;
 
   /* Utility */
-  --border:              #cde4ed;
-  --input:               #cde4ed;
-  --ring:                #0e7490;
-  --radius:              0.625rem;
+  --border:             #cde4ed;
+  --input:              #cde4ed;
+  --ring:               #0e7490;
+  --radius:             0.625rem;
 
   /* Charts */
-  --chart-1:             #0e7490;
-  --chart-2:             #0891b2;
-  --chart-3:             #22d3ee;
-  --chart-4:             #155e75;
-  --chart-5:             #a5f3fc;
+  --chart-1: #0e7490;
+  --chart-2: #0891b2;
+  --chart-3: #22d3ee;
+  --chart-4: #155e75;
+  --chart-5: #a5f3fc;
 
   /* Sidebar */
-  --sidebar:             #f0f8fc;
-  --sidebar-foreground:  #0d1b2a;
-  --sidebar-primary:     #0e7490;
+  --sidebar:                    #f0f8fc;
+  --sidebar-foreground:         #0d1b2a;
+  --sidebar-primary:            #0e7490;
   --sidebar-primary-foreground: #f0fdff;
-  --sidebar-accent:      #e0f2f8;
+  --sidebar-accent:             #e0f2f8;
   --sidebar-accent-foreground:  #1e4a5c;
-  --sidebar-border:      #cde4ed;
-  --sidebar-ring:        #0e7490;
+  --sidebar-border:             #cde4ed;
+  --sidebar-ring:               #0e7490;
 }
 
 .dark {
-  /* Surfaces — deep navy */
-  --background:          #0a1628;
-  --foreground:          #e2f4f8;
-  --card:                #112035;
-  --card-foreground:     #e2f4f8;
-  --popover:             #112035;
-  --popover-foreground:  #e2f4f8;
+  /* ── Main surfaces — clearly differentiated ── */
+  --background:         #0d1f35;   /* page bg — deep navy */
+  --foreground:         #e8f4f8;   /* primary text — near white */
 
-  /* Brand — lighter teal for dark bg */
-  --primary:             #22d3ee;
-  --primary-foreground:  #0a1628;
+  /* Cards sit visibly ABOVE the page background */
+  --card:               #172d45;   /* card bg — noticeably lighter than bg */
+  --card-foreground:    #e8f4f8;
+  --popover:            #172d45;
+  --popover-foreground: #e8f4f8;
 
-  /* Supporting */
-  --secondary:           #142840;
-  --bgcolor:             #0a1628cc;
-  --secondary-foreground:#a5e8f5;
-  --muted:               #142030;
-  --muted-foreground:    #94c5d6;
-  --accent:              #0891b2;
-  --accent-foreground:   #0a1628;
+  /* Brand — bright enough to glow on dark */
+  --primary:            #22d3ee;
+  --primary-foreground: #0d1f35;
+
+  /* Supporting surfaces — clearly visible on bg */
+  --secondary:          #1a3550;
+  --bgcolor:            #0d1f35;
+  --secondary-foreground: #a5e8f5;
+
+  /* Muted — used for subtle card backgrounds, MUST be visible */
+  --muted:              #1e3a52;   /* lifted enough to see card boundaries */
+  --muted-foreground:   #93c5d6;   /* text inside muted areas — readable */
+
+  --accent:             #0891b2;
+  --accent-foreground:  #e8f4f8;
 
   /* Destructive */
-  --destructive:         #ef4444;
-  --destructive-foreground: #fff5f5;
+  --destructive:        #f87171;
+  --destructive-foreground: #0d1f35;
 
   /* Utility */
-  --border:              #1e3a50;
-  --input:               #1e3a50;
-  --ring:                #22d3ee;
+  --border:             #254a66;   /* borders clearly visible on dark bg */
+  --input:              #254a66;
+  --ring:               #22d3ee;
 
   /* Charts */
-  --chart-1:             #22d3ee;
-  --chart-2:             #0891b2;
-  --chart-3:             #67e8f9;
-  --chart-4:             #0e7490;
-  --chart-5:             #a5f3fc;
+  --chart-1: #22d3ee;
+  --chart-2: #0891b2;
+  --chart-3: #67e8f9;
+  --chart-4: #0e7490;
+  --chart-5: #a5f3fc;
 
   /* Sidebar */
-  --sidebar:             #0e1e30;
-  --sidebar-foreground:  #e2f4f8;
-  --sidebar-primary:     #22d3ee;
-  --sidebar-primary-foreground: #0a1628;
-  --sidebar-accent:      #142840;
+  --sidebar:                    #112236;
+  --sidebar-foreground:         #e8f4f8;
+  --sidebar-primary:            #22d3ee;
+  --sidebar-primary-foreground: #0d1f35;
+  --sidebar-accent:             #1a3550;
   --sidebar-accent-foreground:  #a5e8f5;
-  --sidebar-border:      #1e3a50;
-  --sidebar-ring:        #22d3ee;
+  --sidebar-border:             #254a66;
+  --sidebar-ring:               #22d3ee;
 }
 
 /* ── Theme token mapping ─────────────────────────── */
 @theme inline {
-  --color-background:              var(--background);
-  --color-bgcolor:                 var(--bgcolor);
-  --color-foreground:              var(--foreground);
-  --color-card:                    var(--card);
-  --color-card-foreground:         var(--card-foreground);
-  --color-popover:                 var(--popover);
-  --color-popover-foreground:      var(--popover-foreground);
-  --color-primary:                 var(--primary);
-  --color-primary-foreground:      var(--primary-foreground);
-  --color-secondary:               var(--secondary);
-  --color-secondary-foreground:    var(--secondary-foreground);
-  --color-muted:                   var(--muted);
-  --color-muted-foreground:        var(--muted-foreground);
-  --color-accent:                  var(--accent);
-  --color-accent-foreground:       var(--accent-foreground);
-  --color-destructive:             var(--destructive);
-  --color-destructive-foreground:  var(--destructive-foreground);
-  --color-border:                  var(--border);
-  --color-input:                   var(--input);
-  --color-ring:                    var(--ring);
-  --color-chart-1:                 var(--chart-1);
-  --color-chart-2:                 var(--chart-2);
-  --color-chart-3:                 var(--chart-3);
-  --color-chart-4:                 var(--chart-4);
-  --color-chart-5:                 var(--chart-5);
+  --color-background:             var(--background);
+  --color-bgcolor:                var(--bgcolor);
+  --color-foreground:             var(--foreground);
+  --color-card:                   var(--card);
+  --color-card-foreground:        var(--card-foreground);
+  --color-popover:                var(--popover);
+  --color-popover-foreground:     var(--popover-foreground);
+  --color-primary:                var(--primary);
+  --color-primary-foreground:     var(--primary-foreground);
+  --color-secondary:              var(--secondary);
+  --color-secondary-foreground:   var(--secondary-foreground);
+  --color-muted:                  var(--muted);
+  --color-muted-foreground:       var(--muted-foreground);
+  --color-accent:                 var(--accent);
+  --color-accent-foreground:      var(--accent-foreground);
+  --color-destructive:            var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border:                 var(--border);
+  --color-input:                  var(--input);
+  --color-ring:                   var(--ring);
+  --color-chart-1:                var(--chart-1);
+  --color-chart-2:                var(--chart-2);
+  --color-chart-3:                var(--chart-3);
+  --color-chart-4:                var(--chart-4);
+  --color-chart-5:                var(--chart-5);
   --radius-sm:  calc(var(--radius) - 4px);
   --radius-md:  calc(var(--radius) - 2px);
   --radius-lg:  var(--radius);
   --radius-xl:  calc(var(--radius) + 4px);
-  --color-sidebar:                       var(--sidebar);
-  --color-sidebar-foreground:            var(--sidebar-foreground);
-  --color-sidebar-primary:               var(--sidebar-primary);
-  --color-sidebar-primary-foreground:    var(--sidebar-primary-foreground);
-  --color-sidebar-accent:                var(--sidebar-accent);
-  --color-sidebar-accent-foreground:     var(--sidebar-accent-foreground);
-  --color-sidebar-border:                var(--sidebar-border);
-  --color-sidebar-ring:                  var(--sidebar-ring);
+  --color-sidebar:                      var(--sidebar);
+  --color-sidebar-foreground:           var(--sidebar-foreground);
+  --color-sidebar-primary:              var(--sidebar-primary);
+  --color-sidebar-primary-foreground:   var(--sidebar-primary-foreground);
+  --color-sidebar-accent:               var(--sidebar-accent);
+  --color-sidebar-accent-foreground:    var(--sidebar-accent-foreground);
+  --color-sidebar-border:               var(--sidebar-border);
+  --color-sidebar-ring:                 var(--sidebar-ring);
 }
 
-/* ── Base layer ─────────────────────────────────── */
+/* ── Base ─────────────────────────────────────────── */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -163,7 +169,7 @@
   }
 }
 
-/* ── Global transitions ────────────────────────── */
+/* ── Global transitions ───────────────────────────── */
 *,
 *::before,
 *::after {
@@ -176,51 +182,36 @@
     opacity          0.3s ease;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
-/* Interactive elements */
 button,
 a,
 [role="button"],
 .cursor-pointer {
   transition: all 0.2s ease;
 }
-
 button:hover,
 a:hover,
-[role="button"]:hover {
-  transform: translateY(-1px);
-}
+[role="button"]:hover { transform: translateY(-1px); }
 
 button:active,
 a:active,
-[role="button"]:active {
-  transform: translateY(0) scale(0.98);
-}
+[role="button"]:active { transform: translateY(0) scale(0.98); }
 
-/* Prevent double-translate on group cards */
-.group:hover {
-  transform: translateY(-2px);
-}
+.group:hover { transform: translateY(-2px); }
 
-/* ── Animations ────────────────────────────────── */
+/* ── Animations ───────────────────────────────────── */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease forwards;
-}
+.animate-fade-in-up { animation: fadeInUp 0.6s ease forwards; }
 
 @keyframes scaleIn {
   from { opacity: 0; transform: scale(0.95); }
   to   { opacity: 1; transform: scale(1); }
 }
-.animate-scale-in {
-  animation: scaleIn 0.3s ease forwards;
-}
+.animate-scale-in { animation: scaleIn 0.3s ease forwards; }
 
 @keyframes gradientShift {
   0%   { background-position: 0%   50%; }
@@ -241,32 +232,20 @@ a:active,
   0%, 100% { opacity: 0.7; }
   50%      { opacity: 1; }
 }
-.animate-pulse-slow {
-  animation: pulse-slow 4s ease-in-out infinite;
-}
+.animate-pulse-slow { animation: pulse-slow 4s ease-in-out infinite; }
 
-/* Stagger helpers */
 .animate-stagger-1 { animation-delay: 0.1s; }
 .animate-stagger-2 { animation-delay: 0.2s; }
 .animate-stagger-3 { animation-delay: 0.3s; }
 
-/* Scale utilities */
-.scale-102          { transform: scale(1.02); }
-.hover\:scale-102:hover { transform: scale(1.02); }
-
-/* ── Custom scrollbar ──────────────────────────── */
+/* ── Scrollbar ────────────────────────────────────── */
 .scrollbar-thin::-webkit-scrollbar       { width: 5px; }
 .scrollbar-thin::-webkit-scrollbar-thumb {
   background-color: var(--primary);
-  opacity: 0.4;
   border-radius: 8px;
 }
-.scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  opacity: 0.7;
-}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover { opacity: 0.8; }
 
-/* Swiper nav button override — inherit theme */
+/* Swiper arrows */
 .swiper-button-next,
-.swiper-button-prev {
-  color: var(--primary) !important;
-}
+.swiper-button-prev { color: var(--primary) !important; }

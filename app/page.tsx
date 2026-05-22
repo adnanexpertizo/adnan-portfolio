@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { Navbar } from "@/components/navbar";
 import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
@@ -8,13 +7,20 @@ import { SkillsSection } from "@/components/skills-section";
 import { EducationSection } from "@/components/education-section";
 import { CertificatesSection } from "@/components/certificates-section";
 import { ExperienceSection } from "@/components/experience-section";
-import { ProjectsSection } from "@/components/projects-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative bg-bgcolor overflow-hidden">
+    /*
+      CRITICAL FIX: removed overflow-hidden from <main>.
+      overflow-hidden on a parent clips fixed/absolute children
+      and creates a new stacking context that breaks z-index on
+      modals and any section using position:absolute fill images.
+      Use overflow-x-hidden only (prevents horizontal scroll)
+      without cutting off vertically positioned content.
+    */
+    <main className="min-h-screen relative bg-bgcolor">
       <Navbar />
       <HeroSection />
       <AboutSection />
