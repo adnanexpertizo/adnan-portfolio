@@ -12,14 +12,7 @@ import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    /*
-      CRITICAL FIX: removed overflow-hidden from <main>.
-      overflow-hidden on a parent clips fixed/absolute children
-      and creates a new stacking context that breaks z-index on
-      modals and any section using position:absolute fill images.
-      Use overflow-x-hidden only (prevents horizontal scroll)
-      without cutting off vertically positioned content.
-    */
+
     <main className="min-h-screen relative bg-bgcolor">
       <Navbar />
       <HeroSection />
