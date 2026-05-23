@@ -146,7 +146,7 @@ export function HeroSection() {
             <div className={`flex-1 text-center lg:text-left transition-all duration-700 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
 
               {/* Eyebrow */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-medium mb-3 sm:mb-4">
+              <div className="inline-flex items-center gap-2 mt-5 md:mt-auto px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-medium mb-3 sm:mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                 Available for Opportunities
               </div>
@@ -166,7 +166,7 @@ export function HeroSection() {
               {/* Description */}
               <p className="text-sm sm:text-base text-muted-foreground mb-5 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 {heroData.description}
-              </p>
+              </p>  
 
               {/* Ask modal */}
               <div className="flex justify-center lg:justify-start mb-5">
@@ -205,19 +205,19 @@ export function HeroSection() {
                 {/* Outer ring — clockwise */}
                 <div
                   className="absolute rounded-full border-2 border-dashed border-primary/30"
-                  style={{ inset: "-28px", animation: "orbit-cw 130s linear infinite" }}
+                  style={{ inset: "-20px", animation: "orbit-cw 130s linear infinite" }}
                 />
                 {/* Inner ring — counter-clockwise */}
                 <div
                   className="absolute rounded-full border-[2px] border-dashed border-primary/30"
-                  style={{ inset: "-52px", animation: "orbit-ccw 130s linear infinite" }}
+                  style={{ inset: "-40px", animation: "orbit-ccw 130s linear infinite" }}
                 />
 
                 {/* Glow behind image */}
                 <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl scale-110 pointer-events-none" />
 
                 {/* Photo */}
-                <div className="relative w-52 h-52 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-[360px] xl:h-[360px] rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
+                <div className="relative w-52 h-52 sm:w-64 sm:h-64  lg:w-80 lg:h-80 xl:w-[360px] xl:h-[360px] pt-5 md:mt-auto rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
                   <Image
                     src={heroData.profileImage || "/placeholder.svg"}
                     alt={heroData.name}
@@ -228,38 +228,38 @@ export function HeroSection() {
                 </div>
 
                 {/* NEBOSH badge — top right */}
-                <div className="absolute -top-3 -right-3 sm:top-3 sm:right-3 bg-card border border-border rounded-xl px-2 py-1 shadow-xl flex items-center gap-1 hover:-translate-y-0.5 transition-transform">
+                <div className="absolute -top-3 -right-4 md:-right-3 sm:top-3 sm:right-3 bg-card border border-border rounded-xl px-2 py-1 shadow-xl flex items-center gap-1 hover:-translate-y-0.5 transition-transform">
                   <span className="text-lg">🛡️</span>
                   <div>
-                    <p className="text-xs font-medium text-foreground leading-none">NEBOSH</p>
-                    <p className="text-[10px] text-muted-foreground mt-0.5">Certified</p>
+                    <p className="md:text-[10px] text-[8px] font-medium text-foreground leading-none">NEBOSH</p>
+                    <p className="md:text-[10px] text-[7px] text-muted-foreground mt-0.5">Certified</p>
                   </div>
                 </div>
 
                 {/* Experience badge — top left */}
-                <div className="absolute -top-3 -left-3 sm:top-3 sm:left-3 bg-card border border-border rounded-xl px-2 py-1 shadow-xl flex items-center gap-1 hover:-translate-y-0.5 transition-transform">
+                <div className="absolute -top-3 -left-4 md:-left-3 sm:top-3 sm:left-3 bg-card border border-border rounded-xl px-2 py-1 shadow-xl flex items-center gap-1 hover:-translate-y-0.5 transition-transform">
                   <span className="text-lg">⭐</span>
                   <div>
-                    <p className="text-xs font-medium text-foreground leading-none">5+ Years</p>
-                    <p className="text-[10px] text-muted-foreground mt-0.5">Experience</p>
+                    <p className="md:text-[10px] text-[8px] font-medium text-foreground leading-none">5+ Years</p>
+                    <p className="md:text-[10px] text-[7px] text-muted-foreground mt-0.5">Experience</p>
                   </div>
                 </div>
 
                 {/* Education badge — bottom left */}
-                <div className="absolute -bottom-3 -left-3 sm:bottom-3 sm:left-3 bg-card border border-border rounded-xl px-2 py-1 shadow-xl flex items-center gap-1 hover:-translate-y-0.5 transition-transform">
+                <div className="absolute -bottom-3 -left-4 md:-left-3 sm:bottom-3 sm:left-3 bg-card border border-border rounded-xl px-2 py-1 shadow-xl flex items-center gap-1 hover:-translate-y-0.5 transition-transform">
                   <span className="text-lg">🎓</span>
                   <div>
-                    <p className="text-xs font-medium text-foreground leading-none">Graduated</p>
-                    <p className="text-[10px] text-muted-foreground mt-0.5">Computer Science</p>
+                    <p className="md:text-[10px] text-[8px] font-medium text-foreground leading-none">Graduated</p>
+                    <p className="md:text-[10px] text-[7px] text-muted-foreground mt-0.5">Computer Science</p>
                   </div>
                 </div>
 
                 {/* Certifications badge — bottom right */}
-                <div className="absolute -bottom-3 -right-3 sm:bottom-3 sm:right-3 bg-card border border-border rounded-xl px-2 py-1 shadow-xl flex items-center gap-1 hover:-translate-y-0.5 transition-transform">
+                <div className="absolute -bottom-3 -right-4 md:-right-3 sm:bottom-3 sm:right-3 bg-card border border-border rounded-xl px-2 py-1 shadow-xl flex items-center gap-1 hover:-translate-y-0.5 transition-transform">
                   <span className="text-lg">📜</span>
                   <div>
-                    <p className="text-xs font-medium text-foreground leading-none">8+ Certifications</p>
-                    <p className="text-[10px] text-muted-foreground mt-0.5">Safety & Health</p>
+                    <p className="md:text-[10px] text-[8px] font-medium text-foreground leading-none">8+ Certifications</p>
+                    <p className="md:text-[10px] text-[7px] text-muted-foreground mt-0.5">Safety & Health</p>
                   </div>
                 </div>
 
