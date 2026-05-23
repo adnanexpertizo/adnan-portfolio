@@ -6,117 +6,118 @@
 @import "swiper/css/navigation";
 @import "swiper/css/autoplay";
 
-/* ═══════════════════════════════════════════════════
-   THEME: Deep Navy × Professional Teal
-   Light mode: clean white/slate
-   Dark mode:  high-contrast navy with visible cards
-═══════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════
+   THEME: Corporate Navy × Electric Blue
+   Used by ISO, HSE UK, NEBOSH, OSHA websites.
+   The colour language of professional safety bodies worldwide.
+   Light: crisp white, deep navy text, electric blue brand
+   Dark:  near-black navy, vivid sky-blue brand
+═══════════════════════════════════════════════════════════ */
 
 :root {
-  /* Surfaces */
-  --background:         #f8fafc;
-  --foreground:         #0d1b2a;
-  --card:               #ffffff;
-  --card-foreground:    #0d1b2a;
-  --popover:            #ffffff;
-  --popover-foreground: #0d1b2a;
+  /* ── Surfaces ── */
+  --background:          #f5f7fa;
+  --foreground:          #0f172a;
+  --card:                #ffffff;
+  --card-foreground:     #0f172a;
+  --popover:             #ffffff;
+  --popover-foreground:  #0f172a;
 
-  /* Brand */
-  --primary:            #0e7490;
-  --primary-foreground: #f0fdff;
+  /* ── Brand — strong corporate blue ── */
+  --primary:             #1d4ed8;
+  --primary-foreground:  #eff6ff;
 
-  /* Supporting */
-  --secondary:          #e8f4f8;
-  --bgcolor:            #eef4f7;
-  --secondary-foreground: #1e4a5c;
-  --muted:              #f0f6fa;
-  --muted-foreground:   #3d5a6b;
-  --accent:             #155e75;
-  --accent-foreground:  #f0fdff;
+  /* ── Accent — sky blue for hover/highlights ── */
+  --accent:              #0284c7;
+  --accent-foreground:   #f0f9ff;
 
-  /* Destructive */
-  --destructive:        #b91c1c;
+  /* ── Supporting ── */
+  --secondary:           #dbeafe;
+  --bgcolor:             #eff6ff;
+  --secondary-foreground:#1e3a8a;
+  --muted:               #f1f5f9;
+  --muted-foreground:    #475569;
+
+  /* ── Destructive ── */
+  --destructive:         #dc2626;
   --destructive-foreground: #fff5f5;
 
-  /* Utility */
-  --border:             #cde4ed;
-  --input:              #cde4ed;
-  --ring:               #0e7490;
-  --radius:             0.625rem;
+  /* ── Utility ── */
+  --border:              #bfdbfe;
+  --input:               #bfdbfe;
+  --ring:                #1d4ed8;
+  --radius:              0.625rem;
 
-  /* Charts */
-  --chart-1: #0e7490;
-  --chart-2: #0891b2;
-  --chart-3: #22d3ee;
-  --chart-4: #155e75;
-  --chart-5: #a5f3fc;
+  /* ── Charts ── */
+  --chart-1: #1d4ed8;
+  --chart-2: #0284c7;
+  --chart-3: #38bdf8;
+  --chart-4: #0f172a;
+  --chart-5: #93c5fd;
 
-  /* Sidebar */
-  --sidebar:                    #f0f8fc;
-  --sidebar-foreground:         #0d1b2a;
-  --sidebar-primary:            #0e7490;
-  --sidebar-primary-foreground: #f0fdff;
-  --sidebar-accent:             #e0f2f8;
-  --sidebar-accent-foreground:  #1e4a5c;
-  --sidebar-border:             #cde4ed;
-  --sidebar-ring:               #0e7490;
+  /* ── Sidebar ── */
+  --sidebar:                     #eff6ff;
+  --sidebar-foreground:          #0f172a;
+  --sidebar-primary:             #1d4ed8;
+  --sidebar-primary-foreground:  #eff6ff;
+  --sidebar-accent:              #dbeafe;
+  --sidebar-accent-foreground:   #1e3a8a;
+  --sidebar-border:              #bfdbfe;
+  --sidebar-ring:                #1d4ed8;
 }
 
 .dark {
-  /* ── Main surfaces — clearly differentiated ── */
-  --background:         #0d1f35;   /* page bg — deep navy */
-  --foreground:         #e8f4f8;   /* primary text — near white */
+  /* ── Surfaces ── */
+  --background:          #080f1e;
+  --foreground:          #e8f0fe;
+  --card:                #101c33;
+  --card-foreground:     #e8f0fe;
+  --popover:             #101c33;
+  --popover-foreground:  #e8f0fe;
 
-  /* Cards sit visibly ABOVE the page background */
-  --card:               #172d45;   /* card bg — noticeably lighter than bg */
-  --card-foreground:    #e8f4f8;
-  --popover:            #172d45;
-  --popover-foreground: #e8f4f8;
+  /* ── Brand — vivid sky blue on dark ── */
+  --primary:             #60a5fa;
+  --primary-foreground:  #080f1e;
 
-  /* Brand — bright enough to glow on dark */
-  --primary:            #22d3ee;
-  --primary-foreground: #0d1f35;
+  /* ── Accent ── */
+  --accent:              #38bdf8;
+  --accent-foreground:   #080f1e;
 
-  /* Supporting surfaces — clearly visible on bg */
-  --secondary:          #1a3550;
-  --bgcolor:            #0d1f35;
-  --secondary-foreground: #a5e8f5;
+  /* ── Supporting ── */
+  --secondary:           #172554;
+  --bgcolor:             #080f1e;
+  --secondary-foreground:#bfdbfe;
+  --muted:               #1e3352;
+  --muted-foreground:    #93c5fd;
 
-  /* Muted — used for subtle card backgrounds, MUST be visible */
-  --muted:              #1e3a52;   /* lifted enough to see card boundaries */
-  --muted-foreground:   #93c5d6;   /* text inside muted areas — readable */
+  /* ── Destructive ── */
+  --destructive:         #f87171;
+  --destructive-foreground: #080f1e;
 
-  --accent:             #0891b2;
-  --accent-foreground:  #e8f4f8;
+  /* ── Utility ── */
+  --border:              #1e3a6e;
+  --input:               #1e3a6e;
+  --ring:                #60a5fa;
 
-  /* Destructive */
-  --destructive:        #f87171;
-  --destructive-foreground: #0d1f35;
+  /* ── Charts ── */
+  --chart-1: #60a5fa;
+  --chart-2: #38bdf8;
+  --chart-3: #93c5fd;
+  --chart-4: #0284c7;
+  --chart-5: #bae6fd;
 
-  /* Utility */
-  --border:             #254a66;   /* borders clearly visible on dark bg */
-  --input:              #254a66;
-  --ring:               #22d3ee;
-
-  /* Charts */
-  --chart-1: #22d3ee;
-  --chart-2: #0891b2;
-  --chart-3: #67e8f9;
-  --chart-4: #0e7490;
-  --chart-5: #a5f3fc;
-
-  /* Sidebar */
-  --sidebar:                    #112236;
-  --sidebar-foreground:         #e8f4f8;
-  --sidebar-primary:            #22d3ee;
-  --sidebar-primary-foreground: #0d1f35;
-  --sidebar-accent:             #1a3550;
-  --sidebar-accent-foreground:  #a5e8f5;
-  --sidebar-border:             #254a66;
-  --sidebar-ring:               #22d3ee;
+  /* ── Sidebar ── */
+  --sidebar:                     #0c1628;
+  --sidebar-foreground:          #e8f0fe;
+  --sidebar-primary:             #60a5fa;
+  --sidebar-primary-foreground:  #080f1e;
+  --sidebar-accent:              #172554;
+  --sidebar-accent-foreground:   #bfdbfe;
+  --sidebar-border:              #1e3a6e;
+  --sidebar-ring:                #60a5fa;
 }
 
-/* ── Theme token mapping ─────────────────────────── */
+/* ── Theme token mapping ──────────────────────────── */
 @theme inline {
   --color-background:             var(--background);
   --color-bgcolor:                var(--bgcolor);
@@ -184,20 +185,9 @@
 
 html { scroll-behavior: smooth; }
 
-button,
-a,
-[role="button"],
-.cursor-pointer {
-  transition: all 0.2s ease;
-}
-button:hover,
-a:hover,
-[role="button"]:hover { transform: translateY(-1px); }
-
-button:active,
-a:active,
-[role="button"]:active { transform: translateY(0) scale(0.98); }
-
+button, a, [role="button"], .cursor-pointer { transition: all 0.2s ease; }
+button:hover, a:hover, [role="button"]:hover { transform: translateY(-1px); }
+button:active, a:active, [role="button"]:active { transform: translateY(0) scale(0.98); }
 .group:hover { transform: translateY(-2px); }
 
 /* ── Animations ───────────────────────────────────── */
@@ -213,14 +203,8 @@ a:active,
 }
 .animate-scale-in { animation: scaleIn 0.3s ease forwards; }
 
-@keyframes gradientShift {
-  0%   { background-position: 0%   50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0%   50%; }
-}
-
 @keyframes gradient-x {
-  0%, 100% { background-position: 0%   50%; }
+  0%, 100% { background-position: 0% 50%; }
   50%      { background-position: 100% 50%; }
 }
 .animate-gradient-x {
@@ -240,12 +224,9 @@ a:active,
 
 /* ── Scrollbar ────────────────────────────────────── */
 .scrollbar-thin::-webkit-scrollbar       { width: 5px; }
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: var(--primary);
-  border-radius: 8px;
-}
+.scrollbar-thin::-webkit-scrollbar-thumb { background-color: var(--primary); border-radius: 8px; }
 .scrollbar-thin::-webkit-scrollbar-thumb:hover { opacity: 0.8; }
 
-/* Swiper arrows */
+/* ── Swiper ───────────────────────────────────────── */
 .swiper-button-next,
 .swiper-button-prev { color: var(--primary) !important; }

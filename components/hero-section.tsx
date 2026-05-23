@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download, Mail, Volume2, VolumeX, ArrowDown } from "lucide-react";
+import { Download, Mail, Volume2, VolumeX } from "lucide-react";
 import Image from "next/image";
 import heroData from "@/data/hero.json";
 import { AskModal } from "./AskModal";
@@ -26,19 +26,14 @@ function FloatingButtons({
 
   return createPortal(
     <>
-      {/* Music toggle — bottom left */}
       <button
         onClick={onToggleMusic}
         className="fixed bottom-5 left-4 w-10 h-10 sm:w-12 sm:h-12 bg-primary text-primary-foreground rounded-full shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-transform duration-200"
         style={{ zIndex: 9999 }}
         aria-label="Toggle background music"
       >
-        {isPlaying
-          ? <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />
-          : <VolumeX className="w-4 h-4 sm:w-5 sm:h-5" />}
+        {isPlaying ? <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" /> : <VolumeX className="w-4 h-4 sm:w-5 sm:h-5" />}
       </button>
-
-      {/* WhatsApp — bottom right */}
       <button
         onClick={onWhatsApp}
         className="fixed bottom-5 right-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-xl flex items-center justify-center text-white hover:scale-110 active:scale-95 transition-transform duration-200"
@@ -53,20 +48,20 @@ function FloatingButtons({
 }
 
 export function HeroSection() {
-  const [openModal, setOpenModal]         = useState(false);
-  const [audio, setAudio]                 = useState<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying]         = useState(false);
-  const [showFloating, setShowFloating]   = useState(false);
-  const [mounted, setMounted]             = useState(false);
+  const [openModal, setOpenModal]           = useState(false);
+  const [audio, setAudio]                   = useState<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying]           = useState(false);
+  const [showFloating, setShowFloating]     = useState(false);
+  const [mounted, setMounted]               = useState(false);
   const [showScrollHint, setShowScrollHint] = useState(false);
 
   const typedText = useTypewriter(
     [
-      "Safety Officer",
+      "a Safety Officer",
       "NEBOSH Certified",
-      "Risk Assessment Expert",
       "IOSH & OSHA Certified",
-      "Fire Safety Specialist",
+      "a Risk Assessment Expert",
+      "a Fire Safety Specialist",
     ],
     80
   );
@@ -107,8 +102,8 @@ export function HeroSection() {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href      = heroData.cvLink || "/Adnan_Rafiq_CV.pdf";
-    link.download  = "Adnan_Rafiq_CV.pdf";
+    link.href = heroData.cvLink || "/Adnan_Rafiq_CV.pdf";
+    link.download = "Adnan_Rafiq_CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -156,27 +151,22 @@ export function HeroSection() {
                 Available for Opportunities
               </div>
 
+              {/* Name */}
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-2 leading-tight">
                 {heroData.name}
               </h1>
-    
+
+              {/* ── Typewriter — "I am ..." ── */}
+              <p className="text-base sm:text-lg font-semibold text-primary mb-4 min-h-[1.75rem]">
+                <span className="text-destructive">I am </span>
+                {typedText}
+                <span className="animate-pulse text-primary/60">|</span>
+              </p>
+
+              {/* Description */}
               <p className="text-sm sm:text-base text-muted-foreground mb-5 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 {heroData.description}
               </p>
-
-              {/* Stats */}
-              <div className="flex flex-wrap gap-6 mb-6 justify-center lg:justify-start">
-                {[
-                  { label: "Years Experience",   value: "5+" },
-                  { label: "Certifications",     value: "8+" },
-                  { label: "Projects Completed", value: "30+" },
-                ].map((stat) => (
-                  <div key={stat.label} className="text-center lg:text-left">
-                    <p className="text-2xl sm:text-3xl font-bold text-primary">{stat.value}</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
 
               {/* Ask modal */}
               <div className="flex justify-center lg:justify-start mb-5">
@@ -237,21 +227,39 @@ export function HeroSection() {
                   />
                 </div>
 
-                {/* NEBOSH badge */}
-                <div className="absolute -bottom-3 -right-3 sm:bottom-3 sm:right-3 bg-card border border-border rounded-2xl px-3 py-2 shadow-xl flex items-center gap-2.5 hover:-translate-y-0.5 transition-transform">
-                  <span className="text-xl">🛡️</span>
+                {/* NEBOSH badge — top right */}
+                <div className="absolute -top-3 -right-3 sm:top-3 sm:right-3 bg-card border border-border rounded-xl px-2 py-1 shadow-xl flex items-center gap-1 hover:-translate-y-0.5 transition-transform">
+                  <span className="text-lg">🛡️</span>
                   <div>
-                    <p className="text-xs font-bold text-foreground leading-none">NEBOSH</p>
+                    <p className="text-xs font-medium text-foreground leading-none">NEBOSH</p>
                     <p className="text-[10px] text-muted-foreground mt-0.5">Certified</p>
                   </div>
                 </div>
 
                 {/* Experience badge — top left */}
-                <div className="absolute -top-3 -left-3 sm:top-3 sm:left-3 bg-card border border-border rounded-2xl px-3 py-2 shadow-xl flex items-center gap-2.5 hover:-translate-y-0.5 transition-transform">
-                  <span className="text-xl">⭐</span>
+                <div className="absolute -top-3 -left-3 sm:top-3 sm:left-3 bg-card border border-border rounded-xl px-2 py-1 shadow-xl flex items-center gap-1 hover:-translate-y-0.5 transition-transform">
+                  <span className="text-lg">⭐</span>
                   <div>
-                    <p className="text-xs font-bold text-foreground leading-none">5+ Years</p>
+                    <p className="text-xs font-medium text-foreground leading-none">5+ Years</p>
                     <p className="text-[10px] text-muted-foreground mt-0.5">Experience</p>
+                  </div>
+                </div>
+
+                {/* Education badge — bottom left */}
+                <div className="absolute -bottom-3 -left-3 sm:bottom-3 sm:left-3 bg-card border border-border rounded-xl px-2 py-1 shadow-xl flex items-center gap-1 hover:-translate-y-0.5 transition-transform">
+                  <span className="text-lg">🎓</span>
+                  <div>
+                    <p className="text-xs font-medium text-foreground leading-none">Graduated</p>
+                    <p className="text-[10px] text-muted-foreground mt-0.5">Computer Science</p>
+                  </div>
+                </div>
+
+                {/* Certifications badge — bottom right */}
+                <div className="absolute -bottom-3 -right-3 sm:bottom-3 sm:right-3 bg-card border border-border rounded-xl px-2 py-1 shadow-xl flex items-center gap-1 hover:-translate-y-0.5 transition-transform">
+                  <span className="text-lg">📜</span>
+                  <div>
+                    <p className="text-xs font-medium text-foreground leading-none">8+ Certifications</p>
+                    <p className="text-[10px] text-muted-foreground mt-0.5">Safety & Health</p>
                   </div>
                 </div>
 
@@ -273,10 +281,10 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Spin keyframe */}
+        {/* Orbit keyframes */}
         <style>{`
-          @keyframes orbit-cw  { from { transform: rotate(0deg);    } to { transform: rotate(360deg);  } }
-          @keyframes orbit-ccw { from { transform: rotate(0deg);    } to { transform: rotate(-360deg); } }
+          @keyframes orbit-cw  { from { transform: rotate(0deg);   } to { transform: rotate(360deg);  } }
+          @keyframes orbit-ccw { from { transform: rotate(0deg);   } to { transform: rotate(-360deg); } }
         `}</style>
       </section>
 
