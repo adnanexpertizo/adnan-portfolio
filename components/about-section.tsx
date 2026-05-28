@@ -35,7 +35,7 @@ export function AboutSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="relative py-16 sm:py-20 bg-muted/30 overflow-hidden">
+    <section ref={sectionRef} id="about" className="relative py-16 sm:py-20  bg-muted/30 overflow-hidden">
       {/* Decorative glow */}
       <div className="absolute top-0 right-0 w-72 h-72 lg:w-96 lg:h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none -translate-y-1/3 translate-x-1/4" />
 

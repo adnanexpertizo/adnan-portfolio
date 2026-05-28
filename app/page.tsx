@@ -13,7 +13,7 @@ import { Footer } from "@/components/footer";
 export default function Home() {
   return (
 
-    <main className="min-h-screen relative bg-bgcolor">
+    <main className=" relative bg-bgcolor">
       <Navbar />
       <HeroSection />
       <AboutSection />
