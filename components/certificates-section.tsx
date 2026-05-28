@@ -83,7 +83,7 @@ function CertificateModal({ cert, onClose }: { cert: Cert; onClose: () => void }
   return (
     /* Overlay — starts below navbar (pt accounts for nav height) */
     <div
-      className="fixed inset-0 z-[150] flex items-center justify-center px-3 pt-20 pb-4 sm:pt-24 sm:pb-6"
+      className="fixed inset-0 z-[999] flex items-center justify-center px-3 pt-6 pb-4 sm:pt-10 sm:pb-6 border border-red-700"
       style={{ backgroundColor: "rgba(0,0,0,0.72)", backdropFilter: "blur(14px)" }}
       onClick={(e) => e.target === e.currentTarget && onClose()}
       role="dialog"
@@ -94,7 +94,7 @@ function CertificateModal({ cert, onClose }: { cert: Cert; onClose: () => void }
         style={{ maxHeight: "calc(100dvh - 104px)" }}
       >
         {/* ── Header ── */}
-        <div className="flex items-center gap-3 px-4 sm:px-5 py-3.5 border-b border-border flex-shrink-0">
+        <div className="flex items-center gap-3 px-4 sm:px-3 py-3.5 border-b border-border flex-shrink-0">
           <div className="p-2 rounded-xl bg-primary/10 border border-primary/20 flex-shrink-0">
             <Award className="w-4 h-4 text-primary" />
           </div>
@@ -114,7 +114,7 @@ function CertificateModal({ cert, onClose }: { cert: Cert; onClose: () => void }
         {/* ── Scrollable image area ── */}
         <div className="flex-1 overflow-y-auto overscroll-contain min-h-0 bg-background/50">
           {!error ? (
-            <div className="flex items-center justify-center p-4 sm:p-6 min-h-[180px] relative">
+            <div className="flex items-center justify-center p-2 sm:p-3 min-h-[180px] border border-red-600 relative">
               {!loaded && (
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5">
                   <div className="w-7 h-7 border-2 border-primary border-t-transparent rounded-full animate-spin" />
@@ -129,11 +129,9 @@ function CertificateModal({ cert, onClose }: { cert: Cert; onClose: () => void }
                 draggable={false}
                 className={`rounded-xl border border-border/60 shadow-md select-none transition-opacity duration-300
                   ${!loaded ? "opacity-0 absolute pointer-events-none" : "opacity-100"}
-                  ${orientation === "landscape"
-                    ? "w-full h-auto object-contain"
-                    : "max-h-[55vh] w-auto object-contain mx-auto"
-                  }
-                `}
+  
+               max-h-auto w-auto object-contain mx-auto `}
+
               />
             </div>
           ) : (
