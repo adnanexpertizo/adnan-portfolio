@@ -11,9 +11,9 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative py-16 sm:py-20 bg-muted/30 overflow-hidden">
+    <footer className="relative  bg-muted/30 overflow-hidden">
       {/* Decorative background accent */}
-      <div className="absolute top-0 right-0 w-72 h-72 lg:w-96 lg:h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none -translate-y-1/3 translate-x-1/4" />
+      {/* <div className="absolute top-0 right-0 w-72 h-full lg:w-96 lg:h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none -translate-y-1/3 translate-x-1/4" /> */}
       <div className="container lg:px-36 md:px-16 px-4 mx-auto  py-10 md:py-12 relative z-10">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           {/* Left Side: Name and Title */}
