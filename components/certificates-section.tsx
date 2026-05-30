@@ -83,7 +83,7 @@ function CertificateModal({ cert, onClose }: { cert: Cert; onClose: () => void }
   return (
     /* Overlay — starts below navbar (pt accounts for nav height) */
     <div
-      className="fixed inset-0 z-[999] flex items-center justify-center px-3 pt-6 pb-4 sm:pt-10 sm:pb-6 border border-red-700"
+      className="fixed inset-0 z-[999] flex items-center justify-center px-3 pt-6 pb-4 sm:pt-10 sm:pb-6"
       style={{ backgroundColor: "rgba(0,0,0,0.72)", backdropFilter: "blur(14px)" }}
       onClick={(e) => e.target === e.currentTarget && onClose()}
       role="dialog"
@@ -114,7 +114,7 @@ function CertificateModal({ cert, onClose }: { cert: Cert; onClose: () => void }
         {/* ── Scrollable image area ── */}
         <div className="flex-1 overflow-y-auto overscroll-contain min-h-0 bg-background/50">
           {!error ? (
-            <div className="flex items-center justify-center p-2 sm:p-3 min-h-[180px] border border-red-600 relative">
+            <div className="flex items-center justify-center p-2 sm:p-3 min-h-[180px] relative">
               {!loaded && (
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5">
                   <div className="w-7 h-7 border-2 border-primary border-t-transparent rounded-full animate-spin" />
@@ -184,7 +184,7 @@ function CertCard({ cert, index, total, onClick }: {
   return (
     <div
       onClick={onClick}
-      className="group h-full bg-card rounded-2xl border border-border hover:border-primary/40 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col cursor-pointer select-none overflow-hidden"
+      className="group h-full bg-muted/30 rounded-2xl border border-border hover:border-primary/40 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col cursor-pointer select-none overflow-hidden"
     >
       {/* Solid top accent */}
       <div className="h-[3px] w-full bg-primary flex-shrink-0" />
@@ -234,7 +234,7 @@ function CertCard({ cert, index, total, onClick }: {
         {/* Row 5: View button — always at bottom */}
         <button
           onClick={(e) => { e.stopPropagation(); onClick(); }}
-          className="mt-auto w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-semibold border border-border bg-background text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200 group-hover:border-primary/30"
+          className="hover:cursor-pointer mt-auto w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-semibold border border-border bg-background text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200 group-hover:border-primary/30"
         >
           <Eye className="w-3.5 h-3.5" />
           View Certificate

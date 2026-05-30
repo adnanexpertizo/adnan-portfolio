@@ -9,11 +9,11 @@ import { CertificatesSection } from "@/components/certificates-section";
 import { ExperienceSection } from "@/components/experience-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
+import { WorkAuthorizationSection } from "@/components/work-authorization-section";
 
 export default function Home() {
   return (
-
-    <main className=" relative bg-bgcolor">
+    <main className="min-h-screen relative bg-bgcolor overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <AboutSection />
@@ -21,6 +21,7 @@ export default function Home() {
       <SkillsSection />
       <EducationSection />
       <ExperienceSection />
+      <WorkAuthorizationSection />
       <ContactSection />
       <Footer />
     </main>

@@ -1,0 +1,67 @@
+{
+  "title": "Work Authorization & Legal Status",
+  "subtitle": "Fully authorized to work in the Kingdom of Saudi Arabia with all documentation valid and compliant with Saudi labor law.",
+  "country": "Saudi Arabia",
+  "flag": "🇸🇦",
+  "status": "Cleared to Work",
+  "documents": [
+    {
+      "id": "iqama",
+      "label": "Iqama",
+      "fullName": "Resident Identity Card (Iqama)",
+      "icon": "IdCard",
+      "status": "Valid",
+      "issuedBy": "Ministry of Interior, KSA",
+      "note": "Legal resident ID for expatriate workers in Saudi Arabia",
+      "color": "green"
+    },
+    {
+      "id": "visa",
+      "label": "Work Visa",
+      "fullName": "Saudi Arabia Work Visa",
+      "icon": "Stamp",
+      "status": "Valid",
+      "issuedBy": "Saudi Embassy",
+      "note": "Authorized to work legally in the Kingdom of Saudi Arabia",
+      "color": "green"
+    },
+    {
+      "id": "qiwa",
+      "label": "Qiwa",
+      "fullName": "Qiwa Platform Registration",
+      "icon": "Monitor",
+      "status": "Registered",
+      "issuedBy": "Ministry of Human Resources, KSA",
+      "note": "Registered on Qiwa — Saudi Arabia's official labor platform for employment contracts",
+      "color": "green"
+    },
+    {
+      "id": "passport",
+      "label": "Passport",
+      "fullName": "International Passport",
+      "icon": "BookOpen",
+      "status": "Valid",
+      "issuedBy": "Government of Pakistan",
+      "note": "Valid international travel document",
+      "color": "green"
+    }
+  ],
+  "highlights": [
+    {
+      "icon": "CheckCircle",
+      "text": "No sponsorship required to start"
+    },
+    {
+      "icon": "CheckCircle",
+      "text": "Immediately available to join"
+    },
+    {
+      "icon": "CheckCircle",
+      "text": "Compliant with Saudi Nitaqat program"
+    },
+    {
+      "icon": "CheckCircle",
+      "text": "Labor contract registered on Qiwa"
+    }
+  ]
+}

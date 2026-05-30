@@ -6,18 +6,19 @@ import heroData from "@/data/hero.json";
 import Image from "next/image";
 
 const navItems = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#certificates", label: "Certs" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
+  { href: "#home",          label: "Home" },
+  { href: "#about",         label: "About" },
+  { href: "#skills",        label: "Skills" },
+  { href: "#certificates",  label: "Certs" },
+  { href: "#experience",    label: "Experience" },
+  { href: "#authorization", label: "Visa Status" },
+  { href: "#contact",       label: "Contact" },
 ];
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled]             = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection]       = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,15 +65,15 @@ export function Navbar() {
           </button>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-1 lg:gap-2">
+          <div className="hidden md:flex items-center gap-0.5 lg:gap-1">
             {navItems.map((item) => {
-              const id = item.href.replace("#", "");
+              const id       = item.href.replace("#", "");
               const isActive = activeSection === id;
               return (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className={`relative px-3 lg:px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                  className={`relative px-2.5 lg:px-3 py-2 text-xs lg:text-sm font-medium rounded-lg transition-all duration-200 hover:cursor-pointer ${
                     isActive
                       ? "text-primary"
                       : "text-foreground/70 hover:text-foreground"
@@ -85,7 +86,7 @@ export function Navbar() {
                 </button>
               );
             })}
-            <div className="ml-3 pl-3 border-l border-border/60">
+            <div className="ml-2 pl-2 border-l border-border/60">
               <ThemeToggle />
             </div>
           </div>
@@ -99,21 +100,9 @@ export function Navbar() {
               aria-label="Toggle menu"
               aria-expanded={isMobileMenuOpen}
             >
-              <span
-                className={`block w-5 h-0.5 bg-foreground rounded-full transition-all duration-300 ${
-                  isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
-                }`}
-              />
-              <span
-                className={`block w-5 h-0.5 bg-foreground rounded-full transition-all duration-300 ${
-                  isMobileMenuOpen ? "opacity-0" : ""
-                }`}
-              />
-              <span
-                className={`block w-5 h-0.5 bg-foreground rounded-full transition-all duration-300 ${
-                  isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
-                }`}
-              />
+              <span className={`block w-5 h-0.5 bg-foreground rounded-full transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block w-5 h-0.5 bg-foreground rounded-full transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : ""}`} />
+              <span className={`block w-5 h-0.5 bg-foreground rounded-full transition-all duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
             </button>
           </div>
         </div>
@@ -122,12 +111,12 @@ export function Navbar() {
       {/* Mobile menu */}
       <div
         className={`md:hidden transition-all duration-300 overflow-hidden ${
-          isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          isMobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="bg-background/98 backdrop-blur-xl border-t border-border/60 px-4 py-3">
           {navItems.map((item) => {
-            const id = item.href.replace("#", "");
+            const id       = item.href.replace("#", "");
             const isActive = activeSection === id;
             return (
               <button
