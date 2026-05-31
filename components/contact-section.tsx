@@ -193,7 +193,7 @@ export function ContactSection() {
           </div>
 
           {/* Right Side: Contact Form */}
-          <Card className="border-2 border-border/60 dark:border-border/80 shadow-lg bg-muted/40 backdrop-blur-sm">
+          <Card className="border-2 border-border/60 dark:border-border/80 shadow-lg  bg-background backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="font-serif text-[16px] md:text-xl">
                 Send a Message

@@ -101,7 +101,7 @@ export function EducationSection() {
               </div>
 
               {/* Card */}
-              <Card className="flex-1 group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-border/60 hover:border-primary/40 bg-card shadow-sm overflow-hidden">
+              <Card className="flex-1 group hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 border border-border/60 hover:border-primary/40 bg-muted/30 shadow-sm overflow-hidden">
                 <div className="h-1 w-full bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
 
                 <CardContent className="p-6">

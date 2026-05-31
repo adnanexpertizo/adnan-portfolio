@@ -83,7 +83,7 @@ export function WorkAuthorizationSection() {
 
         {/* ── Status banner ── */}
         <div className={`mb-10 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>
-          <div className="relative overflow-hidden rounded-2xl border border-emerald-500/20 bg-card shadow-sm">
+          <div className="relative overflow-hidden rounded-2xl border border-emerald-500/20 bg-muted/30  shadow-lg">
             {/* green left strip */}
             <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 to-emerald-600" />
 
@@ -105,7 +105,7 @@ export function WorkAuthorizationSection() {
               </div>
 
               {/* Divider */}
-              <div className="hidden sm:block w-px self-stretch bg-border/60" />
+              <div className="hidden sm:block w-px self-stretch bg-muted/30" />
 
               {/* Highlights */}
               <div className="flex flex-wrap gap-x-6 gap-y-2.5 flex-1 justify-center sm:justify-start">
@@ -148,7 +148,7 @@ export function WorkAuthorizationSection() {
 
                 return (
                   <SwiperSlide key={doc.id} className="h-auto py-2">
-                    <div className={`group h-full bg-card rounded-2xl border border-border hover:border-primary/40 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col cursor-pointer select-none overflow-hidden`}>
+                    <div className={`group h-full bg-muted/30 rounded-2xl border border-border hover:border-primary/40 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 flex flex-col cursor-pointer select-none overflow-hidden`}>
 
                       {/* Gradient top bar */}
                       <div className={`h-[3px] w-full bg-gradient-to-r ${st.bar} flex-shrink-0`} />

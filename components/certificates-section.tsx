@@ -184,7 +184,7 @@ function CertCard({ cert, index, total, onClick }: {
   return (
     <div
       onClick={onClick}
-      className="group h-full bg-muted/30 rounded-2xl border border-border hover:border-primary/40 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col cursor-pointer select-none overflow-hidden"
+      className="group h-full bg-muted/30 rounded-2xl border border-border hover:border-primary/40 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 flex flex-col cursor-pointer select-none overflow-hidden"
     >
       {/* Solid top accent */}
       <div className="h-[3px] w-full bg-primary flex-shrink-0" />
@@ -234,7 +234,7 @@ function CertCard({ cert, index, total, onClick }: {
         {/* Row 5: View button — always at bottom */}
         <button
           onClick={(e) => { e.stopPropagation(); onClick(); }}
-          className="hover:cursor-pointer mt-auto w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-semibold border border-border bg-background text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200 group-hover:border-primary/30"
+          className="hover:cursor-pointer mt-auto w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-semibold border border-border bg-background text-muted-foreground hover:bg-background/80 hover:text-bg-background/60 hover:border-primary transition-all duration-200 group-hover:border-primary/30"
         >
           <Eye className="w-3.5 h-3.5" />
           View Certificate
