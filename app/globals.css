@@ -138,7 +138,7 @@
 }
 
 /* ── Global transitions ───────────────────────────── */
-*,
+/* *,
 *::before,
 *::after {
   transition:
@@ -148,14 +148,18 @@
     box-shadow       0.2s ease,
     transform        0.2s ease,
     opacity          0.3s ease;
-}
-
+} */
+/* .no-transition,
+.no-transition *,
+.no-transition *::before,
+.no-transition *::after {
+  transition: none !important;
+  animation: none !important;
+} */
 html { scroll-behavior: smooth; }
 
-button, a, [role="button"], .cursor-pointer { transition: all 0.2s ease; }
-button:hover, a:hover, [role="button"]:hover { transform: translateY(-1px); }
-button:active, a:active, [role="button"]:active { transform: translateY(0) scale(0.98); }
-.group:hover { transform: translateY(-2px); }
+/* ── Global transitions ───────────────────────────── */
+html { scroll-behavior: smooth; }
 
 /* ── Animations ───────────────────────────────────── */
 @keyframes fadeInUp {
@@ -197,3 +201,14 @@ button:active, a:active, [role="button"]:active { transform: translateY(0) scale
 /* ── Swiper ───────────────────────────────────────── */
 .swiper-button-next,
 .swiper-button-prev { color: var(--primary) !important; }
+/* ── Docs page: disable layout-affecting transitions ── */
+.docs-page *,
+.docs-page *::before,
+.docs-page *::after {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease !important;
+  animation: none !important;
+}
+.docs-page button:hover,
+.docs-page a:hover {
+  transform: none !important;
+}
