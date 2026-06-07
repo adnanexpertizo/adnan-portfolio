@@ -6,6 +6,7 @@ import { Source_Sans_3, Playfair_Display, Rubik } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Suspense } from "react"
+import { Navbar } from "@/components/navbar"
 
 const sourceSans = Source_Sans_3({
   subsets: ["latin"],
@@ -74,8 +75,10 @@ export default function RootLayout({
       <body
         suppressHydrationWarning
         className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${sourceSans.variable} ${playfairDisplay.variable} ${rubik.variable}`}
-      >
-        <Suspense fallback={null}>{children}</Suspense>
+      > 
+        <Suspense fallback={null}>
+          {children}
+          </Suspense>
         <Analytics />
       </body>
     </html>

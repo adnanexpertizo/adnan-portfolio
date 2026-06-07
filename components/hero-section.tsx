@@ -10,7 +10,6 @@ import { createPortal } from "react-dom";
 import { FaWhatsapp } from "react-icons/fa";
 import { useTypewriter } from "./useTypewriter";
 
-/* ─── Floating buttons via portal ─── */
 function FloatingButtons({
   isPlaying,
   onToggleMusic,
@@ -266,18 +265,6 @@ export function HeroSection() {
               </div>
             </div>
 
-          </div>
-        </div>
-
-        {/* Scroll hint */}
-        <div
-          className={`absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 transition-all duration-700 ${
-            showScrollHint ? "opacity-60 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"
-          }`}
-        >
-          <p className="text-[10px] font-medium text-muted-foreground uppercase tracking-widest">Scroll</p>
-          <div className="w-5 h-8 rounded-full border border-muted-foreground/40 flex items-start justify-center pt-1.5">
-            <div className="w-1 h-2 rounded-full bg-primary animate-bounce" />
           </div>
         </div>
 
