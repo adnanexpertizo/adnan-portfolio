@@ -102,7 +102,7 @@ export function HeroSection() {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
     link.href = heroData.cvLink || "/Adnan_Rafiq_CV.pdf";
-    link.download = "Adnan_Rafiq_CV.pdf";
+    link.download = "Adnan_Rafiq_Safety-Officer-CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
