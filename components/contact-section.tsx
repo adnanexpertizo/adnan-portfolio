@@ -12,7 +12,6 @@ import {
   FaLinkedin,
   FaMapMarkerAlt,
 } from "react-icons/fa";
-import Image from "next/image";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -39,7 +38,7 @@ export function ContactSection() {
     }));
   };
 
-  // ✅ WhatsApp logic (mobile + desktop support)
+  // WhatsApp logic (mobile + desktop support)
   const handleWhatsAppClick = () => {
     const phoneNumber = "923077522229";
     const message = encodeURIComponent(
@@ -58,12 +57,40 @@ export function ContactSection() {
   const location = "Saudi Arabia";
   const linkedin = "https://linkedin.com/in/adnanrafiq";
 
+  const contactItems = [
+    {
+      key: "email",
+      icon: FaEnvelope,
+      label: "Email",
+      value: email,
+      href: `mailto:${email}`,
+      iconClass: "text-primary",
+    },
+    {
+      key: "location",
+      icon: FaMapMarkerAlt,
+      label: "Location",
+      value: location,
+      href: undefined,
+      iconClass: "text-primary",
+    },
+    {
+      key: "linkedin",
+      icon: FaLinkedin,
+      label: "LinkedIn",
+      value: linkedin.replace("https://", ""),
+      href: linkedin,
+      iconClass: "text-primary",
+    },
+  ];
+
   return (
     <section id="contact" className="relative z-0 bg-muted/30 overflow-hidden">
-      {/* Background texture */}
-      
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_40%,var(--color-primary)_0%,transparent_70%)] opacity-[0.07] dark:opacity-[0.12]" />
-      <div className="container lg:px-36 md:px-16 px-4 mx-auto md:py-16 py-10">
+      {/* Background texture — pointer-events-none so it never intercepts
+          clicks or text selection on the content above it */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_40%,var(--color-primary)_0%,transparent_70%)] opacity-[0.07] dark:opacity-[0.12]" />
+
+      <div className="container lg:px-36 md:px-16 px-4 mx-auto md:py-16 py-10 relative">
         {/* Section Heading */}
         <div className="text-center mb-16">
           <h2 className="font-serif text-[20px] md:text-[26px] font-bold text-foreground mb-4">
@@ -71,154 +98,125 @@ export function ContactSection() {
           </h2>
           <p className="text-[12px] md:text-[14px] text-muted-foreground max-w-2xl mx-auto text-pretty">
             Feel free to reach out for collaborations, opportunities, or any
-            safety and development inquiries. I’ll respond as soon as possible.
+            safety and development inquiries. I’ll respond as soon as
+            possible.
           </p>
         </div>
 
         {/* Grid Layout */}
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
           {/* Left Side: Contact Info */}
-          <div className="space-y-8">
-            {/* Desktop version */}
-            <div className="hidden md:block space-y-6">
-              {/* Email */}
-              <div className="flex items-center">
-                <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4">
-                  <FaEnvelope className="text-primary text-[22px]" />
-                </div>
-                <div>
-                  <p className="font-medium text-foreground">Email</p>
-                  <a
-                    href={`mailto:${email}`}
-                    className="text-muted-foreground text-[13px] md:text-[14px] hover:text-primary transition-colors"
-                  >
-                    {email}
-                  </a>
-                </div>
-              </div>
+          <div className="flex flex-col h-full">
+            <ul className="divide-y divide-border/60 border-t border-b border-border/60">
+              {contactItems.map(({ key, icon: Icon, label, value, href, iconClass }) => {
+                const content = (
+                  <div className="group flex items-center gap-4 py-5">
+                    <Icon className={`shrink-0 text-[18px] ${iconClass}`} />
+                    <div className="min-w-0">
+                      <p className="text-[13px] uppercase tracking-wide text-muted-foreground/70">
+                        {label}
+                      </p>
+                      <p
+                        className={`text-[15px] text-foreground truncate ${
+                          href ? "group-hover:text-primary transition-colors" : ""
+                        }`}
+                      >
+                        {value}
+                      </p>
+                    </div>
+                  </div>
+                );
 
-              {/* WhatsApp */}
-              <div className="flex items-center cursor-pointer">
-                <div
-                  onClick={handleWhatsAppClick}
-                  className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4 hover:bg-[#25D366]/30 transition"
-                >
-                  <FaWhatsapp className="text-[#25D366] text-[24px]" />
-                </div>
-                <div>
-                  <p className="font-medium text-foreground flex items-center gap-2">
-                    WhatsApp
-                    <button
-                      type="button"
-                      onClick={() => setShowNumber(!showNumber)}
-                      className="focus:outline-none"
-                    >
-                      {showNumber ? (
-                        <EyeOff className="w-4 h-4 text-muted-foreground hover:text-primary transition" />
-                      ) : (
-                        <Eye className="w-4 h-4 text-muted-foreground hover:text-primary transition" />
-                      )}
-                    </button>
-                  </p>
+                return (
+                  <li key={key}>
+                    {href ? (
+                      <a
+                        href={href}
+                        target={href.startsWith("http") ? "_blank" : undefined}
+                        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      >
+                        {content}
+                      </a>
+                    ) : (
+                      content
+                    )}
+                  </li>
+                );
+              })}
+
+              {/* WhatsApp row — kept separate for the reveal/hide toggle */}
+              <li>
+                <div className="group flex items-center gap-4 py-5">
                   <button
+                    type="button"
                     onClick={handleWhatsAppClick}
-                    className="text-[13px] md:text-[14px] text-muted-foreground hover:text-green-600 transition-colors"
+                    aria-label="Message on WhatsApp"
+                    className="shrink-0"
                   >
-                    {showNumber ? "0307 7522229" : "•••••••••••"}
+                    <FaWhatsapp className="text-[19px] text-[#25D366]" />
                   </button>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[13px] uppercase tracking-wide text-muted-foreground/70">
+                      WhatsApp
+                    </p>
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={handleWhatsAppClick}
+                        className="text-[15px] text-foreground hover:text-[#25D366] transition-colors"
+                      >
+                        {showNumber ? "+92 307 7522229" : "Tap to reveal number"}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setShowNumber(!showNumber)}
+                        aria-label={showNumber ? "Hide number" : "Show number"}
+                        className="text-muted-foreground hover:text-primary transition-colors focus:outline-none"
+                      >
+                        {showNumber ? (
+                          <EyeOff className="w-4 h-4" />
+                        ) : (
+                          <Eye className="w-4 h-4" />
+                        )}
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </li>
+            </ul>
 
-              {/* Location */}
-              <div className="flex items-center">
-                <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4">
-                  <FaMapMarkerAlt className="text-primary text-[22px]" />
-                </div>
-                <div>
-                  <p className="font-medium text-foreground">Location</p>
-                  <p className="text-muted-foreground text-[13px] md:text-[14px]">
-                    {location}
-                  </p>
-                </div>
-              </div>
-
-              {/* LinkedIn */}
-              <div className="flex items-center">
-                <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mr-4">
-                  <FaLinkedin className="text-primary text-[22px]" />
-                </div>
-                <div>
-                  <p className="font-medium text-foreground">LinkedIn</p>
-                  <a
-                    href={linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground text-[13px] md:text-[14px] hover:text-primary transition-colors"
-                  >
-                    {linkedin}
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile version — Only icons */}
-            <div className="flex md:hidden items-center justify-around gap-4">
-              <a
-                href={`mailto:${email}`}
-                className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition"
-              >
-                <FaEnvelope className="text-primary text-[22px]" />
-              </a>
-
-              <button
-                onClick={handleWhatsAppClick}
-                className="p-3 rounded-full bg-[#25D366]/20 hover:bg-[#25D366]/30 transition"
-              >
-                <FaWhatsapp className="text-[#25D366] text-[24px]" />
-              </button>
-
-              <div className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition">
-                <FaMapMarkerAlt className="text-primary text-[22px]" />
-              </div>
-
-              <a
-                href={linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition"
-              >
-                <FaLinkedin className="text-primary text-[22px]" />
-              </a>
-            </div>
+            
           </div>
 
           {/* Right Side: Contact Form */}
-          <Card className="border-2 border-border/60 dark:border-border/80 shadow-lg  bg-background backdrop-blur-sm">
+          <Card className="border border-border/60 shadow-sm bg-background">
             <CardHeader>
               <CardTitle className="font-serif text-[16px] md:text-xl">
                 Send a Message
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <Input
-                  name="name"
-                  type="text"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="border-2 border-border/60 bg-background"
-                />
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="border-2 border-border/60 bg-background"
-                />
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <Input
+                    name="name"
+                    type="text"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="border border-border/60 bg-background"
+                  />
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="border border-border/60 bg-background"
+                  />
+                </div>
                 <Input
                   name="subject"
                   type="text"
@@ -226,7 +224,7 @@ export function ContactSection() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="border-2 border-border/60 bg-background"
+                  className="border border-border/60 bg-background"
                 />
                 <Textarea
                   name="message"
@@ -235,7 +233,7 @@ export function ContactSection() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="border-2 border-border/60 bg-background"
+                  className="border border-border/60 bg-background"
                 />
                 <Button
                   type="submit"
@@ -248,6 +246,10 @@ export function ContactSection() {
             </CardContent>
           </Card>
         </div>
+        <p className="m-8 text-[13px] text-muted-foreground/80">
+              Prefer a quick chat? WhatsApp usually gets the fastest reply —
+              email works well for anything more detailed.
+            </p>
       </div>
     </section>
   );
