@@ -40,7 +40,7 @@ export function ContactSection() {
 
   // WhatsApp logic (mobile + desktop support)
   const handleWhatsAppClick = () => {
-    const phoneNumber = "9665482906756";
+    const phoneNumber = "9665482996756";
     const message = encodeURIComponent(
       "Hello! 👋\n\nI’d like to get in touch.\n\nHere are my details:\n• Full Name:\n• Company Name:\n• Message / Inquiry:\n\nThank you!"
     );

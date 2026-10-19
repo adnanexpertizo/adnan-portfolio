@@ -51,7 +51,7 @@ export function CertificateModal({ cert, index, total, onClose, onPrev, onNext }
   }, [onClose, onPrev, onNext]);
 
   const contactOnWhatsApp = () => {
-    const phone = "9665482906756";
+    const phone = "9665482996756";
     const msg = encodeURIComponent(
       `🛡️ Certificate Verification Request\n\n` +
       `Certificate: "${cert.title}"\n\n` +
