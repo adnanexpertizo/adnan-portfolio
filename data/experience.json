@@ -1,34 +1,55 @@
+
 {
   "title": "Professional Experience",
-  "subtitle": "Proven track record in workplace safety management and implementation of international safety standards",
+  "subtitle": "Over 5 years of experience in workplace safety management, construction, and infrastructure development",
   "experiences": [
     {
       "title": "Safety Officer",
-      "company": "BRT Metro Project (TransPeshawar)",
-      "location": "Peshawar, Pakistan",
-      "period": "2019 - 2024",
+      "company": "Al-Mashrik Contracting Company",
+      "location": "Saudi Arabia",
+      "period": "May 2025 – Aug 2026",
       "type": "Full-time",
+      "project": "Road and Infrastructure Development",
       "responsibilities": [
-        "Led safety operations for major infrastructure and construction activities at BRT Metro Project.",
-        "Conducted comprehensive risk assessments and implemented preventive safety measures.",
-        "Ensured compliance with NEBOSH and OSHA-based safety protocols on-site.",
-        "Organized regular safety trainings, toolbox talks, and emergency response drills.",
-        "Investigated accidents and near-misses, recommending effective corrective actions.",
-        "Maintained accurate safety documentation, inspection logs, and compliance reports."
+        "Conducted site safety inspections to identify hazards and ensure compliance with safety requirements.",
+        "Performed risk assessments and recommended appropriate control measures for construction activities.",
+        "Monitored workers' compliance with PPE requirements and safe work procedures.",
+        "Conducted toolbox talks and promoted safety awareness among site personnel.",
+        "Monitored construction activities to ensure compliance with company HSE policies and safety standards.",
+        "Reported unsafe conditions and followed up on corrective actions."
       ]
     },
     {
-      "title": "Safety Assistant / Trainee",
-      "company": "Industrial Services & Construction Company",
-      "location": "Karachi, Pakistan",
-      "period": "2018 - 2019",
-      "type": "Internship / Training",
+      "title": "HSE Officer",
+      "company": "Sinohydro Corporation",
+      "location": "Saudi Arabia",
+      "period": "July 2024 – March 2025",
+      "type": "Full-time",
+      "project": "Water Transmission Pipeline",
       "responsibilities": [
-        "Assisted senior officers in daily site safety inspections and audits.",
-        "Monitored PPE usage and promoted compliance with safety regulations.",
-        "Helped prepare risk assessment and incident investigation reports.",
-        "Supported safety awareness programs and workforce training initiatives.",
-        "Gained practical exposure to ISO 45001 and workplace safety documentation."
+        "Monitored pipeline construction activities to ensure compliance with HSE procedures.",
+        "Identified workplace hazards and supported the implementation of risk control measures.",
+        "Conducted routine site inspections and monitored the proper use of PPE.",
+        "Delivered toolbox talks and safety briefings to workers and supervisors.",
+        "Monitored permit-to-work requirements and safe working practices.",
+        "Reported incidents, near misses, and unsafe conditions and supported corrective actions."
+      ]
+    },
+    {
+      "title": "Safety Officer",
+      "company": "Maqbool JV (CR21G & Calsons)",
+      "location": "Pakistan",
+      "period": "April 2021 – July 2024",
+      "type": "Full-time",
+      "project": "Sustainable BRT Reach III – Aman Chowk to Karkhano",
+      "responsibilities": [
+        "Monitored safety during road infrastructure and BRT construction activities.",
+        "Conducted workplace inspections and identified potential hazards.",
+        "Prepared and reviewed risk assessments and recommended preventive measures.",
+        "Ensured workers followed PPE requirements and site safety procedures.",
+        "Conducted toolbox talks and safety awareness sessions for the workforce.",
+        "Reported incidents and near misses and followed up on corrective actions.",
+        "Maintained safety inspection records and supported compliance with project safety requirements."
       ]
     }
   ]
