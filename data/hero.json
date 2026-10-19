@@ -1,3 +1,4 @@
+
 {
   "name": "Adnan Rafiq",
   "title": "Safety Officer",
@@ -8,6 +9,7 @@
   "nebosh": "/nebosh.png",
   "osha": "/osha.png",
   "logo": "/logo-2.png",
+  "cvLink": "/Safety_officer_Adnan_Rafiq_CV.pdf",
   "buttons": [
     {
       "text": "Download CV",
