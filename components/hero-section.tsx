@@ -109,7 +109,7 @@ export function HeroSection() {
   };
 
   const handleWhatsApp = () => {
-    const phone = "9665482996756";
+    const phone = "966548299269";
     const msg = encodeURIComponent(
       `*🛡️ Safety Portfolio Inquiry*\n\n` +
       `Hi Adnan! I visited your safety portfolio and would like to get in touch.\n\n` +
